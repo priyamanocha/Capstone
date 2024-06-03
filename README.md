@@ -1,2 +1,2 @@
 # Capstone
-Web Development - Capstone
+Web Development - Capstone Team 3
