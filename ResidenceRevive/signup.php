@@ -39,5 +39,25 @@
         </div>
     </div>
    
+    <script>
+        const password = document.getElementById('password');
+        const weak = document.querySelector('.weak');
+        const medium = document.querySelector('.medium');
+        const strong = document.querySelector('.strong');
+
+        password.addEventListener('input', () => {
+            const val = password.value;
+            let strength = 0;
+
+            if (val.length > 7) strength++;
+            if (/[A-Z]/.test(val)) strength++;
+            if (/[0-9]/.test(val)) strength++;
+            if (/[@$!%*?&#]/.test(val)) strength++;
+
+            weak.style.backgroundColor = strength > 0 ? 'red' : 'gray';
+            medium.style.backgroundColor = strength > 2 ? 'orange' : 'gray';
+            strong.style.backgroundColor = strength > 3 ? 'green' : 'gray';
+        });
+    </script>
 </body>
 </html>
