@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <footer>
+        <div>
+            <p>Residence Revive</p>
+            <a href="#">About Us</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Careers</a>
+        </div>
+        <div>
+            <p>For Customers</p>
+            <a href="#">Residence Revive Reviews</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div>
+            <p>Social Links</p>
+            <div class="social-links">
+                <a href="#" class="icon-facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
