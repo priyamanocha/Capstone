@@ -1,7 +1,7 @@
 <?php
 // includes/functions.php
 function getAllServices($conn) {
-    $sql = "SELECT service_id, service_name FROM services";
+    $sql = "SELECT service_id, service_name, des FROM services";
     $result = $conn->query($sql);
     $services = [];
 
