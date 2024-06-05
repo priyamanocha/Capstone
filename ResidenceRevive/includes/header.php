@@ -14,8 +14,6 @@
             <a href="services.php">About Us</a>
             <a href="about.php">Contact Us</a>
             <a href="contact.php">Cart</a>
-            <a href="signup.php">Register</a>
-            <a href="login.php">Login</a>
         </nav>
     </header>
     <main>
