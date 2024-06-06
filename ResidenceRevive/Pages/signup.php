@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/signup_styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script>
         function checkPasswordStrength(password) {
             let strengthBar = document.getElementById('strength-bar');
             let strength = 0;
 
-            
             const regexes = [
                 /.{8,}/,       
                 /[A-Z]/,       
@@ -19,14 +21,12 @@
                 /[^A-Za-z0-9]/ 
             ];
 
-     
             regexes.forEach((regex) => {
                 if (regex.test(password)) {
                     strength++;
                 }
             });
 
-     
             strengthBar.value = strength;
             let strengthLabel = document.getElementById('strength-label');
             switch (strength) {
@@ -56,20 +56,24 @@
     </script>
 </head>
 <body>
-    <div class="signup-container">
-        <form action="../signup_action.php" method="POST">
-            <h1>Sign Up to Residence Revive</h1>
-            <button type="button" class="google-signup">Sign up with Google</button>
-            <p>Already have an account? <a href="../html/login.html">Log In</a></p>
-            <input type="text" name="first_name" placeholder="First Name" required>
-            <input type="text" name="last_name" placeholder="Last Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required oninput="checkPasswordStrength(this.value)">
-            <progress id="strength-bar" max="5" value="0"></progress>
-            <span id="strength-label">Very Weak</span>
-            <input type="submit" value="Create Account">
-            <p>By creating an account you agree to our <a href="#">Terms of Service</a> and <a href="#">Notification Setting</a></p>
-        </form>
-    </div>
+    <?php include '../includes/header.php'; ?>
+    <main>
+        <div class="signup-container">
+            <form action="../signup_action.php" method="POST">
+                <h1>Sign Up to Residence Revive</h1>
+                <button type="button" class="google-signup">Sign up with Google</button>
+                <p>Already have an account? <a href="../Pages/login.php">Log In</a></p>
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required oninput="checkPasswordStrength(this.value)">
+                <progress id="strength-bar" max="5" value="0"></progress>
+                <span id="strength-label">Very Weak</span>
+                <input type="submit" value="Create Account">
+                <p>By creating an account you agree to our <a href="#">Terms of Service</a> and <a href="#">Notification Setting</a></p>
+            </form>
+        </div>
+    </main>
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

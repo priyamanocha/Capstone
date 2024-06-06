@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +15,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2>Login to Residence Revive</h2>
-                <?php
-                session_start();
-               
-                ?>
                 <form action="../login_action.php" method="POST">
                     <p>New to here? Create a new account? <a href="../html/signup.html">Signup</a></p>
                     <div class="form-group">

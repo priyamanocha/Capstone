@@ -19,11 +19,11 @@
                 <input type="text" placeholder="Search for Service" class="search-service">
             </div>
             <div class="links">
-                <a href="#">Home</a>
+                <a href="../index.php">Home</a>
                 <a href="#">About us</a>
                 <a href="#">Contact us</a>
-                <a href="../ResidenceRevive/html/login.html">Login</a>
-                <a href="../ResidenceRevive/html/signup.html">SignUp</a>
+                <a href="../Pages/login.php">Login</a>
+                <a href="../Pages/signup.php">SignUp</a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
