@@ -10,23 +10,23 @@
             let strengthBar = document.getElementById('strength-bar');
             let strength = 0;
 
-            // Regex patterns to test password strength
+            
             const regexes = [
-                /.{8,}/,       // At least 8 characters
-                /[A-Z]/,       // At least one uppercase letter
-                /[a-z]/,       // At least one lowercase letter
-                /[0-9]/,       // At least one digit
-                /[^A-Za-z0-9]/ // At least one special character
+                /.{8,}/,       
+                /[A-Z]/,       
+                /[a-z]/,       
+                /[0-9]/,       
+                /[^A-Za-z0-9]/ 
             ];
 
-            // Check each pattern
+     
             regexes.forEach((regex) => {
                 if (regex.test(password)) {
                     strength++;
                 }
             });
 
-            // Update the strength bar
+     
             strengthBar.value = strength;
             let strengthLabel = document.getElementById('strength-label');
             switch (strength) {
@@ -57,7 +57,7 @@
 </head>
 <body>
     <div class="signup-container">
-        <form action="signup_action.php" method="POST">
+        <form action="../signup_action.php" method="POST">
             <h1>Sign Up to Residence Revive</h1>
             <button type="button" class="google-signup">Sign up with Google</button>
             <p>Already have an account? <a href="#">Log In</a></p>
