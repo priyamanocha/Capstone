@@ -9,15 +9,18 @@ body {
     flex-direction: column;
 }
 
+
 .signup-container {
     background-color: #fff;
     padding: 20px;
-    padding-bottom: 50%;
+    
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a box shadow */
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px; 
+    padding-top: 100px;
+    padding-bottom: 160px;
 }
 
 .signup-container h1 {
@@ -106,12 +109,13 @@ header {
 footer {
     bottom: 0;
 }
-
 main {
     flex: 1; /* Allowing the main content to grow and shrink as needed */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px; 
-    margin-bottom: 80px; 
+    
+    margin-top: 180px; 
+    margin-bottom: 180px; 
 }
+

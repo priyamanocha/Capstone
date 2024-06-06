@@ -14,7 +14,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="#"><img src="images/ResidenceRevive_logo.png" alt="Residence Revive Logo"></a>
+                <a href="#"><img src="../images/ResidenceRevive_logo.png" alt="Residence Revive Logo"></a>
                 <a href="#">Residence Revive</a>
             </div>
             <div class="search">
