@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- The meta tags for character set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
@@ -11,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Footer section -->
     <footer>
         <div>
             <p>Residence Revive</p>
@@ -26,6 +28,7 @@
         </div>
         <div>
             <p>Social Links</p>
+            <!-- Container for the social media icons -->
             <div class="social-links">
                 <a href="#" class="icon-facebook"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>

@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
+    <!-- The Meta tags for char set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
+    <!-- Link to the external CSS stylesheet for styling the page -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -25,6 +27,7 @@
                 <a href="../Pages/login.php">Login</a>
                 <a href="../Pages/signup.php">SignUp</a>
             </div>
+             <!-- The menu toggle button, just for the responsive design -->
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>

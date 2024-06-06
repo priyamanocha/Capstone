@@ -1,4 +1,5 @@
 <?php
+// Checking for the session, if is not already started, then start the session
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -8,10 +9,6 @@ include 'config/db.php';
 include 'includes/functions.php';
 include 'includes/header.php';
 
-// if (isset($_SESSION['db_message'])) {
-//     echo "<p>" . $_SESSION['db_message'] . "</p>";
-//     unset($_SESSION['db_message']); 
-// }
 
 $categories = getAllCategories($conn); // Fetch category names
 
@@ -78,7 +75,7 @@ $icons = [
     </div>
 </div>
 
-
+     <!-- Including the footer from a separate PHP file -->
 <?php
 include 'includes/footer.php';
 $conn->close();

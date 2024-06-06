@@ -32,13 +32,14 @@ h2 {
     color: #555;
 }
 
+/* Form control styles */
 .form-control {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+    box-sizing: border-box;/* Ensuring the padding and border are included in the element's width and height */
     font-size: 1rem;
 }
 
@@ -49,8 +50,8 @@ h2 {
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer; /* Changing the cursor to the pointer on hover */
+    transition: background-color 0.3s, border-color 0.3s; /* Adding the transition effect */
 }
 
 .btn-primary:hover {
@@ -63,8 +64,8 @@ h2 {
 }
 
 .row {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Using the flexbox layout */
+    justify-content: center; /* Centering the items horizontally */
 }
 
 .col-md-6 {
@@ -80,7 +81,7 @@ h2 {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounding the corners */
     color: #fff;
     text-align: left;
 }

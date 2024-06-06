@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Setting the minimum height to 100% of the viewport height */
     margin: 0;
     flex-direction: column;
 }
@@ -14,7 +14,7 @@ body {
     padding: 20px;
     padding-bottom: 50%;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a box shadow */
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px; 
@@ -25,6 +25,8 @@ body {
     margin-bottom: 20px;
 }
 
+
+/* Styles for the Google signup button */
 .signup-container .google-signup {
     display: block;
     width: 100%;
@@ -46,6 +48,7 @@ body {
     text-decoration: none;
 }
 
+/* Styling for text, email, and password input fields inside the signup container */
 .signup-container input[type="text"],
 .signup-container input[type="email"],
 .signup-container input[type="password"] {
@@ -62,6 +65,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* Styles for the submit button inside the signup container */
 .signup-container input[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -69,9 +73,10 @@ body {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; /* Changing cursor to pointer on hover */
 }
 
+/* Hover styles for the submit button inside the signup container */
 .signup-container input[type="submit"]:hover {
     background-color: #e55d00;
 }
@@ -88,7 +93,6 @@ header, footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -104,7 +108,7 @@ footer {
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Allowing the main content to grow and shrink as needed */
     display: flex;
     justify-content: center;
     align-items: center;
