@@ -8,10 +8,10 @@ include 'config/db.php';
 include 'includes/functions.php';
 include 'includes/header.php';
 
-if (isset($_SESSION['db_message'])) {
-    echo "<p>" . $_SESSION['db_message'] . "</p>";
-    unset($_SESSION['db_message']); 
-}
+// if (isset($_SESSION['db_message'])) {
+//     echo "<p>" . $_SESSION['db_message'] . "</p>";
+//     unset($_SESSION['db_message']); 
+// }
 
 $categories = getAllCategories($conn); // Fetch category names
 
