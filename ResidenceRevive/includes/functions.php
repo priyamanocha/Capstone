@@ -1,16 +1,16 @@
 <?php
 // includes/functions.php
-function getAllServices($conn) {
-    $sql = "SELECT service_id, service_name, des FROM services";
+function getAllCategories($conn) {
+    $sql = "SELECT category_id, category_name FROM categories"; // Assuming the correct table name is 'categories'
     $result = $conn->query($sql);
-    $services = [];
+    $categories = [];
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $services[] = $row;
+            $categories[] = $row;
         }
     }
 
-    return $services;
+    return $categories;
 }
 ?>
