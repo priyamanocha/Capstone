@@ -10,7 +10,7 @@ include 'includes/header.php';
 
 if (isset($_SESSION['db_message'])) {
     echo "<p>" . $_SESSION['db_message'] . "</p>";
-    unset($_SESSION['db_message']); // Clear the message after displaying it
+    unset($_SESSION['db_message']); 
 }
 
 $services = getAllServices($conn);

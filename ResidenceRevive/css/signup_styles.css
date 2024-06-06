@@ -1,21 +1,46 @@
+
+.container {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007BFF; 
+    border-color: #007BFF; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+}
+
 .password-strength {
     display: flex;
-    margin-bottom: 10px;
+    margin-top: 5px; 
 }
 
 .password-strength div {
-    height: 5px;
+    height: 10px;
     flex: 1;
+    margin: 0 2px;
+    border-radius: 2px;
 }
 
-.password-strength .weak {
-    background-color: gray;
+.weak {
+    background-color: #FF4D4D; 
 }
 
-.password-strength .medium {
-    background-color: gray;
+.medium {
+    background-color: #FFA500; 
 }
 
-.password-strength .strong {
-    background-color: gray;
+.strong {
+    background-color: #32CD32; 
 }

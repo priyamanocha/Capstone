@@ -49,7 +49,6 @@ if (isset($_SESSION['db_message'])) {
         </div>
     </div>
 </div>
-
 <script>
     const password = document.getElementById('password');
     const weak = document.querySelector('.weak');
@@ -57,6 +56,7 @@ if (isset($_SESSION['db_message'])) {
     const strong = document.querySelector('.strong');
 
     password.addEventListener('input', () => {
+       
         const val = password.value;
         let strength = 0;
 
@@ -70,6 +70,7 @@ if (isset($_SESSION['db_message'])) {
         strong.style.backgroundColor = strength > 3 ? 'green' : 'gray';
     });
 </script>
+
 
 <?php
 include 'includes/footer.php';
