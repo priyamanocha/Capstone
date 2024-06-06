@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up to Residence Revive</title>
-    
+    <title>Sign Up</title>
     <link rel="stylesheet" href="../css/signup_styles.css">
+    <script>
+        function checkPasswordStrength(password) {
+            let strengthBar = document.getElementById('strength-bar');
+            let strength = 0;
+
+            // Regex patterns to test password strength
+            const regexes = [
+                /.{8,}/,       // At least 8 characters
+                /[A-Z]/,       // At least one uppercase letter
+                /[a-z]/,       // At least one lowercase letter
+                /[0-9]/,       // At least one digit
+                /[^A-Za-z0-9]/ // At least one special character
+            ];
+
+            // Check each pattern
+            regexes.forEach((regex) => {
+                if (regex.test(password)) {
+                    strength++;
+                }
+            });
+
+            // Update the strength bar
+            strengthBar.value = strength;
+            let strengthLabel = document.getElementById('strength-label');
+            switch (strength) {
+                case 0:
+                case 1:
+                    strengthLabel.textContent = 'Very Weak';
+                    strengthLabel.style.color = 'red';
+                    break;
+                case 2:
+                    strengthLabel.textContent = 'Weak';
+                    strengthLabel.style.color = 'orange';
+                    break;
+                case 3:
+                    strengthLabel.textContent = 'Moderate';
+                    strengthLabel.style.color = 'yellow';
+                    break;
+                case 4:
+                    strengthLabel.textContent = 'Strong';
+                    strengthLabel.style.color = 'blue';
+                    break;
+                case 5:
+                    strengthLabel.textContent = 'Very Strong';
+                    strengthLabel.style.color = 'green';
+                    break;
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2>Sign Up to Residence Revive</h2>
-                <form action="signup_action.php" method="POST">
-                    <div class="form-group">
-                        <label for="first_name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="last_name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_number">Contact Number</label>
-                        <input type="text" class="form-control" id="contact_number" name="contact_number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        <div class="password-strength">
-                            <div class="weak"></div>
-                            <div class="medium"></div>
-                            <div class="strong"></div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
-                </form>
-            </div>
-        </div>
+    <div class="signup-container">
+        <form action="signup_action.php" method="POST">
+            <h1>Sign Up to Residence Revive</h1>
+            <button type="button" class="google-signup">Sign up with Google</button>
+            <p>Already have an account? <a href="#">Log In</a></p>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required oninput="checkPasswordStrength(this.value)">
+            <progress id="strength-bar" max="5" value="0"></progress>
+            <span id="strength-label">Very Weak</span>
+            <input type="submit" value="Create Account">
+            <p>By creating an account you agree to our <a href="#">Terms of Service</a> and <a href="#">Notification Setting</a></p>
+        </form>
     </div>
-    <script>
-    const password = document.getElementById('password');
-    const weak = document.querySelector('.weak');
-    const medium = document.querySelector('.medium');
-    const strong = document.querySelector('.strong');
-
-    password.addEventListener('input', () => {
-        const val = password.value;
-        let strength = 0;
-
-        if (val.length > 7) strength++;
-        if (/[A-Z]/.test(val)) strength++;
-        if (/[0-9]/.test(val)) strength++;
-        if (/[@$!%*?&#]/.test(val)) strength++;
-
-        weak.style.backgroundColor = strength > 0 ? 'red' : 'gray';
-        medium.style.backgroundColor = strength > 2 ? 'orange' : 'gray';
-        strong.style.backgroundColor = strength > 3 ? 'green' : 'gray';
-    });
-</script>
 </body>
 </html>
