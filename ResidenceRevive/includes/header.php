@@ -22,7 +22,8 @@
                 <a href="#">Home</a>
                 <a href="#">About us</a>
                 <a href="#">Contact us</a>
-                <a href="#">Login</a>
+                <a href="../html/login.html">Login</a>
+                <a href="../html/signup.html">SignUp</a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
