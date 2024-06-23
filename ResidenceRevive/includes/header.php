@@ -22,7 +22,8 @@
                 <a href="#">Residence Revive</a>
             </div>
             <div class="search">
-                <input type="text" placeholder="Search for Service" class="search-service">
+                <input type="text" placeholder="Search for Service"
+                 class="form-control form-control-lg d-inline-block search-service">
             </div>
             <div class="links">
                 <a href="../index.php">Home</a>
