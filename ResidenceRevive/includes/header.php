@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <!-- Link to the external CSS stylesheet for styling the page -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">  
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             </div>
             <div class="links">
                 <a href="../index.php">Home</a>
-                <a href="#">About us</a>
+                <a href="../Pages/about.php">About us</a>
                 <a href="#">Contact us</a>
                 <a href="../Pages/login.php">Login</a>
                 <a href="../Pages/signup.php">SignUp</a>
