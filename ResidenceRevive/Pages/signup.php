@@ -67,7 +67,7 @@
     <?php include '../includes/header.php'; ?>
     <main>
         <!-- Main container for the signup form -->
-        <div class="signup-container">
+        <div class="signup-container col-md-6">
             <form action="../signup_action.php" method="POST">
                 <h1>Sign Up to Residence Revive</h1>
                 <button type="button" class="google-signup">Sign up with Google</button>
