@@ -44,19 +44,19 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #FF6F61;
-    border-color: #FF6F61;
+    background-color: #FF6F61 !important;
+    border-color: #FF6F61 !important;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 20px !important;
+    font-size: 1rem; 
     border-radius: 5px;
     cursor: pointer; /* Changing the cursor to the pointer on hover */
-    transition: background-color 0.3s, border-color 0.3s; /* Adding the transition effect */
+    transition: background-color 0.3s, border-color 0.3s !important; /* Adding the transition effect */
 }
 
 .btn-primary:hover {
-    background-color: #FF3D2E;
-    border-color: #FF3D2E;
+    background-color: #FF3D2E !important;
+    border-color: #FF3D2E !important;
 }
 
 .mt-5 {
