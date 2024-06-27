@@ -12,7 +12,7 @@
     <main>
         <div class="privacy-policy-container">
             <h1>Privacy Policy</h1>
-            <p>Effective Date: [Insert Date]</p>
+            <p>Effective Date: 27/06/2024</p>
 
             <h2>1. Introduction</h2>
             <p>Welcome to Residence Revive. We value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and protect your data when you use our services.</p>
@@ -46,7 +46,7 @@
             <p>You have the right to access and correct your personal information. You can update your information by contacting us directly.</p>
 
             <h3>6.2 Deletion</h3>
-            <p>You can request the deletion of your personal information, subject to certain legal obligations. To request deletion, please contact us at [Insert Contact Email].</p>
+            <p>You can request the deletion of your personal information, subject to certain legal obligations. To request deletion, please contact us at residencerevive@gmail.com.</p>
 
             <h3>6.3 Opt-Out</h3>
             <p>You can opt-out of receiving marketing communications from us by following the unsubscribe instructions in the emails or by contacting us directly.</p>
