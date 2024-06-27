@@ -33,6 +33,11 @@
     margin-right: 10px;
 }
 
+.contact-social-media img {
+    width: 80px; 
+    height: 40px; 
+}
+
 .contact-form-container p {
     margin-bottom: 20px;
 }
