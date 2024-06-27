@@ -17,7 +17,7 @@
         <div>
             <p>Residence Revive</p>
             <a href="../Pages/about.php">About Us</a>
-            <a href="#">Terms and Conditions</a>
+            <a href="../Pages/terms_and_conditions.php">Terms and Conditions</a>
             <a href="../Pages/privacy_policy.php">Privacy Policy</a>
             <a href="#">Careers</a>
         </div>
