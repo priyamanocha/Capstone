@@ -29,7 +29,7 @@
                 <a href="../index.php">Home</a>
                 <a href="../Pages/about.php">About us</a>
                 <a href="../Pages/cart.php">Cart</a>
-                <a href="#">Contact us</a>
+                <a href="../Pages/contact.php">Contact us</a>
                 <a href="../Pages/login.php">Login</a>
                 <a href="../Pages/signup.php">SignUp</a>
             </div>
