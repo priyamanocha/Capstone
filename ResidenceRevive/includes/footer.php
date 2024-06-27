@@ -16,15 +16,15 @@
     <footer>
         <div>
             <p>Residence Revive</p>
-            <a href="#">About Us</a>
+            <a href="../Pages/about.php">About Us</a>
             <a href="#">Terms and Conditions</a>
-            <a href="#">Privacy Policy</a>
+            <a href="../Pages/privacy_policy.php">Privacy Policy</a>
             <a href="#">Careers</a>
         </div>
         <div>
             <p>For Customers</p>
             <a href="#">Residence Revive Reviews</a>
-            <a href="#">Contact Us</a>
+            <a href="../Pages/contact.php">Contact Us</a>
         </div>
         <div>
             <p>Social Links</p>
