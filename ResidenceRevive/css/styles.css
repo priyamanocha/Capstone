@@ -68,7 +68,7 @@ main {
 footer {
     background-color: black;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px 10%;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -79,7 +79,7 @@ footer div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
 footer div a {
     text-decoration: none; 
@@ -113,11 +113,26 @@ footer .social-links a i {
 footer .social-links a:hover {
     color: orange; 
 }
+.bold{
+    font-weight: bold;
+}
+.rights{
+    grid-column: 1 / span2;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     footer {
         grid-template-columns: repeat(1, 1fr);
     }
+    footer div {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
 }
 /* CSS for Footer ends */
 
@@ -186,6 +201,25 @@ nav {
     }
 }
 /* CSS for Header ends */
+
+/* CSS for Terms and Conditions starts */
+.terms_conditions{
+    padding: 5%;
+}
+.terms_conditions h1{
+    text-align: center;
+    font-weight: bold;
+}
+.terms_conditions h3{
+    text-align: left;
+    font-weight: bold;
+    padding: 0%;
+}
+.terms_conditions p, .terms_conditions ul li{
+    text-align: left;
+    font-size: larger;
+}
+/* CSS for Terms and Conditions ends */
 
 .why-us {
     display: flex;

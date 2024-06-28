@@ -28,7 +28,8 @@ $icons = [
     <?php foreach ($categories as $category): ?>
         <div class="service-card">
             <?php if (isset($icons[$category['category_name']])): ?>
-                <img src="<?php echo $icons[$category['category_name']]; ?>" alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
+                <img src="<?php echo $icons[$category['category_name']]; ?>"
+                    alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
             <?php else: ?>
                 <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
             <?php endif; ?>
@@ -39,7 +40,7 @@ $icons = [
 
 <h2>Why Choose Us?</h2>
 <div class="why-us">
-    
+
     <!-- Left Container -->
     <div class="left-container">
         <div class="icon-line">
@@ -52,14 +53,14 @@ $icons = [
         <div class="icon-line">
             <img src="./images/search.png" alt="Icon 2">
             <div>
-            <h2>Tranparent Pricing</h2>
+                <h2>Tranparent Pricing</h2>
                 <p>See prices before you book,No hidden fees</p>
             </div>
         </div>
         <div class="icon-line">
             <img src="./images/leader.png" alt="Icon 3">
             <div>
-            <h2>Experts Only</h2>
+                <h2>Experts Only</h2>
                 <p>Our Staff is full of experts, and have on-job experience of years</p>
             </div>
         </div>
@@ -75,7 +76,7 @@ $icons = [
     </div>
 </div>
 
-     <!-- Including the footer from a separate PHP file -->
+<!-- Including the footer from a separate PHP file -->
 <?php
 include 'includes/footer.php';
 $conn->close();

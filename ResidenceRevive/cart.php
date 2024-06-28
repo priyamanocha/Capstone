@@ -15,7 +15,7 @@
 
 <body>
     <!-- Including the header from a separate PHP file -->
-    <?php include '../includes/header.php'; ?>
+    <?php include 'includes/header.php'; ?>
 
     <div class="container my-4">
 
@@ -34,7 +34,7 @@
                     <td>
 
                         <div class="border d-flex p-3 rounded-5 w-75">
-                            <img src="../images/electrician.png" class="img-fluid object-fit-contain" alt="Image"
+                            <img src="images/electrician.png" class="img-fluid object-fit-contain" alt="Image"
                                 style="max-width: 60px;">
                             <div class="p-3 ms-2">
                                 <h5>Electrician Service</h5>
@@ -55,7 +55,7 @@
                     <td>
 
                         <div class="border d-flex p-3 rounded-5 w-75">
-                            <img src="../images/cleaning.png" class="img-fluid object-fit-contain" alt="Image"
+                            <img src="images/cleaning.png" class="img-fluid object-fit-contain" alt="Image"
                                 style="max-width: 60px;">
                             <div class="p-3 ms-2">
                                 <h5>Carpet Cleaning</h5>
@@ -76,7 +76,7 @@
                     <td>
 
                         <div class="border d-flex p-3 rounded-5 w-75">
-                            <img src="../images/plumbing.png" class="img-fluid object-fit-contain" alt="Image"
+                            <img src="images/plumbing.png" class="img-fluid object-fit-contain" alt="Image"
                                 style="max-width: 60px;">
                             <div class="p-3 ms-2">
                                 <h5>Plumbing Service</h5>
@@ -122,7 +122,7 @@
 
 
     <!-- Including the footer from a separate PHP file -->
-    <?php include '../includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>
