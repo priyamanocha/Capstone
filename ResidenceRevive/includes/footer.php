@@ -38,7 +38,7 @@
             <a href="terms_and_conditions.php">Terms and Conditions</a>
             <a href="privacy_policy.php">Privacy Policy</a>
             <a href="#">Careers</a>
-            <a href="#">Contact Us</a>
+            <a href="contact_us.php">Contact Us</a>
         </div>
         <p class="rights">© 2024 Residence Revive. All Rights Reserved.</p>
     </footer>
