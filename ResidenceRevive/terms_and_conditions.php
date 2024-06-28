@@ -77,7 +77,7 @@
             sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other
             users of the Services, us, or third parties, or for any other reason.</p>
         <h3>Governing Law</h3>
-        <p>These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes
+        <p>These Terms are governed by and construed in accordance with the laws of Ontario, Canada. Any disputes
             arising out of or relating to these Terms or the Services will be resolved in the courts of Ontario, Canada.
         </p>
         <h3>Changes to Terms</h3>
@@ -87,9 +87,9 @@
         <h3>Contact Us</h3>
         <p>If you have any questions about these Terms, please contact us at:</p>
         <p class="bold">Residence Revive</p>
-        <p>Email: support@residencerevive.com</p>
-        <p>Phone: [Your Contact Number]</p>
-        <p>Address: [Your Business Address]</p>
+        <p class="bold">Email: <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
+        <p class="bold">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p class="bold">Address: [Your Business Address]</p>
     </div>
     <?php
     include 'includes/footer.php';

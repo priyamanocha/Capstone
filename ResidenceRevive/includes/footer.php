@@ -24,7 +24,6 @@
                 <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
             </div>
-            
         </div>
         <div>
             <p class="bold">For Customers</p>
@@ -37,7 +36,7 @@
             <p class="bold">About our Company</p>
             <a href="about_us.php">About Us</a>
             <a href="terms_and_conditions.php">Terms and Conditions</a>
-            <a href="#">Privacy Policy</a>
+            <a href="privacy_policy.php">Privacy Policy</a>
             <a href="#">Careers</a>
             <a href="#">Contact Us</a>
         </div>

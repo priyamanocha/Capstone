@@ -117,13 +117,13 @@ footer .social-links a:hover {
     font-weight: bold;
 }
 .rights{
-    grid-column: 1 / span2;
     text-align: center;
+    grid-column: 1/ span 3;
 }
 
 @media (max-width: 768px) {
     footer {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
     footer div {
         padding: 0 10px;
@@ -131,6 +131,10 @@ footer .social-links a:hover {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+    .rights{
+        text-align: center;
+        grid-column: 1/ span 1;
     }
 
 }
@@ -219,8 +223,36 @@ nav {
     text-align: left;
     font-size: larger;
 }
+
 /* CSS for Terms and Conditions ends */
 
+/* CSS for Privacy Policy starts */
+.privacy_policy_container{
+    padding: 5%;
+}
+.privacy_policy_container h1{
+    text-align: center;
+    font-weight: bold;
+}
+.privacy_policy_container h3{
+    text-align: left;
+    font-weight: bold;
+    padding: 0%;
+}
+.privacy_policy_container h5{
+    text-align: left;
+    font-weight: bold;
+    padding: 0%;
+}
+.privacy_policy_container p, .privacy_policy_container ul li{
+    text-align: left;
+    list-style: none;
+}
+.privacy_policy_container ul li p, .privacy_policy_container p{
+    text-align: left;
+    font-size: larger;
+}
+/* CSS for Privacy Policy ends */
 .why-us {
     display: flex;
     margin-bottom: 50px;
