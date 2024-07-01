@@ -6,18 +6,19 @@
     <title> Billing Page </title>
     <link rel="stylesheet" href="../css/contact_styles.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/billing.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
 </head>
 <body>
     <?php include 'includes/header.php' ?>
     <main>
-        
         <div class="billing-form-container">
-            <form action="billing_action.php" method="POST">
+            <form action="billing_action.php" method="POST" class="fo">
                 <div>
                     <h1> Personal Information </h1>
                 </div>
                 <hr> </hr>
+                <div>
                     <div class="form-group">
                         <label for="first_name">First Name</label>
                         <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
@@ -96,7 +97,9 @@
                         </div>
                 </div>
                 <div>
-                    <button type="submit" name="submit"> Submit </button>
+                    <center>
+                        <button type="submit" class="btn btn-success"> Processed </button>
+                    </center>
                 </div>
             </form>
         </div>
