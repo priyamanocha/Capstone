@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/billing.css">
 </head>
 <body>
-    <?php include '../includes/header.php' ?>
+    <?php include 'includes/header.php' ?>
     <main>
         
         <div class="billing-form-container">
@@ -101,6 +101,6 @@
             </form>
         </div>
     </main>
-    <?php include '../includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
