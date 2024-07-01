@@ -21,15 +21,15 @@
                 <div>
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                        <input type="text" id="first_name" name="first_name" placeholder="First Name" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@yoursite.com" required>
+                        <input type="email" id="email" name="email" placeholder="you@yoursite.com" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="invoicenumber">Invoice Number</label>
@@ -47,27 +47,27 @@
                     <hr> </hr>
                         <div class="form-group">
                             <label for="first_name">First Name</label>
-                            <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                            <input type="text" id="first_name" name="first_name" placeholder="First Name" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group">
                             <label for="last_name">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                            <input type="text" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group">
                             <label for="creditcard">Credit Card</label>
-                            <input type="number" id="ccard" name="ccard" placeholder="Credit Card Number" required>
+                            <input type="number" id="ccard" name="ccard" placeholder="Credit Card Number" pattern="[1-9]{12}" required>
                         </div>
                         <div class="form-group">
                             <label for="securitycode">Security Code</label>
-                            <input type="number" id="scode" name="scode" placeholder="Enter Security Code" required>
+                            <input type="number" id="scode" name="scode" placeholder="Enter Security Code" pattern="[1-9]{3}" required>
                         </div>
                         <div class="form-group">
                             <label for="expirationmonth">Expiration Month</label>
-                            <input type="number" id="emonth" name="emonth" placeholder="Enter Expiration Month" required>
+                            <input type="number" id="emonth" name="emonth" placeholder="Enter Expiration Month" pattern="[1-9]{2}" required>
                         </div>
                         <div class="form-group">
                             <label for="expirationyear">Expiration Year</label>
-                            <input type="number" id="emonth" name="emonth" placeholder="Enter Expiration Month" required>
+                            <input type="number" id="eyear" name="eyear" placeholder="Enter Expiration Year" pattern="[1-9]{2}" required>
                         </div>
                 </div>
                 <div>
@@ -77,23 +77,23 @@
                     <hr> </hr>
                         <div class="form-group">
                             <label for="unitnumber">Unit/Apartment Number</label>
-                            <input type="number" id="unumber" name="unumber" placeholder="Enter Unit/Apartment Number" required>
+                            <input type="number" id="unumber" name="unumber" placeholder="Enter Unit/Apartment Number" pattern="[1-9]{2}" required>
                         </div>
                         <div class="form-group">
                             <label for="Street Address"> Street Address </label>
-                            <input type="text" id="saddress" name="saddress" placeholder="Enter Street Address" required>
+                            <input type="text" id="saddress" name="saddress" placeholder="Enter Street Address" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" id="city" name="city" placeholder="Enter City" required>
+                            <input type="text" id="city" name="city" placeholder="Enter City" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group">
                             <label for="state">State/Province</label>
-                            <input type="text" id="state" name="state" placeholder="Enter State/Province" required>
+                            <input type="text" id="state" name="state" placeholder="Enter State/Province" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group">
                             <label for="zipcode">Zip Code</label>
-                            <input type="text" id="zcode" name="zcode" placeholder="Enter Zip Code" required>
+                            <input type="text" id="zcode" name="zcode" placeholder="Enter Zip Code" pattern="[A-Za-z1-9]" required>
                         </div>
                 </div>
                 <div>
