@@ -1,0 +1,100 @@
+/* External CSS file for subcategories.php */
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for subcategories */
+.subcategory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+/* Individual subcategory card styles */
+.subcategory-card {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px); /* Full width minus margins */
+    height: 150px;
+    margin: 10px;
+    padding: 0 15px;
+    background-color: #F5F9FF;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative; /* Added for positioning "View Services" link */
+}
+
+.subcategory-card:hover {
+    transform: translateY(-5px);
+}
+
+.subcategory-card img {
+    max-width: 80px; /* Adjust icon size */
+    height: auto;
+    margin-right: 10px; /* Spacing between icon and text */
+}
+
+.subcategory-card h2 {
+    flex: 1; /* Take remaining space */
+    font-size: 2rem;
+    color: #333333;
+    margin: 0;
+}
+
+.subcategory-card a {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.subcategory-card a:hover {
+    text-decoration: underline;
+}
+
+.services-list {
+    margin-top: 20px;
+}
+
+.service-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.service-item h4 {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 468px) {
+    .subcategory-card {
+        height: 200px;
+        display: flex;
+        align-items: center; 
+    }
+
+    .subcategory-card img {
+        margin-bottom: 5px; /* Reduce spacing between icon and text */
+    }
+
+    .subcategory-card h2 {
+        font-size: 1rem; /* Further adjust font size */
+    }
+
+    .subcategory-card a {
+        position: static; /* Reset position for "View Services" link */
+        display: block;
+        margin-top: 10px; /* Add spacing between text and link */
+    }
+}
