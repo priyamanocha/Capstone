@@ -1,5 +1,3 @@
-/* External CSS file for subcategories.php */
-
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
@@ -9,32 +7,28 @@ body {
 }
 
 /* Container for subcategories */
+.subcategories {
+    margin-bottom: 40px;
+}
+
 .subcategory {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: center; /* Center align cards */
 }
 
-/* Individual subcategory card styles */
+
 .subcategory-card {
-    display: flex;
-    align-items: center;
-    width: calc(100% - 20px); /* Full width minus margins */
-    height: 150px;
-    margin: 10px;
-    padding: 0 15px;
-    background-color: #F5F9FF;
+    width: 100%; /* Full width of the container */
+    margin-bottom: 20px; /* Spacing between cards */
+    padding: 20px; /* Padding for each card */
+    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
     transition: transform 0.3s ease;
-    position: relative; /* Added for positioning "View Services" link */
-}
-
-.subcategory-card:hover {
-    transform: translateY(-5px);
+    display: flex;
+    align-items: center; /* Align items vertically */
 }
 
 .subcategory-card img {
@@ -45,56 +39,77 @@ body {
 
 .subcategory-card h2 {
     flex: 1; /* Take remaining space */
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #333333;
     margin: 0;
+    text-align: center; /* Center align text */
 }
 
 .subcategory-card a {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
+    margin-left: auto; /* Push "View Services" link to the right */
     color: #007bff;
     text-decoration: none;
 }
 
-.subcategory-card a:hover {
+.view-services {
+    margin-top: auto; /* Pushes "View Services" link to the bottom */
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-services:hover {
     text-decoration: underline;
 }
 
+/* Services List */
 .services-list {
-    margin-top: 20px;
+    display: none;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.service-item {
+.show-services {
+    display: block;
+}
+
+/* Service card styles */
+.sub_service-card {
+    background-color: #F5F9FF;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
     margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
 }
 
-.service-item h4 {
+.sub_service-card:hover {
+    transform: translateY(-5px);
+}
+
+.sub_service-card h4 {
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
-@media (max-width: 468px) {
-    .subcategory-card {
-        height: 200px;
-        display: flex;
-        align-items: center; 
-    }
+.sub_service-card p {
+    color: #666666;
+    margin-bottom: 10px;
+}
 
-    .subcategory-card img {
-        margin-bottom: 5px; /* Reduce spacing between icon and text */
-    }
+.service-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .subcategory-card h2 {
-        font-size: 1rem; /* Further adjust font size */
-    }
+.service-info form {
+    flex: 1; /* Take remaining space */
+}
 
-    .subcategory-card a {
-        position: static; /* Reset position for "View Services" link */
-        display: block;
-        margin-top: 10px; /* Add spacing between text and link */
-    }
+.service-info .service-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007bff;
 }
