@@ -169,12 +169,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     <hr> </hr>
                         <div class="form-group">
                             <label for="first_name">First Name</label>
-                            <input type="text" id="fname" name="cfname" placeholder="First Name" >
+                            <input type="text" id="cfname" name="cfname" placeholder="First Name" >
                             <span class="error"><?php echo $cfname_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label for="last_name">Last Name</label>
-                            <input type="text" id="lname" name="clname" placeholder="Last Name" >
+                            <input type="text" id="clname" name="clname" placeholder="Last Name" >
                             <span class="error"><?php echo $clname_err; ?></span>
                         </div>
                         <div class="form-group">
