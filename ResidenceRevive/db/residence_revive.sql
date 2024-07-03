@@ -9,6 +9,7 @@ drop table category_subcategory_service_mapping;
 drop table cart;
 drop table booking;
 drop table booking_services;
+drop table contact_us; 
 
 CREATE TABLE IF NOT EXISTS user_details (
     email VARCHAR(100) PRIMARY KEY,
@@ -86,6 +87,15 @@ CREATE TABLE IF NOT EXISTS booking_services (
     FOREIGN KEY (subcategory_id) REFERENCES sub_categories(sub_category_id),
     FOREIGN KEY (service_id) REFERENCES services(service_id),
     PRIMARY KEY(booking_id, category_id, service_id)
+);
+
+CREATE TABLE IF NOT EXISTS contact_us (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(50) NOT NULL,
+    message VARCHAR(5000) NOT NULL
 );
 
 -- Insert Queries for Categories

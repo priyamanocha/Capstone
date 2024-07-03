@@ -14,8 +14,8 @@ body {
     background-color: #fff;
     padding: 20px;
     
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a box shadow */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  */
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px; 
@@ -32,7 +32,6 @@ body {
 /* Styles for the Google signup button */
 .signup-container .google-signup {
     display: block;
-    width: 100%;
     padding: 10px;
     background-color: #4285f4;
     color: #fff;
@@ -41,9 +40,8 @@ body {
     margin-bottom: 10px;
     cursor: pointer;
 }
-
-.signup-container p {
-    text-align: center;
+.google-signup-button{
+text-align: center;
 }
 
 .signup-container p a {
@@ -72,7 +70,7 @@ body {
 .signup-container input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #ff6600;
+    background-color: #F16A43;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -81,7 +79,7 @@ body {
 
 /* Hover styles for the submit button inside the signup container */
 .signup-container input[type="submit"]:hover {
-    background-color: #e55d00;
+    background-color: #F16A43;
 }
 
 .signup-container #strength-label {
@@ -90,7 +88,7 @@ body {
     margin-bottom: 10px;
 }
 
-header, footer {
+ header {
     width: 100%;
     background-color: black;
     color: white;
@@ -102,13 +100,23 @@ header, footer {
     left: 0;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+footer{
+    width: 100%;
+}
 header {
     top: 0;
 }
 
-footer {
+/* footer {
     bottom: 0;
-}
+}  */
 main {
     flex: 1; /* Allowing the main content to grow and shrink as needed */
     display: flex;

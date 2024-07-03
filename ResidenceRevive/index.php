@@ -22,7 +22,7 @@ $icons = [
     // Add more categories with their respective icon paths
 ];
 ?>
-<h2>Our Services</h2>
+<h3>Our Services</h3>
 <div class="services-grid">
     <?php foreach ($categories as $category): ?>
         <div class="service-card">
@@ -39,7 +39,7 @@ $icons = [
     <?php endforeach; ?>
 </div>
 
-<h2>Why Choose Us?</h2>
+<h3>Why Choose Us?</h3>
 <div class="why-us">
 
     <!-- Left Container -->
@@ -77,8 +77,20 @@ $icons = [
     </div>
 </div>
 
+<!-- Carousel -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="./images/slider_1.png" alt="Carousel Image 1" class="carousel-image">
+        <img src="./images/slider_2.png" alt="Carousel Image 2" class="carousel-image">
+        <img src="./images/slider_3.png" alt="Carousel Image 3" class="carousel-image">
+    </div>
+    <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+</div>
+
 <!-- Including the footer from a separate PHP file -->
 <?php
 include 'includes/footer.php';
 $conn->close();
 ?>
+
