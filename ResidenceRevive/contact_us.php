@@ -97,31 +97,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form id="contactForm" action="contact_us.php" method="POST">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" placeholder="Enter First Name."
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter First Name"
                             value="<?php echo $first_name; ?>">
                         <span class="error"><?php echo $first_name_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name."
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name"
                             value="<?php echo $last_name; ?>">
                         <span class="error"><?php echo $last_name_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email" placeholder="Enter Email."
+                        <input type="text" id="email" name="email" placeholder="Enter Email"
                             value="<?php echo $email; ?>">
                         <span class="error"><?php echo $email_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" id="phone" name="phone" placeholder="Enter Phone Number."
+                        <input type="text" id="phone" name="phone" placeholder="Enter Phone Number"
                             value="<?php echo $phone; ?>">
                         <span class="error"><?php echo $phone_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter Message."
+                        <textarea id="message" name="message" placeholder="Enter Message"
                             value="<?php echo $message; ?>"></textarea>
                         <span class="error"><?php echo $message_err; ?></span>
                     </div>

@@ -3,7 +3,7 @@
 
 <?php
 $first_name = $last_name = $email = $phone = $password = "";
-$first_name_err = $last_name_err = $email_err = $phone_err = $password_err = "";
+$first_name_err = $last_name_err = $email_err = $phone_err = $password_err = $email_phone_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Including the database file to establish the database connection
     include 'config/db.php';
@@ -48,20 +48,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = htmlspecialchars($_POST["password"]);
     }
-    if (empty($first_name_err) && empty($last_name_err) && empty($email_err) && empty($password_err)) {
+    if (empty($first_name_err) && empty($last_name_err) && empty($email_err) && empty($password_err) && empty($phone_err)) {
+
+        // Check if the email or phone number already exists
+        $sql_check = "SELECT * FROM user_details WHERE email = ? OR contact_number = ?";
+        echo $sql_check;
+        $stmt_check = $conn->prepare($sql_check);
+        echo $email;
+        $stmt_check->bind_param("ss", $email, $phone);
+        $stmt_check->execute();
+        $result_check = $stmt_check->get_result();
+
+        if ($result_check->num_rows > 0) {
+            // Email or phone number already exists
+            $email_phone_err = "Email or phone number already exists.";
+            echo $email_phone_err;
+            $stmt_check->close();
+            $conn->close();
+        } else {
+            echo $email;
+            $stmt_check->close();
+        }
+    }
+    if (empty($first_name_err) && empty($last_name_err) && empty($email_err) && empty($password_err) && empty($phone_err) && empty($email_phone_err)) {
 
         // Get the user input from the POST request
         $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
         $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
+
         // Preparing the query to insert the user details into the database
-        $sql = "INSERT INTO user_details (email, first_name, last_name, password) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO user_details (email, first_name, last_name, contact_number, password) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
 
-        $stmt->bind_param("ssss", $email, $first_name, $last_name, $password);
+        $stmt->bind_param("sssss", $email, $first_name, $last_name, $phone, $password);
 
         // If the insertion done by the user was successful, then store a success message in the session
         if ($stmt->execute()) {
@@ -156,7 +180,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Already have an account? <a href="login.php">Log In</a></p>
             </div>
             <!-- The link to the login page for the users who already have an account registered with us -->
-
+            <div class="form-group">
+                <span class="error"><?php echo $email_phone_err; ?></span>
+            </div>
             <div class="form-group">
                 <label for="first_name">First Name</label>
                 <input type="text" name="first_name" value="<?php echo $first_name; ?>">
