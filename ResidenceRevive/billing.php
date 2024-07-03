@@ -205,27 +205,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     <hr> </hr>
                         <div class="form-group">
                             <label for="unitnumber">Unit/Apartment Number</label>
-                            <input type="number" id="unumber" name="unumber" placeholder="Enter Unit/Apartment Number" pattern="[1-9]{2}" >
+                            <input type="number" id="unumber" name="unumber" placeholder="Enter Unit/Apartment Number" >
                             <span class="error"><?php echo $unit_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label for="Street Address"> Street Address </label>
-                            <input type="text" id="saddress" name="saddress" placeholder="Enter Street Address" pattern="[A-Za-z]" >
+                            <input type="text" id="saddress" name="saddress" placeholder="Enter Street Address" >
                             <span class="error"><?php echo $address_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" id="city" name="city" placeholder="Enter City" pattern="[A-Za-z]" >
+                            <input type="text" id="city" name="city" placeholder="Enter City">
                             <span class="error"><?php echo $city_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label for="state">State/Province</label>
-                            <input type="text" id="state" name="state" placeholder="Enter State/Province" pattern="[A-Za-z]" >
+                            <input type="text" id="state" name="state" placeholder="Enter State/Province" >
                             <span class="error"><?php echo $state_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label for="zipcode">Zip Code</label>
-                            <input type="text" id="zcode" name="zcode" placeholder="Enter Zip Code" pattern="[A-Za-z1-9]" >
+                            <input type="text" id="zcode" name="zcode" placeholder="Enter Zip Code" >
                             <span class="error"><?php echo $zip_err; ?></span>
                         </div>
                 </div>
