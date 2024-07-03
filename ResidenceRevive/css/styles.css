@@ -27,16 +27,8 @@ main {
 
 .services-grid {
     display: grid;
-<<<<<<< HEAD
     grid-template-columns: repeat(3, 1fr); /* Set to 3 columns */
     gap: 20px; /* Adjust the gap between boxes */
-=======
-    grid-template-columns: repeat(3, 1fr);
-    /* Adjusted to evenly distribute columns */
-    grid-template-rows: repeat(2, auto);
-    /* Adjusted to automatically size rows */
-    gap: 20px;
->>>>>>> 57243341dcccf545b3c65c58730e35e0612136e7
     margin-bottom: 50px;
     padding: 0 10%;
 }
@@ -57,18 +49,9 @@ main {
 }
 
 .service-card img.service-icon {
-<<<<<<< HEAD
     width: 80px; /* Adjust the icon size */
     height: 80px;
     margin-bottom: 10px;
-=======
-    width: 100px;
-    /* Set the width of the icon */
-    height: 100px;
-    /* Set the height of the icon */
-    margin-bottom: 10px;
-    /* Space between icon and service name */
->>>>>>> 57243341dcccf545b3c65c58730e35e0612136e7
 }
 
 .service-card h2 {
@@ -310,17 +293,10 @@ nav {
     padding-top: 0%;
 }
 
-<<<<<<< HEAD
 h3{
     padding: 5%;
     text-align: center;
 } 
-=======
-h2 {
-    padding: 5%;
-    text-align: center;
-}
->>>>>>> 57243341dcccf545b3c65c58730e35e0612136e7
 
 .left-container {
     flex: 1;
@@ -364,14 +340,7 @@ h2 {
     height: 150px;
     margin-top: 10px;
     margin-bottom: 20px;
-<<<<<<< HEAD
 }
-=======
-
-}
-
-/* CSS for Billing starts */
->>>>>>> 57243341dcccf545b3c65c58730e35e0612136e7
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
