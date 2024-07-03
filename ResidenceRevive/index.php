@@ -94,3 +94,31 @@ include 'includes/footer.php';
 $conn->close();
 ?>
 
+<!-- JavaScript for Carousel -->
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-image');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Auto change slides every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Initialize carousel
+showSlide(currentSlide);
+</script>
