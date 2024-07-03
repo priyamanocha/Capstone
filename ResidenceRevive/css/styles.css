@@ -480,6 +480,14 @@ h3{
 .billing-form-container input[type="submit"]:hover {
     background-color: #0056b3;
 }
+button{
+    width: 700px; 
+    height: 45px;
+}
+.fo{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 /* CSS for Billing ends */
 
