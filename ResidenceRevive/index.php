@@ -26,13 +26,15 @@ $icons = [
 <div class="services-grid">
     <?php foreach ($categories as $category): ?>
         <div class="service-card">
-            <?php if (isset($icons[$category['category_name']])): ?>
-                <img src="<?php echo $icons[$category['category_name']]; ?>"
-                    alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
-            <?php else: ?>
-                <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
-            <?php endif; ?>
-            <h2><?php echo $category['category_name']; ?></h2>
+            <a href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
+                <?php if (isset($icons[$category['category_name']])): ?>
+                    <img src="<?php echo $icons[$category['category_name']]; ?>"
+                        alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
+                <?php else: ?>
+                    <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
+                <?php endif; ?>
+                <h2><?php echo $category['category_name']; ?></h2>
+            </a>
         </div>
     <?php endforeach; ?>
 </div>
@@ -92,31 +94,3 @@ include 'includes/footer.php';
 $conn->close();
 ?>
 
-<!-- JavaScript for Carousel -->
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-image');
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? '1' : '0';
-        slide.style.display = i === index ? 'block' : 'none';
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
-
-// Auto change slides every 5 seconds
-setInterval(nextSlide, 5000);
-
-// Initialize carousel
-showSlide(currentSlide);
-</script>
