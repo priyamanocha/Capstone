@@ -2,6 +2,8 @@
 
 <?php session_start(); ?>
 <?php
+$email = $password = "";
+$email_err = $password_err = $email_password_err = "";
 // Checking for the session, if is not already started, then start the session
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -12,32 +14,47 @@ include 'config/db.php';
 
 // Checking if my request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Getting the email and password from the POST request
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
 
-    // Preparing the SQL query to select the user details 
-    $sql = "SELECT * FROM user_details WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-
-    // We are check if the user exists along with the fact that the provided password matches the stored password
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
-        header("Location: ../index.php");
-        exit();
+    //Validate Email
+    if (empty($_POST["email"])) {
+        $email_err = "Email is required.";
     } else {
-        // If the user login fails, store an error message in the session
-        $_SESSION['error_message'] = "Invalid email or password!";
-        header("Location: /Pages/login.php");
-        exit();
+        $email = htmlspecialchars($_POST["email"]);
     }
-    // Closing the statement and the database connection
-    $stmt->close();
-    $conn->close();
+
+    // Validate Password
+    if (empty($_POST["password"])) {
+        $password_err = "Password is required.";
+    } else {
+        $password = htmlspecialchars($_POST["password"]);
+    }
+
+    if (empty($email_err) && empty($password_err)) {
+
+        // Preparing the SQL query to select the user details 
+        $sql = "SELECT * FROM user_details WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        // We are check if the user exists along with the fact that the provided password matches the stored password
+        if ($user && password_verify($password, $user['password'])) {
+            // $_SESSION['user'] = $user;
+            header("Location: index.php");
+            // exit();
+        } else {
+            // If the user login fails, store an error message in the session
+            echo $user['password'];
+            echo '\n';
+            echo $password;
+            $email_password_err = "Invalid email/password combination!";
+        }
+        // Closing the statement and the database connection
+        $stmt->close();
+        $conn->close();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -63,14 +80,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Login to Residence Revive</h2>
                 <!-- The login form that sends a POST request to login_action.php when the user submit the form -->
                 <form action="login.php" method="POST">
-                    <p>New to here? Create a new account? <a href="../Pages/signup.php">Signup</a></p>
+                    <p>Create an account? <a href="signup.php">Register</a></p>
+                    <div class="form-group">
+                <span class="error"><?php echo $email_password_err; ?></span>
+            </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                        <span class="error"><?php echo $email_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <span class="error"><?php echo $password_err; ?></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>

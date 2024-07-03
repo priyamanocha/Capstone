@@ -5,7 +5,8 @@ body {
     /* background-color: #f4f4f4; */
 }
 
-header, footer {
+header,
+footer {
     background-color: black;
     color: white;
     text-align: center;
@@ -26,23 +27,19 @@ main {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjusted to evenly distribute columns */
-    grid-template-rows: repeat(2, auto); /* Adjusted to automatically size rows */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Set to 3 columns */
+    gap: 20px; /* Adjust the gap between boxes */
     margin-bottom: 50px;
-    padding: 10%;
-    padding-bottom: 0%;
-    padding-top: 0%;
-
+    padding: 0 10%;
 }
 
 .service-card {
     background-color: #F5F9FF;
     border: 1px solid #ddd;
-    padding: 10px;
-    height: 300px;
+    padding: 20px;
+    height: 200px; /* Adjust height as needed */
     border-radius: 10px;
-    width: 300px;
+    width: 100%; /* Use full width of the grid cell */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -52,15 +49,16 @@ main {
 }
 
 .service-card img.service-icon {
-    width: 100px; /* Set the width of the icon */
-    height: 100px; /* Set the height of the icon */
-    margin-bottom: 10px; /* Space between icon and service name */
+    width: 80px; /* Adjust the icon size */
+    height: 80px;
+    margin-bottom: 10px;
 }
 
 .service-card h2 {
-    font-size: 1.25em;
+    font-size: 1.1em;
     margin: 0;
     padding: 10px 0;
+    font-weight: bold;
 }
 
 /* CSS for Footer starts */
@@ -74,6 +72,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 footer div {
     padding: 0 10px;
     display: flex;
@@ -81,42 +80,51 @@ footer div {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 footer div a {
-    text-decoration: none; 
+    text-decoration: none;
     padding: 2px;
     color: inherit;
     transition: color 0.3s;
 }
+
 footer div a:hover {
-    color: #F16A43; 
+    color: #F16A43;
 }
+
 footer div p {
     font-size: 18px;
 }
+
 footer .social-links {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
+
 footer .social-links p {
     margin-right: 10px;
 }
+
 footer .social-links a {
     margin-right: 10px;
     color: inherit;
 }
+
 footer .social-links a i {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
 }
 
 footer .social-links a:hover {
-    color: orange; 
+    color: orange;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
-.rights{
+
+.rights {
     text-align: center;
     grid-column: 1/ span 3;
 }
@@ -125,6 +133,7 @@ footer .social-links a:hover {
     footer {
         grid-template-columns: 1fr;
     }
+
     footer div {
         padding: 0 10px;
         display: flex;
@@ -132,12 +141,14 @@ footer .social-links a:hover {
         justify-content: flex-start;
         align-items: center;
     }
-    .rights{
+
+    .rights {
         text-align: center;
         grid-column: 1/ span 1;
     }
 
 }
+
 /* CSS for Footer ends */
 
 /* CSS for Header starts */
@@ -156,18 +167,21 @@ nav {
     text-decoration: none;
     color: #fff;
 }
+
 .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .links {
     display: flex;
 }
 
 .links a:hover {
-    color: #F16A43; 
+    color: #F16A43;
 }
+
 .links a {
     margin-right: 20px;
     text-decoration: none;
@@ -187,6 +201,7 @@ nav {
     height: 30px;
     margin-right: 10px;
 }
+
 .menu-toggle {
     display: none;
 }
@@ -195,8 +210,10 @@ nav {
     width: 80px;
 }
 
-@media (max-width: 1024px) {
-    .links, .search {
+@media (max-width: 1300px) {
+
+    .links,
+    .search {
         display: none;
     }
 
@@ -204,22 +221,27 @@ nav {
         display: block;
     }
 }
+
 /* CSS for Header ends */
 
 /* CSS for Terms and Conditions starts */
-.terms_conditions{
+.terms_conditions {
     padding: 5%;
 }
-.terms_conditions h1{
+
+.terms_conditions h1 {
     text-align: center;
     font-weight: bold;
 }
-.terms_conditions h3{
+
+.terms_conditions h3 {
     text-align: left;
     font-weight: bold;
     padding: 0%;
 }
-.terms_conditions p, .terms_conditions ul li{
+
+.terms_conditions p,
+.terms_conditions ul li {
     text-align: left;
     font-size: larger;
 }
@@ -227,47 +249,60 @@ nav {
 /* CSS for Terms and Conditions ends */
 
 /* CSS for Privacy Policy starts */
-.privacy_policy_container{
+.privacy_policy_container {
     padding: 5%;
 }
-.privacy_policy_container h1{
+
+.privacy_policy_container h1 {
     text-align: center;
     font-weight: bold;
 }
-.privacy_policy_container h3{
+
+.privacy_policy_container h3 {
     text-align: left;
     font-weight: bold;
     padding: 0%;
 }
-.privacy_policy_container h5{
+
+.privacy_policy_container h5 {
     text-align: left;
     font-weight: bold;
     padding: 0%;
 }
-.privacy_policy_container p, .privacy_policy_container ul li{
+
+.privacy_policy_container p,
+.privacy_policy_container ul li {
     text-align: left;
     list-style: none;
 }
-.privacy_policy_container ul li p, .privacy_policy_container p{
+
+.privacy_policy_container ul li p,
+.privacy_policy_container p {
     text-align: left;
     font-size: larger;
 }
+
 /* CSS for Privacy Policy ends */
+
 .why-us {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 50px;
     padding: 10%;
     padding-top: 0%;
 }
-h2{
+
+h3{
     padding: 5%;
     text-align: center;
-}
+} 
+
 .left-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    justify-content: center; /* Center items vertically */
 }
 
 .icon-line {
@@ -280,21 +315,24 @@ h2{
     width: 50px;
     height: 50px;
     margin-right: 20px;
-
 }
 
 .right-container {
     flex: 1;
     padding-left: 20px;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
 .whyus_card {
     text-align: center;
     background-color: #F5F9FF;
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .whyus_card img {
@@ -302,10 +340,81 @@ h2{
     height: 150px;
     margin-top: 10px;
     margin-bottom: 20px;
-    
 }
-/* CSS for Billing starts */
 
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .why-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-container, .right-container {
+        margin-right: 0;
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+     .icon-line {
+        justify-content: center;
+    } 
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 580px;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* CSS for Billing starts */
 
 .billing-page-container {
     display: flex;
@@ -381,3 +490,106 @@ button{
 }
 
 /* CSS for Billing ends */
+
+/* CSS for Contact Us starts */
+.contact-page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.contact-form-container {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.contact-info h2,
+.contact-form-container h1 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-social-media a {
+    margin-right: 10px;
+}
+
+.contact-social-media img {
+    width: 80px;
+    height: 40px;
+}
+
+.contact-form-container p {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="textarea"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.contact-form-container input[type="submit"] {
+    background-color: #F16A43;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+}
+
+.social-links-contact-us a {
+    font-size: 30px;
+    margin-right: 10px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .contact-page-container {
+        flex-direction: column;
+    }
+}
+
+/* CSS for Contact Us ends */
