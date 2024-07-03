@@ -9,7 +9,6 @@ include 'config/db.php';
 include 'includes/functions.php';
 include 'includes/header.php';
 
-
 $categories = getAllCategories($conn); // Fetch category names
 
 // Manually add icon paths
@@ -27,13 +26,15 @@ $icons = [
 <div class="services-grid">
     <?php foreach ($categories as $category): ?>
         <div class="service-card">
-            <?php if (isset($icons[$category['category_name']])): ?>
-                <img src="<?php echo $icons[$category['category_name']]; ?>"
-                    alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
-            <?php else: ?>
-                <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
-            <?php endif; ?>
-            <h2><?php echo $category['category_name']; ?></h2>
+            <a href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
+                <?php if (isset($icons[$category['category_name']])): ?>
+                    <img src="<?php echo $icons[$category['category_name']]; ?>"
+                        alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
+                <?php else: ?>
+                    <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
+                <?php endif; ?>
+                <h2><?php echo $category['category_name']; ?></h2>
+            </a>
         </div>
     <?php endforeach; ?>
 </div>
@@ -53,8 +54,8 @@ $icons = [
         <div class="icon-line">
             <img src="./images/search.png" alt="Icon 2">
             <div>
-                <h2>Tranparent Pricing</h2>
-                <p>See prices before you book,No hidden fees</p>
+                <h2>Transparent Pricing</h2>
+                <p>See prices before you book, No hidden fees</p>
             </div>
         </div>
         <div class="icon-line">

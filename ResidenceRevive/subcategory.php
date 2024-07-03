@@ -13,6 +13,7 @@ include 'includes/header.php';
     <link rel="stylesheet" href="css/subcategory.css"> <!-- Link to external CSS file -->
 </head>
 <body>
+    
     <!-- Subcategories Section -->
     <div class="subcategories">
         <h3>Subcategories</h3>
