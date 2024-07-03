@@ -11,6 +11,7 @@ include 'includes/header.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/subcategory.css"> <!-- Link to external CSS file -->
+    <title>Subcategories</title>
 </head>
 <body>
     
@@ -47,15 +48,24 @@ include 'includes/header.php';
                 <?php else: ?>
                     <img src="images/default.png" alt="Default icon" class="subcategory-icon"> <!-- Fallback icon -->
                 <?php endif; ?>
-                <h2><?php echo $subcategory['sub_category_name']; ?></h2>
-                <a href="#" class="view-services" data-sub-category-id="<?php echo $subcategory['sub_category_id']; ?>">View Services</a>
+                <div class="subcategory-info">
+                    <h2><?php echo $subcategory['sub_category_name']; ?></h2>
+                    <?php if (isset($subcategory['description'])): ?>
+                        <p><?php echo $subcategory['description']; ?></p>
+                    <?php else: ?>
+                        <p>No description available.</p>
+                    <?php endif; ?>
+                    <a href="#" class="view-services" data-sub-category-id="<?php echo $subcategory['sub_category_id']; ?>">View Services</a>
+                </div>
                 
                 <!-- Services List -->
                 <div class="services-list" id="services_<?php echo $subcategory['sub_category_id']; ?>">
                     <?php foreach ($services as $service): ?>
                         <div class="sub_service-card">
-                            <h4><?php echo $service['service_name']; ?></h4>
-                            <p><?php echo $service['description']; ?></p>
+                            <div>
+                                <h4><?php echo $service['service_name']; ?></h4>
+                                <p><?php echo $service['description']; ?></p>
+                            </div>
                             <div class="service-info">
                                 <form action="add_to_cart.php" method="post">
                                     <input type="hidden" name="service_id" value="<?php echo $service['service_id']; ?>">

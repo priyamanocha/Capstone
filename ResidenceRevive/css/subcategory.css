@@ -1,27 +1,32 @@
 /* General body styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
 /* Container for subcategories */
 .subcategories {
-    padding: 20px;
     margin-bottom: 40px;
+    padding: 20px;
+}
+
+.subcategories h3 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .subcategory {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center align cards */
-    gap: 20px;
 }
 
-/* Styles for subcategory cards */
 .subcategory-card {
-    width: calc(33.333% - 40px); /* Three cards per row */
+    width: 90%; /* Full width of the container */
     margin-bottom: 20px; /* Spacing between cards */
     padding: 20px; /* Padding for each card */
     background-color: #ffffff;
@@ -30,8 +35,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: flex;
-    flex-direction: column;
     align-items: center; /* Align items vertically */
+    max-width: 1200px;
 }
 
 .subcategory-card:hover {
@@ -39,26 +44,38 @@ body {
 }
 
 .subcategory-card img {
-    max-width: 60px; /* Adjust icon size */
+    max-width: 80px; /* Adjust icon size */
     height: auto;
-    margin-bottom: 15px; /* Spacing between icon and text */
+    margin-right: 20px; /* Spacing between icon and text */
+}
+
+.subcategory-info {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 .subcategory-card h2 {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     color: #333333;
-    margin: 10px 0;
-    text-align: center; /* Center align text */
+    margin: 0;
+    text-align: left; /* Left align text */
+}
+
+.subcategory-card p {
+    color: #666666;
+    margin-top: 10px;
 }
 
 .subcategory-card a {
-    margin-top: auto; /* Push "View Services" link to the bottom */
+    margin-top: 10px;
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    align-self: flex-end;
 }
 
-.view-services:hover {
+.subcategory-card a:hover {
     text-decoration: underline;
 }
 
@@ -66,10 +83,7 @@ body {
 .services-list {
     display: none;
     width: 100%;
-    margin-top: 10px;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .show-services {
@@ -85,6 +99,9 @@ body {
     padding: 15px;
     transition: transform 0.3s ease;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sub_service-card:hover {
@@ -93,13 +110,12 @@ body {
 
 .sub_service-card h4 {
     font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: #333;
+    margin: 0;
 }
 
 .sub_service-card p {
     color: #666666;
-    margin-bottom: 10px;
+    margin: 5px 0;
 }
 
 .service-info {
@@ -109,25 +125,22 @@ body {
 }
 
 .service-info form {
-    flex: 1; /* Take remaining space */
+    display: flex;
+    align-items: center;
 }
 
 .service-info input[type="number"] {
     width: 60px;
-    padding: 5px;
     margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .service-info button {
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .service-info button:hover {
@@ -138,5 +151,5 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     color: #007bff;
-    margin-left: 15px;
+    margin-left: 20px;
 }
