@@ -26,23 +26,19 @@ main {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjusted to evenly distribute columns */
-    grid-template-rows: repeat(2, auto); /* Adjusted to automatically size rows */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Set to 3 columns */
+    gap: 20px; /* Adjust the gap between boxes */
     margin-bottom: 50px;
-    padding: 10%;
-    padding-bottom: 0%;
-    padding-top: 0%;
-
+    padding: 0 10%;
 }
 
 .service-card {
     background-color: #F5F9FF;
     border: 1px solid #ddd;
-    padding: 10px;
-    height: 300px;
+    padding: 20px;
+    height: 200px; /* Adjust height as needed */
     border-radius: 10px;
-    width: 300px;
+    width: 100%; /* Use full width of the grid cell */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -52,15 +48,16 @@ main {
 }
 
 .service-card img.service-icon {
-    width: 100px; /* Set the width of the icon */
-    height: 100px; /* Set the height of the icon */
-    margin-bottom: 10px; /* Space between icon and service name */
+    width: 80px; /* Adjust the icon size */
+    height: 80px;
+    margin-bottom: 10px;
 }
 
 .service-card h2 {
-    font-size: 1.25em;
+    font-size: 1.1em;
     margin: 0;
     padding: 10px 0;
+    font-weight: bold;
 }
 
 /* CSS for Footer starts */
@@ -253,21 +250,26 @@ nav {
     font-size: larger;
 }
 /* CSS for Privacy Policy ends */
+
 .why-us {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 50px;
     padding: 10%;
     padding-top: 0%;
 }
-h2{
+
+h3{
     padding: 5%;
     text-align: center;
-}
+} 
+
 .left-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    justify-content: center; /* Center items vertically */
 }
 
 .icon-line {
@@ -280,21 +282,24 @@ h2{
     width: 50px;
     height: 50px;
     margin-right: 20px;
-
 }
 
 .right-container {
     flex: 1;
     padding-left: 20px;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
 .whyus_card {
     text-align: center;
     background-color: #F5F9FF;
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .whyus_card img {
@@ -302,10 +307,81 @@ h2{
     height: 150px;
     margin-top: 10px;
     margin-bottom: 20px;
-    
 }
-/* CSS for Billing starts */
 
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .why-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-container, .right-container {
+        margin-right: 0;
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+     .icon-line {
+        justify-content: center;
+    } 
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 580px;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* CSS for Billing starts */
 
 .billing-page-container {
     display: flex;
