@@ -11,32 +11,24 @@ include 'includes/header.php';
 
 $categories = getAllCategories($conn); // Fetch category names
 
-// Manually add icon paths
-$icons = [
-    'Cleaning/Disinfection' => './images/cleaning.png',
-    'Appliance Repair' => './images/gas-stove.png',
-    'Electrician' => './images/electrician.png',
-    'Furniture Assembly' => './images/sofa.png',
-    'Pest-Control' => './images/bug-spray.png',
-    'Plumbing' => './images/plumbing.png',
-    // Add more categories with their respective icon paths
-];
+$sql = "SELECT * FROM services";
+$services = $conn->query($sql);
+
 ?>
+
 <h3>Our Services</h3>
 <div class="services-grid">
-    <?php foreach ($categories as $category): ?>
+    <?php  while($service = $services->fetch_assoc()): ?>
         <div class="service-card">
-            <a href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
-                <?php if (isset($icons[$category['category_name']])): ?>
-                    <img src="<?php echo $icons[$category['category_name']]; ?>"
-                        alt="<?php echo $category['category_name']; ?> icon" class="service-icon">
-                <?php else: ?>
-                    <img src="images/default.png" alt="Default icon" class="service-icon"> <!-- Fallback icon -->
-                <?php endif; ?>
-                <h2><?php echo $category['category_name']; ?></h2>
-            </a>
+                    <img src="<?php echo $service['description']; ?>"
+                        alt="<?php echo $service['service_name']; ?> icon" class="service-icon">
+                <h2><?php echo $service['service_name']; ?></h2>
+                <p>$<?php echo $service['price']; ?></p>
+                <!-- details and add to cart button -->
+                <a class="btn btn-dark mb-2 w-100" href="subcategory.php?service_id=<?php echo $service['service_id']; ?>">Details</a>
+                <a class="btn btn-primary w-100"  href="cart.php?action=add&service_id=<?php echo $service['service_id']; ?>">Add to Cart</a>
         </div>
-    <?php endforeach; ?>
+    <?php endwhile; ?>
 </div>
 
 <h3>Why Choose Us?</h3>

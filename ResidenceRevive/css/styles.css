@@ -37,7 +37,6 @@ main {
     background-color: #F5F9FF;
     border: 1px solid #ddd;
     padding: 20px;
-    height: 200px; /* Adjust height as needed */
     border-radius: 10px;
     width: 100%; /* Use full width of the grid cell */
     text-align: center;
@@ -60,6 +59,7 @@ main {
     padding: 10px 0;
     font-weight: bold;
 }
+
 
 /* CSS for Footer starts */
 
