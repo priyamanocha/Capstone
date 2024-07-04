@@ -9,10 +9,10 @@ include 'config/db.php';
 include 'includes/functions.php';
 include 'includes/header.php';
 
-$categories = getAllCategories($conn); // Fetch category names
 
 $sql = "SELECT * FROM services";
 $services = $conn->query($sql);
+$conn->close();
 
 ?>
 
@@ -83,7 +83,6 @@ $services = $conn->query($sql);
 <!-- Including the footer from a separate PHP file -->
 <?php
 include 'includes/footer.php';
-$conn->close();
 ?>
 
 <!-- JavaScript for Carousel -->
