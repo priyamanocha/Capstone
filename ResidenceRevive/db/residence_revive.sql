@@ -1,16 +1,6 @@
 create schema residence_revive;
 use residence_revive;
 
-drop table user_details;
-drop table categories;
-drop table sub_categories;
-drop table services;
-drop table category_subcategory_service_mapping;
-drop table cart;
-drop table booking;
-drop table booking_services;
-drop table contact_us; 
-
 CREATE TABLE IF NOT EXISTS user_details (
     email VARCHAR(100) PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -31,9 +21,11 @@ CREATE TABLE IF NOT EXISTS sub_categories (
 CREATE TABLE IF NOT EXISTS services (
     service_id INT PRIMARY KEY,
     service_name VARCHAR(100) NOT NULL UNIQUE,
-    description VARCHAR(1000) NOT NULL,
+    description VARCHAR(1000) NULL,
+    service_img VARCHAR(100) NOT NULL,
     price DECIMAL(10, 2) NOT NULL 
 );
+
 
 CREATE TABLE IF NOT EXISTS category_subcategory_service_mapping (
     category_id INT,
@@ -137,19 +129,27 @@ insert into sub_categories values(26, 'Bed');
 insert into sub_categories values(27, 'Sofa');
 
 -- Insert Queries for Services
-insert into services values(1, 'Half-Washroom Classic Cleaning', 'Half-Washroom Classic Cleaning', 9.99);
-insert into services values(2, 'Half-Washroom Deep Cleaning', 'Half-Washroom Deep Cleaning', 14.99);
-insert into services values(3, 'Full-Washroom Classic Cleaning', 'Full-Washroom Classic Cleaning', 12.99);
-insert into services values(4, 'Full-Washroom Deep Cleaning', 'Full-Washroom Deep Cleaning', 16.99);
-insert into services values(5, 'Move-In Cleaning', 'Move-in Kitchen Cleaning', 49.99);
-insert into services values(6, 'Shelve Cleaning', 'Kitchen Shelve Cleaning', 20.99);
-insert into services values(7, 'Chimney Cleaning', 'Kitchen Chimney Cleaning', 20.99);
-insert into services values(8, 'Refrigerator Cleaning', 'Refrigerator Cleaning', 20.99);
-insert into services values(9, 'Induction Cleaning', 'Induction Cleaning', 20.99);
-insert into services values(10, 'Microwave Cleaning', 'Induction Cleaning', 20.99);
-insert into services values(11, 'Classic Home Cleaning', 'Classic Home cleaning without Kitchen and Washroom', 99.99);
-insert into services values(12, 'Deep Home Cleaning', 'Deep Home cleaning ', 149.99);
-insert into services values(13, 'Deep Carpet Cleaning', 'Deep Carpet Cleaning (vaccum)', 99.99);
+INSERT INTO services (service_id, service_name, description, service_img, price)
+VALUES 
+(1, 'Half-Washroom Classic Cleaning', 'Half-Washroom Classic Cleaning', 'images/cleaning.png', 9.99),
+(2, 'Half-Washroom Deep Cleaning', 'Half-Washroom Deep Cleaning', 'images/cleaning.png', 14.99),
+(3, 'Full-Washroom Classic Cleaning', 'Full-Washroom Classic Cleaning', 'images/cleaning.png', 12.99),
+(4, 'Full-Washroom Deep Cleaning', 'Full-Washroom Deep Cleaning', 'images/cleaning.png', 16.99),
+(5, 'Move-In Cleaning', 'Move-in Kitchen Cleaning', 'images/cleaning.png', 49.99),
+(6, 'Shelve Cleaning', 'Kitchen Shelve Cleaning', 'images/cleaning.png', 20.99),
+(7, 'Chimney Cleaning', 'Kitchen Chimney Cleaning', 'images/cleaning.png', 20.99),
+(8, 'Refrigerator Cleaning', 'Refrigerator Cleaning', 'images/cleaning.png', 20.99),
+(9, 'Induction Cleaning', 'Induction Cleaning', 'images/cleaning.png', 20.99),
+(10, 'Microwave Cleaning', 'Induction Cleaning', 'images/cleaning.png', 20.99),
+(11, 'Classic Home Cleaning', 'Classic Home cleaning without Kitchen and Washroom', 'images/cleaning.png', 99.99),
+(12, 'Deep Home Cleaning', 'Deep Home cleaning', 'images/cleaning.png', 149.99),
+(13, 'Deep Carpet Cleaning', 'Deep Carpet Cleaning (vacuum)', 'images/cleaning.png', 99.99),
+(14, 'Cleaning/Disinfection', 'General Cleaning/Disinfection', 'images/cleaning.png', 100.00),
+(15, 'Appliance Repair', 'General Appliance Repair', 'images/gas-stove.png', 300.00),
+(16, 'Electrician', 'General Electrician Services', 'images/electrician.png', 200.00),
+(17, 'Furniture Assembly', 'General Furniture Assembly', 'images/sofa.png', 100.00),
+(18, 'Pest-Control', 'General Pest-Control', 'images/bug-spray.png', 200.00),
+(19, 'Plumbing', 'General Plumbing', 'images/plumbing.png', 100.00);
 
 -- Insert Queries for category_subcategory_service_mapping
 insert into category_subcategory_service_mapping values(1, 1, 1);
@@ -166,14 +166,3 @@ insert into category_subcategory_service_mapping values(1, 3, 13);
 insert into category_subcategory_service_mapping values(1, 4, 11);
 insert into category_subcategory_service_mapping values(1, 4, 12);
 
-
-/*  services data with name, price, image */
-
-INSERT INTO services (service_id, service_name, description, price)
-VALUES 
-(1, 'Cleaning/Disinfection', 'images/cleaning.png', 100),
-(2, 'Appliance Repair', 'images/gas-stove.png', 300),
-(3, 'Electrician', 'images/electrician.png', 200),
-(4, 'Furniture Assembly', 'images/sofa.png', 100),
-(5, 'Pest-Control', 'images/bug-spray.png', 200),
-(6, 'Plumbing', 'images/plumbing.png', 100);
