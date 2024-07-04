@@ -61,7 +61,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     elseif(!empty($_POST["scode"] &&  $scode > 999))
     {
         $security_err = "Please Enter Valid Security Code!";
-
     }
 
     if(empty($_POST["emonth"]))
@@ -71,7 +70,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     elseif(!empty($_POST["emonth"] && $mon > 12))
     {
         $month_err = "Please Enter Valid Expiration Month!";
-
     }
 
     if(empty($_POST["eyear"]))
@@ -106,14 +104,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $zip_err = "Please Enter Zip Code!";
     }
-
 }
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
