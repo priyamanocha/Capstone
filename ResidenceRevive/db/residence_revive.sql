@@ -165,3 +165,15 @@ insert into category_subcategory_service_mapping values(1, 2, 10);
 insert into category_subcategory_service_mapping values(1, 3, 13);
 insert into category_subcategory_service_mapping values(1, 4, 11);
 insert into category_subcategory_service_mapping values(1, 4, 12);
+
+
+/*  services data with name, price, image */
+
+INSERT INTO services (service_id, service_name, description, price)
+VALUES 
+(1, 'Cleaning/Disinfection', 'images/cleaning.png', 0),
+(2, 'Appliance Repair', 'images/gas-stove.png', 0),
+(3, 'Electrician', 'images/electrician.png', 0),
+(4, 'Furniture Assembly', 'images/sofa.png', 0),
+(5, 'Pest-Control', 'images/bug-spray.png', 0),
+(6, 'Plumbing', 'images/plumbing.png', 0);
