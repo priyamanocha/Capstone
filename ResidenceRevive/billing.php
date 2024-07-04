@@ -9,7 +9,9 @@ $fname_err = $lname_err = $cfname_err = $clname_err = $email_err = $card_err = $
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-
+    $mon = $_POST["emonth"];
+    $scode = $_POST["scode"];
+    
     // Personal Information Input Validation.
 
     if(empty($_POST["fname"]))
@@ -47,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $card_err = "Please Enter Card Number!";
     }
-    elseif(!empty($_POST["ccard"]) && !preg_match("/^[0-9]{12}$/", $_POST["ccard"]))
+    elseif(!empty($_POST["ccard"]) && !preg_match("/^[0-9]{12,12}$/", $_POST["ccard"]))
     {
         $card_err = "Please Enter Valid Card Number!";
     }
@@ -56,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $security_err = "Please Enter Security Code!";
     }
-    elseif(!empty($_POST["scode"] && !preg_match("/^[0-9]{3} $/", $_POST["scode"])))
+    elseif(!empty($_POST["scode"] &&  $scode > 999))
     {
         $security_err = "Please Enter Valid Security Code!";
 
@@ -66,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $month_err = "Please Enter Expiration Month!";
     }
-    elseif(!empty($_POST["emonth"] && !preg_match("/^[0-9]{2} $/", $_POST["emonth"])))
+    elseif(!empty($_POST["emonth"] && $mon > 12))
     {
         $month_err = "Please Enter Valid Expiration Month!";
 
@@ -76,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $year_err = "Please Enter Expiration Year!";
     }
-    elseif(!empty($_POST["eyear"] && !preg_match("/^[0-9]{4} $/", $_POST["eyear"])))
+    elseif(!empty($_POST["eyear"] && !preg_match("/^[0-9]{4,4}$/", $_POST["eyear"])))
     {
         $year_err = "Please Enter Valid Expiration Year!";
     }
@@ -86,10 +88,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     if(empty($_POST["unumber"]))
     {
         $unit_err = "Please Enter Unit Number!";
-    }
-    elseif(!empty($_POST["unumber"] && !preg_match("/^[0-9]{5} $/", $_POST["unumber"])))
-    {
-        $unit_err = "Please Enter Valid Unit Number!";
     }
 
     if(empty($_POST["saddress"]))
@@ -140,12 +138,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <div>
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="fname" name="first_name" placeholder="First Name" >
+                        <input type="text" id="fname" name="fname" placeholder="First Name" >
                         <span class="error"><?php echo $fname_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="lname" name="last_name" placeholder="Last Name"  >
+                        <input type="text" id="lname" name="lname" placeholder="Last Name"  >
                         <span class="error"><?php echo $lname_err; ?></span>
                     </div>
                     <div class="form-group">
@@ -179,7 +177,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                         </div>
                         <div class="form-group">
                             <label for="creditcard">Credit Card</label>
-                            <input type="number" id="ccard" name="ccard" placeholder="Credit Card Number" >
+                            <input type="number" id="ccard" name="ccard" placeholder="Credit Card Number">
                             <span class="error"><?php echo $card_err; ?></span>
                         </div>
                         <div class="form-group">
@@ -194,7 +192,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                         </div>
                         <div class="form-group">
                             <label for="expirationyear">Expiration Year</label>
-                            <input type="number" id="eyear" name="eyear" placeholder="Enter Expiration Year" pattern="[1-9]{2}" >
+                            <input type="number" id="eyear" name="eyear" placeholder="Enter Expiration Year"  >
                             <span class="error"><?php echo $year_err; ?></span>
                         </div>
                 </div>
