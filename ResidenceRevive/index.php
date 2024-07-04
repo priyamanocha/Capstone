@@ -16,6 +16,18 @@ $conn->close();
 
 ?>
 
+<?php if(isset($_GET['message']) && $_GET['message'] == 'added'): ?>
+<div class="container mt-3">
+    
+<div class="alert alert-success">Service added in Cart.  
+  <a href="cart.php">View Cart</a>
+
+</div>
+
+</div>
+<?php endif; ?>
+
+
 <h3>Our Services</h3>
 <div class="services-grid">
     <?php  while($service = $services->fetch_assoc()): ?>
