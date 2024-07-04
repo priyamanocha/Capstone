@@ -20,7 +20,7 @@ $services = $conn->query($sql);
 <div class="services-grid">
     <?php  while($service = $services->fetch_assoc()): ?>
         <div class="service-card">
-                    <img src="<?php echo $service['description']; ?>"
+                    <img src="<?php echo $service['service_img']; ?>"
                         alt="<?php echo $service['service_name']; ?> icon" class="service-icon">
                 <h2><?php echo $service['service_name']; ?></h2>
                 <p>$<?php echo $service['price']; ?></p>
