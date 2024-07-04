@@ -171,9 +171,9 @@ insert into category_subcategory_service_mapping values(1, 4, 12);
 
 INSERT INTO services (service_id, service_name, description, price)
 VALUES 
-(1, 'Cleaning/Disinfection', 'images/cleaning.png', 0),
-(2, 'Appliance Repair', 'images/gas-stove.png', 0),
-(3, 'Electrician', 'images/electrician.png', 0),
-(4, 'Furniture Assembly', 'images/sofa.png', 0),
-(5, 'Pest-Control', 'images/bug-spray.png', 0),
-(6, 'Plumbing', 'images/plumbing.png', 0);
+(1, 'Cleaning/Disinfection', 'images/cleaning.png', 100),
+(2, 'Appliance Repair', 'images/gas-stove.png', 300),
+(3, 'Electrician', 'images/electrician.png', 200),
+(4, 'Furniture Assembly', 'images/sofa.png', 100),
+(5, 'Pest-Control', 'images/bug-spray.png', 200),
+(6, 'Plumbing', 'images/plumbing.png', 100);
