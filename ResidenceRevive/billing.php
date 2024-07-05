@@ -46,31 +46,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
 <body>
     <?php include 'includes/header.php'; ?>
     <main>
-        <div class="container mt-5">
-            <div class="billing-form-container">
-                <form id="billing-form" class="fo">
-                    <div class="mb-4">
-                        <h1 class="h3">Personal Information</h1>
-                        <hr>
+        <div class="billing-form-container">
+            <form action="billing_action.php" method="POST" class="fo">
+                <div>
+                    <h1> Personal Information </h1>
+                </div>
+                <hr> </hr>
+                <div>
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="First Name" pattern="[A-Za-z]" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="first_name">First Name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" pattern="[A-Za-z]+" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]+" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="you@yoursite.com" required>
-                    </div>
-                  
-                    <div class="mb-4">
-                        <h1 class="h3">Billing Address</h1>
-                        <hr>
+                        <input type="email" id="email" name="email" placeholder="you@yoursite.com" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="unumber">Unit/Apartment Number</label>
@@ -80,29 +73,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                         <label for="saddress">Street Address</label>
                         <input type="text" class="form-control" id="saddress" name="saddress" placeholder="Street Address" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                </div>
+                <div>
+                    <div>
+                        <h1> Credit Card </h1>
+                    </div>
+                    <hr> </hr>
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" placeholder="First Name" pattern="[A-Za-z]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="creditcard">Credit Card</label>
+                            <input type="number" id="ccard" name="ccard" placeholder="Credit Card Number" pattern="[1-9]{12}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="securitycode">Security Code</label>
+                            <input type="number" id="scode" name="scode" placeholder="Enter Security Code" pattern="[1-9]{3}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationmonth">Expiration Month</label>
+                            <input type="number" id="emonth" name="emonth" placeholder="Enter Expiration Month" pattern="[1-9]{2}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationyear">Expiration Year</label>
+                            <input type="number" id="eyear" name="eyear" placeholder="Enter Expiration Year" pattern="[1-9]{2}" required>
+                        </div>
+                </div>
+                <div>
+                    <div>
+                        <h1> Billing Address </h1>
+                    </div>
+                    <hr> </hr>
+                        <div class="form-group">
+                            <label for="unitnumber">Unit/Apartment Number</label>
+                            <input type="number" id="unumber" name="unumber" placeholder="Enter Unit/Apartment Number" pattern="[1-9]{2}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Street Address"> Street Address </label>
+                            <input type="text" id="saddress" name="saddress" placeholder="Enter Street Address" pattern="[A-Za-z]" required>
+                        </div>
+                        <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                            <input type="text" id="city" name="city" placeholder="Enter City" pattern="[A-Za-z]" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="state">State/Province</label>
-                            <input type="text" class="form-control" id="state" name="state" placeholder="State/Province" required>
+                            <input type="text" id="state" name="state" placeholder="Enter State/Province" pattern="[A-Za-z]" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="zcode">Zip Code</label>
-                        <input type="text" class="form-control" id="zcode" name="zcode" placeholder="Zip Code" required>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-success mb-3" onclick="handleCashOnCompletion()">Cash On Completion</button>
-                    </div>
-                    <div class="payment-buttons">
-                        <div id="paypal-button-container"></div>
-                        <div id="google-pay-button-container"></div>
-                    </div>
-                </form>
-            </div>
+                        <div class="form-group">
+                            <label for="zipcode">Zip Code</label>
+                            <input type="text" id="zcode" name="zcode" placeholder="Enter Zip Code" pattern="[A-Za-z1-9]" required>
+                        </div>
+                </div>
+                <div>
+                    <center>
+                        <button type="submit" class="btn btn-success"> Processed </button>
+                    </center>
+                </div>
+            </form>
         </div>
     </main>
     <?php include 'includes/footer.php'; ?>
