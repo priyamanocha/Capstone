@@ -593,3 +593,15 @@ button{
 }
 
 /* CSS for Contact Us ends */
+
+/* Payment Css */
+
+.payment-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.payment-buttons div {
+    flex: 1 1 200px;
+}
