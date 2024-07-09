@@ -605,11 +605,3 @@ button{
 .payment-buttons div {
     flex: 1 1 200px;
 }
-/* Career Page Css Start */
-
-.imgg{
-    background-image: url("../images/slider_1.png");
-    background-color: red;
-}
-
-/* Career Page Css End */
