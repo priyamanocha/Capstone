@@ -1,0 +1,37 @@
+
+/* Career Page Css Start */
+.fi{
+    margin-top: 60px;
+}
+.con{
+    height: 250px;
+    margin: 20px;
+    background-color: aqua;
+}
+.imgg{
+    background-image: url(../images/slider_1.png);
+}
+
+hr{
+    border: 1px solid black;
+    width: 800px;
+}
+.pp{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+h1{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(10, 66, 84);
+}
+h3{
+    color: rgb(10, 66, 84);
+}
+.form-row{
+    margin-bottom: 50px;
+}
+
+/* Career Page Css End */
