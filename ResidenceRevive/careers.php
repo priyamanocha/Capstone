@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- The Meta tags for char set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
+    <title> Careers Page </title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,9 +71,9 @@ if (session_status() == PHP_SESSION_NONE) {
                         <h2> Creating the sorcery in the movement </h2>
                     </center>
                     <p> 
-                        Nested is reshaping the way real estate works by making it more efficient. Inactive agents and dysfunctional processes have been having a detrimental impact on the vendors for far too long. Using cutting-edge technology and specialists in individual neighborhoods, Nested is resolving each problem associated with relocation – come and be part of it!
+                        <center> Nested is reshaping the way real estate works by making it more efficient. Inactive agents and dysfunctional processes have been having a detrimental impact on the vendors for far too long. Using cutting-edge technology and specialists in individual neighborhoods, Nested is resolving each problem associated with relocation – come and be part of it! <br> <br> <h5> Learn More... </h5> </center>
                     </p>
-                    <h5> Learn More... </h5>
+                    
                 </div>
             </div>
         </div>
