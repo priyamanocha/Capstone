@@ -27,9 +27,9 @@
             </div>
             <div class="links">
                 <a href="index.php">Home</a>
-                <a href="about_us.php">About us</a>
+                <a href="about_us.php">About</a>
+                <a href="contact_us.php">Contact</a>
                 <a href="cart.php">Cart</a>
-                <a href="contact_us.php">Contact us</a>
                 <a href="login.php">Login</a>
                 <a href="signup.php">Register</a>
             </div>
