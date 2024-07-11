@@ -1,4 +1,7 @@
 <?php
+// Include database connection
+include 'config/db.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -8,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     $city = $_POST['city'];
     $state = $_POST['state'];
     $zip_code = $_POST['zcode'];
-
 
     $sql = "INSERT INTO billing_info (first_name, last_name, email, unit_number, street_address, city, state, zip_code)
             VALUES ('$first_name', '$last_name', '$email', '$unit_number', '$street_address', '$city', '$state', '$zip_code')";
@@ -145,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
                     alert('Your service is booked successfully!');
-                    window.location.href = '/'; 
+                    window.location.href = '../index.php'; 
                 });
             }
         }).render('#paypal-button-container');
