@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <nav>
             <div class="logo">
                 <a href="index.php"><img src="images/ResidenceRevive_logo.png" alt="Residence Revive Logo"></a>
@@ -36,12 +36,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <a href="login.php">Login</a>
                 <a href="signup.php">Register</a>
             </div>
-            <!-- The menu toggle button, just for the responsive design -->
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
-    </header>
+    </header> -->
+    <?php include 'includes/header.php'; ?>
 </body>
 
 </html>
