@@ -71,7 +71,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <h2> Creating the sorcery in the movement </h2>
                     </center>
                     <p> 
-                        <center> Nested is reshaping the way real estate works by making it more efficient. Inactive agents and dysfunctional processes have been having a detrimental impact on the vendors for far too long. Using cutting-edge technology and specialists in individual neighborhoods, Nested is resolving each problem associated with relocation – come and be part of it! <br> <br> <h5> Learn More... </h5> </center>
+                        <center> Residence Revive is reshaping the way real estate works by making it more efficient. Inactive agents and dysfunctional processes have been having a detrimental impact on the vendors for far too long. Using cutting-edge technology and specialists in individual neighborhoods, Residence Revive is resolving each problem associated with relocation – come and be part of it! <br> <br> <h5> Learn More... </h5> </center>
                     </p>
                     
                 </div>
@@ -84,16 +84,16 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2> Current Job Openings </h2>
             <br>
             <h4> Residential Cleaner </h4>
-            <h5> Nested Patnership - North Side </h5> <hr> <br>
+            <h5> Residence Revive - North Side </h5> <hr> <br>
 
             <h4> Office Cleaner </h4>
-            <h5> Nested Patnership - West Side </h5> <hr> <br>
+            <h5> Residence Revive - West Side </h5> <hr> <br>
 
             <h4> Industrial Cleaner </h4>
-            <h5> Nested Patnership - East Side </h5> <hr> <br>
+            <h5> Residence Revive - East Side </h5> <hr> <br>
 
             <h4> Commercial cleaner </h4>
-            <h5> Nested Patnership - South Side </h5> 
+            <h5> Residence Revive - South Side </h5> 
             <h6> People can reach to us Email: support@residencerevive.com and upload the cover letter and resume on it. </h6>
             <br>
         </center>
@@ -113,7 +113,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
             <div class="form-group col-md-4">
                 <h3><b> 3. Trial Day. </b> </h3>
-                <p class="pp"> The third and final stage is a working interview. It allows you to see what a day at Nested looks like. Moreover, we can understand your work style. It’s a win-win situation. </p>
+                <p class="pp"> The third and final stage is a working interview. It allows you to see what a day at Residence Revive looks like. Moreover, we can understand your work style. It’s a win-win situation. </p>
             </div>
         </div>
     </div>
