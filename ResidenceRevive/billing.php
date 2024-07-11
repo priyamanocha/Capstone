@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -9,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     $city = $_POST['city'];
     $state = $_POST['state'];
     $zip_code = $_POST['zcode'];
+
 
     $sql = "INSERT INTO billing_info (first_name, last_name, email, unit_number, street_address, city, state, zip_code)
             VALUES ('$first_name', '$last_name', '$email', '$unit_number', '$street_address', '$city', '$state', '$zip_code')";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     <main>
         <div class="container mt-5">
             <div class="billing-form-container">
-                <form id="billing-form" class="fo">
+                <form id="billing-form" class="fo" method="POST" action="">
                     <div class="mb-4">
                         <h1 class="h3">Personal Information</h1>
                         <hr>
@@ -112,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         function handleCashOnCompletion() {
             const form = document.getElementById('billing-form');
             const formData = new FormData(form);
+            formData.append('cash_on_completion', '1');  
 
             fetch('', {
                 method: 'POST',
@@ -162,8 +163,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         const tokenizationSpecification = {
             type: 'PAYMENT_GATEWAY',
             parameters: {
-                'gateway': 'Jai Maurya', 
-                'gatewayMerchantId': 'JaiMauryaGatewayMerchantId' 
+                'gateway': 'example',
+                'gatewayMerchantId': 'exampleMerchantId' 
             }
         };
 
@@ -213,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                 currencyCode: 'USD'
             };
             paymentDataRequest.merchantInfo = {
-                merchantName: 'Jai Maurya' 
+                merchantName: 'Residence Revive' 
             };
 
             paymentsClient.loadPaymentData(paymentDataRequest)
