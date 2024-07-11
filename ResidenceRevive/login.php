@@ -46,10 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // exit();
         } else {
             // If the user login fails, store an error message in the session
-            echo $user['password'];
-            echo '\n';
-            echo $password;
-            $email_password_err = "Invalid email/password combination!";
+            $email_password_err = "Invalid email/password combination";
         }
         // Closing the statement and the database connection
         $stmt->close();
