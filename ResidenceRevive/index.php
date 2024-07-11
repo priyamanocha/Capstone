@@ -70,7 +70,7 @@ $icons = [
     <!-- Right Container -->
     <div class="right-container">
         <div class="whyus_card">
-            <img src="./images/100.png" alt="Card Icon">
+            <img src="./images/professional-cleaning-company.jpeg" alt="Card Icon">
             <h2>100% Quality Assured</h2>
             <p>Our promise to make it right</p>
         </div>
@@ -96,8 +96,6 @@ $conn->close();
 
 <!-- JavaScript for Carousel -->
 <script>
-
-
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-image');
 
