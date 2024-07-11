@@ -13,8 +13,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'empty'){
 
 }
 
-
-
 // add service to cart
 if(isset($_GET['service_id']) && isset($_GET['action']) && $_GET['action'] == 'add'){
 

@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #f4f4f4; */
 }
 
 header,
@@ -33,47 +32,29 @@ main {
     padding: 0 10%;
 }
 
-/* .service-card {
-    background-color: #F5F9FF;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%; 
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-card img.service-icon {
-    width: 80px; 
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-.service-card h2 {
-    font-size: 1.1em;
-    margin: 0;
-    padding: 10px 0;
-    font-weight: bold;
-} */
-
 .service-card {
     position: relative;
     text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
 }
 
 .service-image-container {
     position: relative;
-    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .service-icon {
-    width: 100%;
+    width: 110%;
     height: 350px;
     display: block;
+    filter: blur(2px);
 }
 
 .service-name {
@@ -85,6 +66,8 @@ main {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 5px;
+    font-size: 1.8rem;
+    margin: 10px 0;
 }
 
 .heading {
@@ -114,7 +97,6 @@ main {
         height: 300px;
         display: block;
     }
-
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
@@ -124,9 +106,7 @@ main {
     }
 }
 
-
 /* CSS for Footer starts */
-
 footer {
     background-color: black;
     color: #fff;
@@ -190,7 +170,7 @@ footer .social-links a:hover {
 
 .rights {
     text-align: center;
-    grid-column: 1/ span 3;
+    grid-column: 1 / span 3;
 }
 
 @media (max-width: 768px) {
@@ -208,10 +188,9 @@ footer .social-links a:hover {
 
     .rights {
         text-align: center;
-        grid-column: 1/ span 1;
+        grid-column: 1 / span 1;
     }
 }
-
 /* CSS for Footer ends */
 
 /* CSS for Header starts */
@@ -274,7 +253,6 @@ nav {
 }
 
 @media (max-width: 1300px) {
-
     .links,
     .search {
         display: none;
@@ -284,7 +262,6 @@ nav {
         display: block;
     }
 }
-
 /* CSS for Header ends */
 
 /* CSS for Terms and Conditions starts */
@@ -308,7 +285,6 @@ nav {
     text-align: left;
     font-size: larger;
 }
-
 /* CSS for Terms and Conditions ends */
 
 /* CSS for Privacy Policy starts */
@@ -344,7 +320,6 @@ nav {
     text-align: left;
     font-size: larger;
 }
-
 /* CSS for Privacy Policy ends */
 
 .why-us {
@@ -366,7 +341,6 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center items vertically */
 }
 
 .icon-line {
@@ -386,9 +360,7 @@ h3 {
     padding-left: 20px;
     display: flex;
     justify-content: center;
-    /* Center items horizontally */
     align-items: center;
-    /* Center items vertically */
 }
 
 .whyus_card {
@@ -484,7 +456,6 @@ h3 {
 }
 
 /* CSS for Billing starts */
-
 .billing-page-container {
     display: flex;
     justify-content: space-between;
@@ -558,7 +529,6 @@ button {
     margin-left: 20px;
     margin-right: 20px;
 }
-
 /* CSS for Billing ends */
 
 /* CSS for Contact Us starts */
@@ -661,11 +631,9 @@ button {
         flex-direction: column;
     }
 }
-
 /* CSS for Contact Us ends */
 
 /* Payment Css */
-
 .payment-buttons {
     display: flex;
     justify-content: center;
@@ -676,3 +644,4 @@ button {
 .payment-buttons div {
     flex: 1 1 200px;
 }
+/* Payment Css ends */
