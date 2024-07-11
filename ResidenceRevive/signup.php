@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <!-- The link to external CSS stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
     <link rel="stylesheet" href="css/signup_styles.css">
     <!-- The JavaScript function to check the strength of the password -->
     <script>
@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 case 3:
                     strengthLabel.textContent = 'Moderate';
-                    strengthLabel.style.color = 'yellow';
+                    strengthLabel.style.color = 'blue';
                     break;
                 case 4:
                     strengthLabel.textContent = 'Strong';
@@ -174,9 +174,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Main container for the signup form -->
     <div class="signup-container col-md-6">
         <form action="signup.php" method="POST">
-            <h2>Sign Up to Residence Revive</h2>
+            <h1>Sign Up to Residence Revive</h1>
             <div>
-                <button type="button" class="google-signup">Sign up with Google</button>
+                <!-- <button type="button" class="google-signup">Sign up with Google</button> -->
                 <p>Already have an account? <a href="login.php">Log In</a></p>
             </div>
             <!-- The link to the login page for the users who already have an account registered with us -->
@@ -206,8 +206,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" oninput="checkPasswordStrength(this.value)">
-                <progress id="strength-bar" max="5" value="0"></progress>
                 <span class="error"><?php echo $password_err; ?></span>
+                <progress id="strength-bar" max="5" value="0"></progress>
                 <!-- The label to display password strength text -->
                 <span id="strength-label">Very Weak</span>
             </div>
