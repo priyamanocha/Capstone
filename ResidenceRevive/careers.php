@@ -10,116 +10,76 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- The Meta tags for char set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Careers Page </title>
+    <title>Careers Page</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <!-- <header>
-        <nav>
-            <div class="logo">
-                <a href="index.php"><img src="images/ResidenceRevive_logo.png" alt="Residence Revive Logo"></a>
-                <a href="index.php">Residence Revive</a>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search for Service"
-                    class="form-control form-control-lg d-inline-block search-service">
-            </div>
-            <div class="links">
-                <a href="index.php">Home</a>
-                <a href="about_us.php">About us</a>
-                <a href="cart.php">Cart</a>
-                <a href="contact_us.php">Contact us</a>
-                <a href="login.php">Login</a>
-                <a href="signup.php">Register</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header> -->
-    <?php include 'includes/header.php'; ?>
-</body>
-
-</html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Careers Page </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/careers-styles.css">
-   
 </head>
+
 <body>
-    <div class="con">
-        <div class="form-row">
-            <div class="form- group col-md-6">
-                <div class="imgg">
+    <?php include 'includes/header.php'; ?>
 
+    <div class="hero">
+        <h1>Welcome to Residence Revive</h1>
+        <a href="#connect" class="btn" onclick="scrollToContact()">Connect</a>
+        <a href="#job-postings" class="btn">Job Postings</a>
+        <div class="circle" onclick="scrollToJobPostings()">
+            <div class="arrow-down">&#8595;</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section" id="job-postings">
+            <h2>Current Job Openings</h2>
+            <div class="job-listings-container">
+                <div class="job-listing">
+                    <h4>General Manager</h4>
+                    <h5>Residence Revive - Kitchener</h5>
+                </div>
+                <div class="job-listing">
+                    <h4>Supervisor</h4>
+                    <h5>Residence Revive - Toronto</h5>
+                </div>
+                <div class="job-listing">
+                    <h4>Operations Manager</h4>
+                    <h5>Residence Revive - Toronto</h5>
+                </div>
+                <div class="job-listing">
+                    <h4>Marketing Director</h4>
+                    <h5>Residence Revive - Remote</h5>
                 </div>
             </div>
+            <h6>People can reach out to us via email: support@residencerevive.com and upload their cover letter and resume.</h6>
+        </section>
 
-            <div class="form-group col-md-6">
-                <br>
-                <div class="pa">
-                    <center>
-                        <h2> Creating the sorcery in the movement </h2>
-                    </center>
-                    <p> 
-                        <center> Residence Revive is reshaping the way real estate works by making it more efficient. Inactive agents and dysfunctional processes have been having a detrimental impact on the vendors for far too long. Using cutting-edge technology and specialists in individual neighborhoods, Residence Revive is resolving each problem associated with relocation – come and be part of it! <br> <br> <h5> Learn More... </h5> </center>
-                    </p>
-                    
-                </div>
+        <div class="container-split">
+            <div class="contact-form" id="contact">
+                <h3>Contact Us</h3>
+                <form action="contact_form_submission.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="map">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509068!2d144.95592631550484!3d-37.81720974201551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774c9bdb3b4a02!2sResidence+Revive!5e0!3m2!1sen!2sau!4v1592244257777!5m2!1sen!2sau" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>
 
-    <div class="fi">
-        <center>
-            <h2> Current Job Openings </h2>
-            <br>
-            <h4> Residential Cleaner </h4>
-            <h5> Residence Revive - North Side </h5> <hr> <br>
+    <?php include 'includes/footer.php'; ?>
 
-            <h4> Office Cleaner </h4>
-            <h5> Residence Revive - West Side </h5> <hr> <br>
-
-            <h4> Industrial Cleaner </h4>
-            <h5> Residence Revive - East Side </h5> <hr> <br>
-
-            <h4> Commercial cleaner </h4>
-            <h5> Residence Revive - South Side </h5> 
-            <h6> People can reach to us Email: support@residencerevive.com and upload the cover letter and resume on it. </h6>
-            <br>
-        </center>
-    </div>
-
-    <div>
-        <center> <b> <h1> Our hiring process </h1> </b> </center>
-        <div class="form-row"> 
-            <div class="form-group col-md-4">
-                <div class="hi"> </div>
-                <h3><b> 1. Phone call. </b></h3>
-                <p class="pp"> Onces you apply, first of all we talk to you over the phone. It happens so that we can understand you more and you could get to know more about us. </p>
-            </div>
-            <div class="form-group col-md-4">
-                <h3><b> 2. Interview. </b></h3>
-                <p class="pp"> You must have an interview that is deeper by the hiring manager or perform a practical test. Note: Preliminary telephone interviews may be after this test in some engineering jobs. </p>     
-            </div>
-            <div class="form-group col-md-4">
-                <h3><b> 3. Trial Day. </b> </h3>
-                <p class="pp"> The third and final stage is a working interview. It allows you to see what a day at Residence Revive looks like. Moreover, we can understand your work style. It’s a win-win situation. </p>
-            </div>
-        </div>
-    </div>
-
+    <script>
+        function scrollToJobPostings() {
+            document.getElementById('job-postings').scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
-<?php
-    include 'includes/footer.php';
-?>
