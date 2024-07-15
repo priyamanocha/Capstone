@@ -89,7 +89,7 @@
         <p class="bold">Residence Revive</p>
         <p class="bold">Email: <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
         <p class="bold">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p class="bold">Address: [Your Business Address]</p>
+        <p><span class="bold">Address:</span> 21 Sportsman Hill St, Kitchener, Ontario, N2P L63</p>
     </div>
     <?php
     include 'includes/footer.php';

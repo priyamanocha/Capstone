@@ -20,7 +20,7 @@ nav a {
 .navbar-brand{
     color:rgba(255, 255, 255, 0.75);
 }
-span{
+.welcome{
     color:rgba(255, 255, 255, 0.75);
 }
 main {
@@ -658,11 +658,7 @@ button {
 /* Payment Css ends */
 /* CSS for About Us starts */
 .card{
-    background: mintcream;
     border: 0px;
-}
-.about-us-container{
-    background: mintcream;
 }
 p{
     font-family: math;

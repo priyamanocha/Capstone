@@ -17,7 +17,7 @@ include 'includes/header.php';
     
     <!-- Subcategories Section -->
     <div class="subcategories">
-        <h3>Subcategories</h3>
+        <h3>Services</h3>
         <div class="subcategory">
             <?php
             // Fetch category_id and sub_category_id from the URL
@@ -53,7 +53,7 @@ include 'includes/header.php';
                     <?php if (isset($subcategory['description'])): ?>
                         <p><?php echo $subcategory['description']; ?></p>
                     <?php else: ?>
-                        <p>No description available.</p>
+                        <!-- <p>No description available.</p> -->
                     <?php endif; ?>
                     <a href="#" class="view-services" data-sub-category-id="<?php echo $subcategory['sub_category_id']; ?>">View Services</a>
                 </div>

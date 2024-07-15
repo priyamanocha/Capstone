@@ -39,7 +39,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                 <div>
                     <?php
                     if (isset($_SESSION['email'])) {
-                        echo "<span>Welcome $first_name!</span>";
+                        echo "<span class=\"welcome\">Welcome $first_name!</span>";
                     } ?>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
