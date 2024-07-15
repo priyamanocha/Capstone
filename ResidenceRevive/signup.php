@@ -177,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Sign Up to Residence Revive</h1>
             <div>
                 <!-- <button type="button" class="google-signup">Sign up with Google</button> -->
-                <p>Already have an account? <a href="login.php">Log In</a></p>
+                <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
             <!-- The link to the login page for the users who already have an account registered with us -->
             <div class="form-group">

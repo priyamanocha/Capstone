@@ -63,6 +63,7 @@ $icons = [
             <img src="./images/safe.png" alt="Icon 1">
             <div>
                 <h3 class="bold">100% Safe</h3>
+                <h3 class="bold">100% Safe</h3>
                 <p>Totally safe and secure</p>
             </div>
         </div>
@@ -70,12 +71,14 @@ $icons = [
             <img src="./images/search.png" alt="Icon 2">
             <div>
                 <h3 class="bold">Transparent Pricing</h3>
+                <h3 class="bold">Transparent Pricing</h3>
                 <p>See prices before you book, No hidden fees</p>
             </div>
         </div>
         <div class="icon-line">
             <img src="./images/leader.png" alt="Icon 3">
             <div>
+                <h3 class="bold">Experts Only</h3>
                 <h3 class="bold">Experts Only</h3>
                 <p>Our Staff is full of experts, and have on-job experience of years</p>
             </div>

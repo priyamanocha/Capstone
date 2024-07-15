@@ -78,12 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php include 'includes/header.php'; ?>
     <main>
+    <div class="background-image-container">
+        <h1 class="mb-2">Contact Us</h1>
+    </div>
         <div class="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>
                 <p><b>Email:</b> <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
                 <p><b>Phone:</b> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                <p><b>Address:</b> 21 Sportsman Hill St, Kitchener, Ontario.</p>
+                <p><b>Address:</b> 21 Sportsman Hill St, Kitchener, Ontario, N2P L63.</p>
                 <div class="social-links-contact-us">
                     <a href="#" class="icon-facebook"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
