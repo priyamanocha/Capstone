@@ -1,13 +1,8 @@
 <!-- We are starting the session in order to track user login and other session-related information -->
 
-<?php session_start(); ?>
 <?php
 $email = $password = "";
 $email_err = $password_err = $email_password_err = "";
-// Checking for the session, if is not already started, then start the session
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
 
 // Including the database configuration file to establish a db connection
 include 'config/db.php';
@@ -41,7 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // We are check if the user exists along with the fact that the provided password matches the stored password
         if ($user && password_verify($password, $user['password'])) {
-            // $_SESSION['user'] = $user;
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
             header("Location: index.php");
             // exit();
         } else {
@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login Page Residence Revive">
     <title>Login to Residence Revive</title>
     <!-- The link to external CSS stylesheets -->
     <link rel="stylesheet" href="css/styles.css">

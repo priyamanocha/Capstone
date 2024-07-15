@@ -78,6 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php include 'includes/header.php'; ?>
     <main>
+    <div class="background-image-container">
+        <h1 class="mb-2">Contact Us</h1>
+    </div>
         <div class="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>

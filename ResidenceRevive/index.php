@@ -47,21 +47,21 @@ $icons = [
         <div class="icon-line">
             <img src="./images/safe.png" alt="Icon 1">
             <div>
-                <h2>100% Safe</h2>
+                <h3 class="bold">100% Safe</h3>
                 <p>Totally safe and secure</p>
             </div>
         </div>
         <div class="icon-line">
             <img src="./images/search.png" alt="Icon 2">
             <div>
-                <h2>Transparent Pricing</h2>
+                <h3 class="bold">Transparent Pricing</h3>
                 <p>See prices before you book, No hidden fees</p>
             </div>
         </div>
         <div class="icon-line">
             <img src="./images/leader.png" alt="Icon 3">
             <div>
-                <h2>Experts Only</h2>
+                <h3 class="bold">Experts Only</h3>
                 <p>Our Staff is full of experts, and have on-job experience of years</p>
             </div>
         </div>
@@ -70,8 +70,8 @@ $icons = [
     <!-- Right Container -->
     <div class="right-container">
         <div class="whyus_card">
-            <img src="./images/professional-cleaning-company.jpeg" alt="Card Icon">
-            <h2>100% Quality Assured</h2>
+            <img src="./images/slider_1.png" alt="Card Icon">
+            <h3 class="bold">100% Quality Assured</h3>
             <p>Our promise to make it right</p>
         </div>
     </div>
@@ -81,8 +81,8 @@ $icons = [
 <div class="carousel">
     <div class="carousel-images">
         <img src="./images/slider_1.png" alt="Carousel Image 1" class="carousel-image">
-        <img src="./images/carousel_1.jpg" alt="Carousel Image 4" class="carousel-image">
-        <img src="./images/carousel_2.jpg" alt="Carousel Image 4" class="carousel-image">
+        <img src="./images/slider_2.jpg" alt="Carousel Image 4" class="carousel-image">
+        <img src="./images/slider_3.jpg" alt="Carousel Image 4" class="carousel-image">
     </div>
     <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
     <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
