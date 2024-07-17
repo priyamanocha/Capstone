@@ -22,7 +22,7 @@ $icons = [
 ?>
 <div class="background-image-container"></div>
 <h1 class="heading">Residence Revive Services</h1>
-<div class="services-grid">
+<div class="services-grid" id="services-grid">
     <?php foreach ($categories as $category): ?>
         <div class="service-card">
             <a href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">

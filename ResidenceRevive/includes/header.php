@@ -30,7 +30,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="index.php">
                     <img src="images/ResidenceRevive_logo.png" alt="Residence Revive Logo">
-                    Residence Revive
+                    Residence Revive Services
                 </a>
                 <div class="search mx-5">
                     <input type="text" placeholder="Search for Service"

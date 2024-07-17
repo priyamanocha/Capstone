@@ -17,9 +17,11 @@
     <!-- Including the header from a separate PHP file -->
     <?php include 'includes/header.php'; ?>
     <div class="background-image-container">
-        <h1 class="mb-2">Residence Revive Story</h1>
+        <a href="#about-us-container">
+            <h1 class="mb-2">Residence Revive Story</h1>
+        </a>
     </div>
-    <div class="about-us-container">
+    <div class="about-us-container" id="about-us-container">
         <div class="container text-start">
             <div class="card col">
                 <div class="d-flex p-3 rounded-5">

@@ -35,10 +35,10 @@ include 'includes/header.php';
                 <?php 
                 // Example array of icons (you can modify this to fit your actual icons)
                 $sub_icons = [
-                    'Bathroom Cleaning' => './images/bathroom.png',
-                    'Kitchen Cleaning' => './images/kitchen.png',
-                    'Carpet Cleaning' => './images/adornment.png',
-                    'Home Cleaning' => './images/house.png',
+                    'Bathroom Cleaning' => './images/slider_1.png',
+                    'Kitchen Cleaning' => './images/slider_2.png',
+                    'Carpet Cleaning' => './images/slider_3.png',
+                    'Home Cleaning' => './images/slider_3.png',
                     // Add more subcategories with their respective icon paths
                 ];
                 ?>

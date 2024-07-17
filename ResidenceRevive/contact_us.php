@@ -52,11 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssss", $first_name, $last_name, $email, $phone, $message);
 
         if ($stmt->execute()) {
-            echo "<script>
-                    alert('Your message has been received. Our team will get back to you within 24 hours.');
-                    window.setTimeout(function(){ window.location.href = 'index.php'; }, 1000);
-                    exit;
-                  </script>";
+            $_SESSION['contact_us_message'] = "Your message has been received. Our team will get back to you within 24 hours.";
         } else {
             echo "<script>alert('Failed to send message.');</script>";
         }
@@ -72,16 +68,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <?php include 'includes/header.php'; ?>
     <main>
-    <div class="background-image-container">
-        <h1 class="mb-2">Contact Us</h1>
-    </div>
-        <div class="contact-page-container">
+        <div class="background-image-container">
+            <a href="#contact-page-container">
+                <h1 class="mb-2">Contact Us</h1>
+            </a>
+        </div>
+        <div class="container">
+            <?php if (isset($_SESSION['contact_us_message'])): ?>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 py-2">
+                        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                            <?php echo $_SESSION['contact_us_message'];
+                            unset($_SESSION['contact_us_message']); ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+
+
+        <div class="contact-page-container" id="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>
                 <p><b>Email:</b> <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
@@ -134,6 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
     <?php include 'includes/footer.php'; ?>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
