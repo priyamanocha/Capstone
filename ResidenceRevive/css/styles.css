@@ -331,7 +331,7 @@ footer .social-links a:hover {
 }
 /* CSS for Footer ends */ 
 
-/* CSS for Header starts */
+/* CSS for Header */
 nav {
     display: flex;
     justify-content: space-between;
@@ -407,7 +407,12 @@ nav {
 }
 /* CSS for Header ends */
 
-/* CSS for Terms and Conditions starts */
+.dropdown-menu .dropdown-item:hover {
+    background-color: green;
+    color: white;
+}
+
+/* CSS for Terms and Conditions */
 .terms_conditions {
     padding: 5%;
 }
@@ -429,9 +434,8 @@ nav {
     font-size: large;
     font-family: math;
 }
-/* CSS for Terms and Conditions ends */
 
-/* CSS for Privacy Policy starts */
+/* CSS for Privacy Policy */
 .privacy_policy_container {
     padding: 5%;
 }
@@ -464,7 +468,6 @@ nav {
     text-align: left;
     font-size: larger;
 }
-/* CSS for Privacy Policy ends */
 
 .why-us {
     display: flex;
@@ -474,11 +477,6 @@ nav {
     padding: 5%;
     background-color: aliceblue;
 }
-
-/* h3 {
-    padding: 5%;
-    text-align: center;
-} */
 
 .left-container {
     flex: 1;
@@ -597,7 +595,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* CSS for Billing starts */
+/* CSS for Billing */
 .billing-page-container {
     display: flex;
     justify-content: space-between;
@@ -671,9 +669,8 @@ button {
     margin-left: 20px;
     margin-right: 20px;
 }
-/* CSS for Billing ends */
 
-/* CSS for Contact Us starts */
+/* CSS for Contact Us */
 .contact-page-container {
     display: flex;
     flex-direction: row;
@@ -773,7 +770,6 @@ button {
         flex-direction: column;
     }
 }
-/* CSS for Contact Us ends */
 
 /* Payment Css */
 .payment-buttons {
@@ -786,12 +782,13 @@ button {
 .payment-buttons div {
     flex: 1 1 200px;
 }
-/* Payment Css ends */
-/* CSS for About Us starts */
-.card{
+
+/* CSS for About Us */
+.card {
     border: 0px;
 }
-p{
+
+p {
     font-family: math;
     font-size: 1.2rem;
 }
