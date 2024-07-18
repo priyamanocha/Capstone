@@ -17,16 +17,33 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
 }
-.navbar-brand{
-    color:rgba(255, 255, 255, 0.75);
+
+.navbar-brand {
+    color: rgba(255, 255, 255, 0.75);
 }
-.welcome{
-    color:rgba(255, 255, 255, 0.75);
+
+.welcome {
+    color: rgba(255, 255, 255, 0.75);
 }
-main {
-    /* padding: 20px; */
-    background-color: white;
-    /* margin: 20px; */
+
+.background-image-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heading {
+    font-weight: bold;
+    text-align: center;
+    padding: 3%;
+    font-size: 2.0rem;
 }
 
 .services-grid {
@@ -43,6 +60,8 @@ main {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }
 
 .service-card:hover {
@@ -56,51 +75,136 @@ main {
 }
 
 .service-icon {
-    width: 110%;
-    height: 350px;
-    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
 }
 
 .service-name {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10px;
+    left: 10px;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin: 10px 0;
 }
 
-.heading {
-    font-weight: bold;
-    text-align: center;
-    padding: 3%;
-    font-size: 2.0rem;
+.service-description {
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
 }
 
-.background-image-container {
-    background-image: url('../images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    padding: 50px 0;
-    height: 500px;
-}
-.background-image-container h1{
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+.why-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
     padding: 5%;
-    font-weight: bold;
-    font-size: 50px;
-    margin-top: 50px;
+    background-color: aliceblue;
 }
-.background-image-container a{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+.left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.icon-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-line img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.right-container {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whyus_card {
+    text-align: center;
+    background-color: #F5F9FF;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.whyus_card img {
+    width: auto;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 500px;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -121,12 +225,29 @@ main {
         width: 100%;
         height: auto;
     }
+
+    .why-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-container,
+    .right-container {
+        margin-right: 0;
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon-line {
+        justify-content: center;
+    }
 }
 
-/* CSS for Footer starts */
+/* CSS for Footer */
 footer {
     background-color: black;
-    color:rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
     padding: 20px 10%;
     text-align: center;
     display: grid;
@@ -208,9 +329,9 @@ footer .social-links a:hover {
         grid-column: 1 / span 1;
     }
 }
-/* CSS for Footer ends */
+/* CSS for Footer ends */ 
 
-/* CSS for Header starts */
+/* CSS for Header */
 nav {
     display: flex;
     justify-content: space-between;
@@ -279,9 +400,19 @@ nav {
         display: block;
     }
 }
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: green;
+    color: white;
+}
 /* CSS for Header ends */
 
-/* CSS for Terms and Conditions starts */
+.dropdown-menu .dropdown-item:hover {
+    background-color: green;
+    color: white;
+}
+
+/* CSS for Terms and Conditions */
 .terms_conditions {
     padding: 5%;
 }
@@ -303,9 +434,8 @@ nav {
     font-size: large;
     font-family: math;
 }
-/* CSS for Terms and Conditions ends */
 
-/* CSS for Privacy Policy starts */
+/* CSS for Privacy Policy */
 .privacy_policy_container {
     padding: 5%;
 }
@@ -338,7 +468,6 @@ nav {
     text-align: left;
     font-size: larger;
 }
-/* CSS for Privacy Policy ends */
 
 .why-us {
     display: flex;
@@ -348,11 +477,6 @@ nav {
     padding: 5%;
     background-color: aliceblue;
 }
-
-/* h3 {
-    padding: 5%;
-    text-align: center;
-} */
 
 .left-container {
     flex: 1;
@@ -471,7 +595,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* CSS for Billing starts */
+/* CSS for Billing */
 .billing-page-container {
     display: flex;
     justify-content: space-between;
@@ -545,9 +669,8 @@ button {
     margin-left: 20px;
     margin-right: 20px;
 }
-/* CSS for Billing ends */
 
-/* CSS for Contact Us starts */
+/* CSS for Contact Us */
 .contact-page-container {
     display: flex;
     flex-direction: row;
@@ -647,7 +770,6 @@ button {
         flex-direction: column;
     }
 }
-/* CSS for Contact Us ends */
 
 /* Payment Css */
 .payment-buttons {
@@ -660,12 +782,13 @@ button {
 .payment-buttons div {
     flex: 1 1 200px;
 }
-/* Payment Css ends */
-/* CSS for About Us starts */
-.card{
+
+/* CSS for About Us */
+.card {
     border: 0px;
 }
-p{
+
+p {
     font-family: math;
     font-size: 1.2rem;
 }

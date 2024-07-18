@@ -51,6 +51,20 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <?php foreach ($categories as $category): ?>
+                                    <li><a class="dropdown-item"
+                                           href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
+                                            <?php echo $category['category_name']; ?>
+                                        </a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about_us.php">About</a>
                         </li>
