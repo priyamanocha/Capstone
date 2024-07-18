@@ -1,3 +1,4 @@
+
 <?php
 $first_name = "";
 // setting firstname and lastname from session
@@ -57,12 +58,16 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                                 Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <?php foreach ($categories as $category): ?>
-                                    <li><a class="dropdown-item"
-                                           href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
+                                <?php if (isset($categories) && is_array($categories)): ?>
+                                    <?php foreach ($categories as $category): ?>
+                                        <li><a class="dropdown-item"
+                                               href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
                                             <?php echo $category['category_name']; ?>
                                         </a></li>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <li><a class="dropdown-item" href="#">No categories available</a></li>
+                                <?php endif; ?>
                             </ul>
                         </li>
                         <li class="nav-item">
