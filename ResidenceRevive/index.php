@@ -7,11 +7,9 @@ if (session_status() == PHP_SESSION_NONE) {
 $title = "Home";
 include 'config/db.php';
 include 'includes/functions.php';
-
-$categories = getAllCategories($conn); // Fetch category names
-
 include 'includes/header.php';
 
+$categories = getAllCategories($conn); // Fetch category names
 $icons = [
     'Cleaning/Disinfection' => './images/cleaning.jpg',
     'Appliance Repair' => './images/repair.jpg',
@@ -22,12 +20,8 @@ $icons = [
     // Add more categories with their respective icon paths
 ];
 ?>
-
-<!-- New Image Section Below Nav Bar -->
-<section class="hero-image">
-    <img src="images/background.jpg" alt="Carpet Cleaning">
-</section>
-
+<div class="background-image-container">
+</div>
 <h1 class="heading">Residence Revive Services</h1>
 <div class="services-grid" id="services-grid">
     <?php foreach ($categories as $category): ?>
