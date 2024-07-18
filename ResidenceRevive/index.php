@@ -22,12 +22,7 @@ $icons = [
     // Add more categories with their respective icon paths
 ];
 ?>
-
-<!-- New Image Section Below Nav Bar -->
-<section class="hero-image">
-    <img src="images/background.jpg" alt="Carpet Cleaning">
-</section>
-
+<div class="background-image-container"></div>
 <h1 class="heading">Residence Revive Services</h1>
 <div class="services-grid" id="services-grid">
     <?php foreach ($categories as $category): ?>
