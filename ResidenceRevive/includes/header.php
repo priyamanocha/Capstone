@@ -79,20 +79,23 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php">Cart</a>
                         </li>
-                        <?php
-                        if (!isset($_SESSION['email'])) {
-                            ?>
+                        
+                        <?php if (!isset($_SESSION['email'])): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
                             </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="signup.php">Register</a>
                             </li>
-                        <?php } else { ?>
+                            
+                        <?php else: ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Logout</a>
+                                <a class="nav-link" href="logout.php">Logout
+                                </a>
                             </li>
-                        <?php } ?>
+                        <?php endif ; ?>
+
                     </ul>
                 </div>
             </div>

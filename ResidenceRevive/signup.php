@@ -90,6 +90,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // If the insertion done by the user was successful, then store a success message in the session
         if ($stmt->execute()) {
             $_SESSION['db_message'] = "New record created successfully";
+
+            // login the user on signup
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['last_name'] = $last_name;
+
             $_SESSION['signup_message'] = "User Registered Successfully";
         } else {
             $_SESSION['db_message'] = "Error: " . $stmt->error;
