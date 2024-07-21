@@ -1,47 +1,56 @@
 <?php
+
 session_start();
-include 'config/db.php'; // Adjust path as per your file structure
-include 'includes/functions.php'; // Adjust path as per your file structure
 
-// Assuming user is logged in and user email is stored in session
-$user_email = $_SESSION['user_email'] ?? '';
+require 'config/db.php';
 
-// Check if form data is received
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+// store cart items of logined user in cart table - database
+
+//  only logged in user can add items to cart
+if(!isset($_SESSION['email'])){
+    header('Location: login.php');
+    exit;
+}
+
+
+if (isset($_POST['service_id'], $_POST['category_id'], $_POST['sub_category_id'], $_POST['quantity'], $_SESSION['email'])) {
     $service_id = $_POST['service_id'];
     $category_id = $_POST['category_id'];
     $sub_category_id = $_POST['sub_category_id'];
     $quantity = $_POST['quantity'];
+    $email = $_SESSION['email'];
 
-    // Add to cart function (You should implement this function in your functions.php file)
-    addToCart($conn, $user_email, $category_id, $sub_category_id, $service_id, $quantity);
-
-    // Redirect to the cart page after adding item to cart
-    header("Location: cart.php");
-    exit();
-}
-
-function addToCart($conn, $user_email, $category_id, $sub_category_id, $service_id, $quantity) {
-    // Check if the item is already in the cart
-    $sql = "SELECT * FROM cart WHERE email = ? AND category_id = ? AND subcategory_id = ? AND service_id = ?";
+    // Check if the service_id already exists in the cart for the user
+    $sql = "SELECT * FROM cart WHERE email = ? AND service_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("siii", $user_email, $category_id, $sub_category_id, $service_id);
+    $stmt->bind_param("si", $email, $service_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Update the quantity if the item is already in the cart
-        $sql = "UPDATE cart SET quantity = quantity + ? WHERE email = ? AND category_id = ? AND subcategory_id = ? AND service_id = ?";
+        // Update the quantity if the service_id exists
+        $sql = "UPDATE cart SET quantity = ?, category_id = ?, subcategory_id = ? WHERE email = ? AND service_id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("isiii", $quantity, $user_email, $category_id, $sub_category_id, $service_id);
+        $stmt->bind_param("iiisi", $quantity, $category_id, $sub_category_id, $email, $service_id);
     } else {
-        // Insert a new row if the item is not in the cart
+        // Insert the new service into the cart
         $sql = "INSERT INTO cart (email, category_id, subcategory_id, service_id, quantity) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("siiii", $user_email, $category_id, $sub_category_id, $service_id, $quantity);
+        $stmt->bind_param("siiii", $email, $category_id, $sub_category_id, $service_id, $quantity);
     }
 
-    $stmt->execute();
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success', 'message' => 'Service added to cart']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Database error: ' . $stmt->error]);
+    }
     $stmt->close();
+    $conn->close();
+    header("Location: cart.php");
+    exit;
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Required fields are missing']);
+    exit;
 }
 ?>

@@ -20,9 +20,9 @@
             <p class="bold">Follow us on Social Media</p>
             <!-- Container for the social media icons -->
             <div class="social-links">
-                <a href="#" class="icon-facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61561765015915&notif_id=1720298577477623&notif_t=page_user_activity&ref=notif" class="icon-facebook" aria-label="Facebook" name="facebook-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
         <div>
@@ -37,7 +37,7 @@
             <a href="about_us.php">About Us</a>
             <a href="terms_and_conditions.php">Terms and Conditions</a>
             <a href="privacy_policy.php">Privacy Policy</a>
-            <a href="#">Careers</a>
+            <a href="careers.php">Careers</a>
             <a href="contact_us.php">Contact Us</a>
         </div>
         <p class="rights">© 2024 Residence Revive. All Rights Reserved.</p>

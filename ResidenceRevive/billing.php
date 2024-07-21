@@ -1,4 +1,6 @@
 <?php
+// Include database connection
+include 'config/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion'])) {
     $first_name = $_POST['first_name'];
@@ -49,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     <main>
         <div class="container mt-5">
             <div class="billing-form-container">
-                <form id="billing-form" class="fo">
+                <form id="billing-form" class="fo" method="POST" action="">
                     <div class="mb-4">
                         <h1 class="h3">Personal Information</h1>
                         <hr>
@@ -64,37 +66,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" pattern="[A-Za-z]+" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="you@yoursite.com" required>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@yoursite.com" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="phone_number"> Phone Number</label>
+                            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" required>
+                        </div>
                     </div>
                   
                     <div class="mb-4">
                         <h1 class="h3">Billing Address</h1>
                         <hr>
                     </div>
-                    <div class="form-group">
-                        <label for="unumber">Unit/Apartment Number</label>
-                        <input type="number" class="form-control" id="unumber" name="unumber" placeholder="Unit/Apartment Number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="saddress">Street Address</label>
-                        <input type="text" class="form-control" id="saddress" name="saddress" placeholder="Street Address" required>
-                    </div>
-                    <div class="form-row">
+
+                    <div class="form-row"> 
                         <div class="form-group col-md-6">
+                            <label for="unumber">Unit/Apartment Number</label>
+                            <input type="number" class="form-control" id="unumber" name="unumber" placeholder="Unit/Apartment Number" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="saddress">Street Address</label>
+                            <input type="text" class="form-control" id="saddress" name="saddress" placeholder="Street Address" required>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
                             <label for="city">City</label>
                             <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="state">State/Province</label>
                             <input type="text" class="form-control" id="state" name="state" placeholder="State/Province" required>
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="zcode">Zip Code</label>
+                            <input type="text" class="form-control" id="zcode" name="zcode" placeholder="Zip Code" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="zcode">Zip Code</label>
-                        <input type="text" class="form-control" id="zcode" name="zcode" placeholder="Zip Code" required>
-                    </div>
+                    
                     <div class="text-center">
                         <button type="button" class="btn btn-success mb-3" onclick="handleCashOnCompletion()">Cash On Completion</button>
                     </div>
@@ -112,6 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         function handleCashOnCompletion() {
             const form = document.getElementById('billing-form');
             const formData = new FormData(form);
+            formData.append('cash_on_completion', '1');  
 
             fetch('', {
                 method: 'POST',
@@ -144,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
                     alert('Your service is booked successfully!');
-                    window.location.href = '/'; 
+                    window.location.href = '../index.php'; 
                 });
             }
         }).render('#paypal-button-container');
@@ -162,8 +177,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         const tokenizationSpecification = {
             type: 'PAYMENT_GATEWAY',
             parameters: {
-                'gateway': 'Jai Maurya', 
-                'gatewayMerchantId': 'JaiMauryaGatewayMerchantId' 
+                'gateway': 'example',
+                'gatewayMerchantId': 'exampleMerchantId' 
             }
         };
 
@@ -213,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                 currencyCode: 'USD'
             };
             paymentDataRequest.merchantInfo = {
-                merchantName: 'Jai Maurya' 
+                merchantName: 'Residence Revive' 
             };
 
             paymentsClient.loadPaymentData(paymentDataRequest)

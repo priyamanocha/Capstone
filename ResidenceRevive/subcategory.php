@@ -17,7 +17,7 @@ include 'includes/header.php';
     
     <!-- Subcategories Section -->
     <div class="subcategories">
-        <h3>Subcategories</h3>
+        <h3>Services</h3>
         <div class="subcategory">
             <?php
             // Fetch category_id and sub_category_id from the URL
@@ -35,10 +35,10 @@ include 'includes/header.php';
                 <?php 
                 // Example array of icons (you can modify this to fit your actual icons)
                 $sub_icons = [
-                    'Bathroom Cleaning' => './images/bathroom.png',
-                    'Kitchen Cleaning' => './images/kitchen.png',
-                    'Carpet Cleaning' => './images/adornment.png',
-                    'Home Cleaning' => './images/house.png',
+                    'Bathroom Cleaning' => './images/slider_1.png',
+                    'Kitchen Cleaning' => './images/slider_2.png',
+                    'Carpet Cleaning' => './images/slider_3.png',
+                    'Home Cleaning' => './images/slider_3.png',
                     // Add more subcategories with their respective icon paths
                 ];
                 ?>
@@ -53,7 +53,7 @@ include 'includes/header.php';
                     <?php if (isset($subcategory['description'])): ?>
                         <p><?php echo $subcategory['description']; ?></p>
                     <?php else: ?>
-                        <p>No description available.</p>
+                        <!-- <p>No description available.</p> -->
                     <?php endif; ?>
                     <a href="#" class="view-services" data-sub-category-id="<?php echo $subcategory['sub_category_id']; ?>">View Services</a>
                 </div>

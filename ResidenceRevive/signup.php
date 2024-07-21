@@ -90,6 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // If the insertion done by the user was successful, then store a success message in the session
         if ($stmt->execute()) {
             $_SESSION['db_message'] = "New record created successfully";
+
+            // login the user on signup
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['last_name'] = $last_name;
+
+            $_SESSION['signup_message'] = "User Registered Successfully";
         } else {
             $_SESSION['db_message'] = "Error: " . $stmt->error;
         }
@@ -113,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <!-- The link to external CSS stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/signup_styles.css">
     <!-- The JavaScript function to check the strength of the password -->
     <script>
@@ -153,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 case 3:
                     strengthLabel.textContent = 'Moderate';
-                    strengthLabel.style.color = 'yellow';
+                    strengthLabel.style.color = 'blue';
                     break;
                 case 4:
                     strengthLabel.textContent = 'Strong';
@@ -172,13 +179,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Including the header from a separate PHP file -->
     <?php include 'includes/header.php'; ?>
     <!-- Main container for the signup form -->
-    <div class="signup-container col-md-6">
+    <div class="signup-container col-md-6 my-10">
         <form action="signup.php" method="POST">
-            <h2>Sign Up to Residence Revive</h2>
+            <h1>Sign Up to Residence Revive</h1>
             <div>
-                <button type="button" class="google-signup">Sign up with Google</button>
-                <p>Already have an account? <a href="login.php">Log In</a></p>
+                <!-- <button type="button" class="google-signup">Sign up with Google</button> -->
+                <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
+                <?php if (isset($_SESSION['signup_message'])): ?>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 py-2">
+                            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                                <?php echo $_SESSION['signup_message'];
+                                unset($_SESSION['signup_message']); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             <!-- The link to the login page for the users who already have an account registered with us -->
             <div class="form-group">
                 <span class="error"><?php echo $email_phone_err; ?></span>
@@ -206,8 +226,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" oninput="checkPasswordStrength(this.value)">
-                <progress id="strength-bar" max="5" value="0"></progress>
                 <span class="error"><?php echo $password_err; ?></span>
+                <progress id="strength-bar" max="5" value="0"></progress>
                 <!-- The label to display password strength text -->
                 <span id="strength-label">Very Weak</span>
             </div>
@@ -217,6 +237,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <!-- Including the footer from a separate PHP file -->
     <?php include 'includes/footer.php'; ?>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,111 +1,86 @@
-<!-- We are starting the session in order to track user login and other session-related information -->
-
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Residence Revive</title>
-    <!-- The link to external CSS stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about-us.css">
 </head>
+
 <body>
-     <!-- Including the header from a separate PHP file -->
+    <?php session_start(); ?>
     <?php include 'includes/header.php'; ?>
 
-    <!-- The container for the login form -->
-    <div class="container mt-4 text-start">
-    
-    <h1 class="mb-4">Our Story</h1>
+    <!-- New Image Section Below Nav Bar -->
+    <section class="hero-image">
+        <img src="images/background.jpg" alt="Carpet Cleaning">
+    </section>
 
-    <!-- Section 1-->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="intro">
+                <h2>Welcome to Residence Revive</h2>
+                <p>Our journey began with a simple mission: to make home services hassle-free, reliable, and accessible for everyone. We understand the profound impact that a clean, safe, and well-maintained home has on your overall well-being and quality of life. From regular housekeeping and comprehensive disinfection to pest control, furniture assembly, plumbing, electrician services, and appliance repair, our professional team ensures every aspect of your living space is in perfect condition. We use advanced techniques and eco-friendly products to provide top-notch services, building trust and creating lasting relationships with our clients. Thank you for choosing Residence Revive!</p>
+            </div>
 
-    <div class="card col-lg-10 mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/parchment.png" class="img-fluid object-fit-contain" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3">
-                    <p class="card-text ms-2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt distinctio neque ut atque inventore sunt eius, velit sapiente! Incidunt, neque? Explicabo sed aperiam distinctio deserunt earum beatae iusto incidunt culpa!
-                    </p>
+            <div class="services">
+                <h2>Residence Revive Services</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <img src="images/appliance_repair.jpg" alt="Appliance Repair">
+                        <div class="card-text">Appliance Repair</div>
+                        <div class="card-description">Our experienced technicians can repair a wide range of home appliances, ensuring they function efficiently and extend their lifespan.</div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/cleaning.jpg" alt="Cleaning/Disinfection">
+                        <div class="card-text">Cleaning/Disinfection</div>
+                        <div class="card-description">From regular housekeeping to deep cleaning, our professional team ensures your home is spotless and inviting.</div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/electrician.jpg" alt="Electrician">
+                        <div class="card-text">Electrician</div>
+                        <div class="card-description">From fixing faulty wiring to installing new electrical systems, our certified electricians ensure your home is safe and functional.</div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/furniture_assembly.jpg" alt="Furniture Assembly">
+                        <div class="card-text">Furniture Assembly</div>
+                        <div class="card-description">We take the hassle out of furniture assembly, providing quick and efficient services to set up your new furniture.</div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/pest_control.jpg" alt="Pest Control">
+                        <div class="card-text">Pest Control</div>
+                        <div class="card-description">Our experts provide effective pest control solutions to keep your home free from unwanted guests.</div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/plumbing.jpg" alt="Plumbing">
+                        <div class="card-text">Plumbing</div>
+                        <div class="card-description">Our skilled plumbers are ready to tackle any plumbing issue, from minor repairs to major installations.</div>
+                    </div>
                 </div>
-            </div>    
-        </div>
+            </div>
 
-
-        <div class="card col-lg-10 ms-lg-auto mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/parchment.png" class="img-fluid object-fit-contain order-last" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3">
-                    <p class="card-text me-2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt distinctio neque ut atque inventore sunt eius, velit sapiente! Incidunt, neque? Explicabo sed aperiam distinctio deserunt earum beatae iusto incidunt culpa!
-                    </p>
+            <div class="about-info">
+                <div class="info-card">
+                    <img src="images/user.png" alt="About Our Team">
+                    <h3>About Our Team</h3>
+                    <p>Our staff is full of experts, and have on-job experience of years</p>
                 </div>
-            </div>    
-        </div>
-
-
-        <div class="card col-lg-10 mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/parchment.png" class="img-fluid object-fit-contain" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3">
-                    <p class="card-text ms-2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt distinctio neque ut atque inventore sunt eius, velit sapiente! Incidunt, neque? Explicabo sed aperiam distinctio deserunt earum beatae iusto incidunt culpa!
-                    </p>
+                <div class="info-card">
+                    <img src="images/question.png" alt="Why Trust Us?">
+                    <h3>Why Trust Us?</h3>
+                    <p>Because we have a good track record</p>
                 </div>
-            </div>    
-        </div>
-       
-
-     <!-- Section 2 -->
-
-     <div class="row justify-content-center">
-        <div class="col-md-6">
-        <div class="mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/user.png" class="img-fluid object-fit-contain" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3 ms-2">
-                    <h4 class="card-title mb-2" style="color: #3F44E5;">About Our Team</h4>
-                    <p class="card-text">
-                    Our Staff is full of experts, and have on-job experience of years</p>
+                <div class="info-card">
+                    <img src="images/map.png" alt="Where We Are Located">
+                    <h3>Where We Are Located</h3>
+                    <p>You can find our office in Kitchener, Ontario.</p>
                 </div>
-            </div>    
+            </div>
         </div>
-        </div>
+    </section>
 
-        <div class="col-md-6">
-        <div class="mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/question.png" class="img-fluid object-fit-contain" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3 ms-2">
-                    <h4 class="card-title mb-2" style="color: #3F44E5;">Why to trust Us?</h4>
-                    <p class="card-text">
-                    Because We have a Good Track Record</p>
-                </div>
-            </div>    
-        </div>
-        </div>
-
-
-        <div class="col-md-6">
-        <div class="mb-4">
-            <div class="d-flex p-3 rounded-5">
-                <img src="images/map.png" class="img-fluid object-fit-contain" alt="Image" style="max-width: 80px;">
-                <div class="flex-grow-1 p-3 ms-2">
-                    <h4 class="card-title mb-2" style="color: #3F44E5;">Where are we located.</h4>
-                    <p class="card-text">
-                    You can find our Office in Kitchener, Ontario.</p>
-                </div>
-            </div>    
-        </div>
-        </div>
-     </div>
-
-
-        
-    </div>
-    <!-- Including the footer from a separate PHP file -->
     <?php include 'includes/footer.php'; ?>
 </body>
+
 </html>

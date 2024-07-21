@@ -131,25 +131,74 @@ insert into sub_categories values(27, 'Sofa');
 -- Insert Queries for Services
 INSERT INTO services (service_id, service_name, description, service_img, price)
 VALUES 
-(1, 'Half-Washroom Classic Cleaning', 'Half-Washroom Classic Cleaning', 'images/cleaning.png', 9.99),
-(2, 'Half-Washroom Deep Cleaning', 'Half-Washroom Deep Cleaning', 'images/cleaning.png', 14.99),
-(3, 'Full-Washroom Classic Cleaning', 'Full-Washroom Classic Cleaning', 'images/cleaning.png', 12.99),
-(4, 'Full-Washroom Deep Cleaning', 'Full-Washroom Deep Cleaning', 'images/cleaning.png', 16.99),
-(5, 'Move-In Cleaning', 'Move-in Kitchen Cleaning', 'images/cleaning.png', 49.99),
-(6, 'Shelve Cleaning', 'Kitchen Shelve Cleaning', 'images/cleaning.png', 20.99),
-(7, 'Chimney Cleaning', 'Kitchen Chimney Cleaning', 'images/cleaning.png', 20.99),
-(8, 'Refrigerator Cleaning', 'Refrigerator Cleaning', 'images/cleaning.png', 20.99),
-(9, 'Induction Cleaning', 'Induction Cleaning', 'images/cleaning.png', 20.99),
-(10, 'Microwave Cleaning', 'Induction Cleaning', 'images/cleaning.png', 20.99),
-(11, 'Classic Home Cleaning', 'Classic Home cleaning without Kitchen and Washroom', 'images/cleaning.png', 99.99),
-(12, 'Deep Home Cleaning', 'Deep Home cleaning', 'images/cleaning.png', 149.99),
-(13, 'Deep Carpet Cleaning', 'Deep Carpet Cleaning (vacuum)', 'images/cleaning.png', 99.99),
-(14, 'Cleaning/Disinfection', 'General Cleaning/Disinfection', 'images/cleaning.png', 100.00),
-(15, 'Appliance Repair', 'General Appliance Repair', 'images/gas-stove.png', 300.00),
-(16, 'Electrician', 'General Electrician Services', 'images/electrician.png', 200.00),
-(17, 'Furniture Assembly', 'General Furniture Assembly', 'images/sofa.png', 100.00),
-(18, 'Pest-Control', 'General Pest-Control', 'images/bug-spray.png', 200.00),
-(19, 'Plumbing', 'General Plumbing', 'images/plumbing.png', 100.00);
+(1, 'Half-Washroom Classic Cleaning', 'Half-Washroom Classic Cleaning', 'images/cleaning.jpg', 9.99),
+(2, 'Half-Washroom Deep Cleaning', 'Half-Washroom Deep Cleaning', 'images/cleaning.jpg', 14.99),
+(3, 'Full-Washroom Classic Cleaning', 'Full-Washroom Classic Cleaning', 'images/cleaning.jpg', 12.99),
+(4, 'Full-Washroom Deep Cleaning', 'Full-Washroom Deep Cleaning', 'images/cleaning.jpg', 16.99),
+(5, 'Move-In Cleaning', 'Move-in Kitchen Cleaning', 'images/cleaning.jpg', 49.99),
+(6, 'Shelve Cleaning', 'Kitchen Shelve Cleaning', 'images/cleaning.jpg', 20.99),
+(7, 'Chimney Cleaning', 'Kitchen Chimney Cleaning', 'images/cleaning.jpg', 20.99),
+(8, 'Refrigerator Cleaning', 'Refrigerator Cleaning', 'images/cleaning.jpg', 20.99),
+(9, 'Induction Cleaning', 'Induction Cleaning', 'images/cleaning.jpg', 20.99),
+(10, 'Microwave Cleaning', 'Induction Cleaning', 'images/cleaning.jpg', 20.99),
+(11, 'Classic Home Cleaning', 'Classic Home cleaning without Kitchen and Washroom', 'images/cleaning.jpg', 99.99),
+(12, 'Deep Home Cleaning', 'Deep Home cleaning', 'images/cleaning.jpg', 149.99),
+(13, 'Deep Carpet Cleaning', 'Deep Carpet Cleaning (vacuum)', 'images/cleaning.jpg', 99.99),
+(14, 'Tap Repair', 'Tap Repair', 'images/cleaning.jpg', 39.99),
+(15, 'Tap Installation/Replacement', 'Tap Installation/Replacement', 'images/cleaning.jpg',49.99),
+(16, 'Shower Repair', 'Shower Repair', 'images/cleaning.jpg', 39.99),
+(17, 'Shower Installation/Replacement', 'Shower Installation/Replacement', 'images/cleaning.jpg', 49.99),
+(18, 'Sink Repair', 'Sink Repair', 'images/cleaning.jpg', 49.99),
+(19, 'Sink Installation', 'Sink Installation', 'images/cleaning.jpg', 59.99),
+(20, 'Jet Spray Installation/Repair', 'Jet Spray Installation/Repair', 'images/cleaning.jpg', 49.99),
+(21, 'Minor Fittings/Installation', 'Minor Fittings/Installation',  'images/cleaning.jpg', 49.99),
+(22, 'Toilet Repair', 'Toilet Repair',  'images/cleaning.jpg', 79.99),
+(23, 'Toilet Installation/Replacement', 'Toilet Installation/Replacement', 'images/cleaning.jpg', 99.99),
+(24, 'Flush Tank Repair', 'Flush Tank Repair', 'images/cleaning.jpg', 79.99),
+(25, 'Flush Tank Replacement', 'Flush Tank Replacement', 'images/cleaning.jpg', 89.99),
+(26, 'Call an expert', 'Call an expert', 'images/cleaning.jpg', 89.99),
+(27, 'Switch Replacement/Installation', 'Switch Replacement/Installation', 'images/cleaning.jpg', 29.99),
+(28, 'Switch Repair', 'Switch Repair', 'images/cleaning.jpg', 29.99),
+(29, 'Socket Replacement/Installation', 'Socket Replacement/Installation', 'images/cleaning.jpg', 29.99),
+(30, 'Socket Repair', 'Socket Repair', 'images/cleaning.jpg', 29.99),
+(31, 'Ceiling Light Installation/Replacement', 'Ceiling Light Installation/Replacement', 'images/cleaning.jpg', 49.99),
+(32, 'Ceiling Light Repair', 'Ceiling Light Repair', 'images/cleaning.jpg', 59.99),
+(33, 'Decorative Light Installation', 'Decorative Light Installation', 'images/cleaning.jpg', 99.99),
+(34, 'Door bell Installation/Repair', 'Door bell Installation/Repair', 'images/cleaning.jpg', 49.99),
+(35, 'TV installation/uninstallation', 'TV installation/uninstallation', 'images/cleaning.jpg', 99.99),
+(36, 'Book an electrician', 'Book an electrician', 'images/cleaning.jpg', 49.99),
+(37, 'Mini Refrigerator Repair', 'Mini Refrigerator Repair', 'images/cleaning.jpg', 49.99),
+(38, 'Side by Side Refrigerator Repair', 'Side by Side Refrigerator Repair', 'images/cleaning.jpg', 49.99),
+(39, 'Top Freezer Refrigerator Repair', 'Top freezer Refrigerator Repair', 'images/cleaning.jpg', 49.99),
+(40, 'Botton Freezer Refrigerator Repair', 'Bottom freezer Refrigerator Repair', 'images/cleaning.jpg', 49.99),
+(41, 'Microwave Repair', 'Microwave Repair', 'images/cleaning.jpg', 29.99),
+(42, 'Induction Stove Repair', 'Induction Stove Repair', 'images/cleaning.jpg', 49.99),
+(43, 'Chimney Repair', 'Chimney Repair', 'images/cleaning.jpg', 49.99),
+(44, 'Front Load Washer Repair', 'Front Load Washer Repair', 'images/cleaning.jpg', 49.99),
+(45, 'Top Load Washer Repair', 'Top Load Washer Repair', 'images/cleaning.jpg', 49.99),
+(46, 'Front Load Dryer Repair', 'Front Load Dryer Repair', 'images/cleaning.jpg', 49.99),
+(47, 'Top Load Dryer Repair', 'Top Load Dryer Repair', 'images/cleaning.jpg', 49.99),
+(48, 'Dishwasher Repair', 'Dishwasher Repair', 'images/cleaning.jpg', 49.99),
+(49, 'Single Door', 'Single Door', 'images/cleaning.jpg', 49.99),
+(50, 'Double Door', 'Double Door', 'images/cleaning.jpg', 59.99),
+(51, 'Three Door', 'Three Door', 'images/cleaning.jpg', 69.99),
+(52, 'Side Table', 'Side Table', 'images/cleaning.jpg', 29.99),
+(53, 'Coffee Table', 'Coffee Table', 'images/cleaning.jpg', 39.99),
+(54, 'Drawer Chest', 'Drawer Chest', 'images/cleaning.jpg', 49.99),
+(55, 'Office Table', 'Office Table', 'images/cleaning.jpg', 29.99),
+(56, 'Office Chair', 'Office Chair', 'images/cleaning.jpg', 29.99),
+(57, 'Dining Table - 4 chairs', 'Dining Table - 4 chairs', 'images/cleaning.jpg', 49.99),
+(58, 'Dining Table - 6 chairs', 'Dining Table - 6 chairs', 'images/cleaning.jpg', 59.99),
+(59, 'Dining Table - 8 chairs', 'Dining Table - 8 chairs', 'images/cleaning.jpg', 69.99),
+(60, 'King Size', 'King Size', 'images/cleaning.jpg', 69.99),
+(61, 'Queen Size', 'Queen Size', 'images/cleaning.jpg', 59.99),
+(62, 'Double', 'Double', 'images/cleaning.jpg', 49.99),
+(63, 'Twin', 'Twin', 'images/cleaning.jpg', 49.99),
+(64, 'Hydraulic Bed', 'Hydraulic Bed', 'images/cleaning.jpg', 89.99),
+(65, 'Sofa - 2 seater', 'Sofa - 2 seater', 'images/cleaning.jpg', 89.99),
+(66, 'Sofa - 3 seater', 'Sofa - 3 seater', 'images/cleaning.jpg', 99.99),
+(67, 'Sofa - 4 seater', 'Sofa - 4 seater', 'images/cleaning.jpg', 99.99);
+
 
 -- Insert Queries for category_subcategory_service_mapping
 insert into category_subcategory_service_mapping values(1, 1, 1);
@@ -165,4 +214,62 @@ insert into category_subcategory_service_mapping values(1, 2, 10);
 insert into category_subcategory_service_mapping values(1, 3, 13);
 insert into category_subcategory_service_mapping values(1, 4, 11);
 insert into category_subcategory_service_mapping values(1, 4, 12);
+insert into category_subcategory_service_mapping values(2, 5, 14);
+insert into category_subcategory_service_mapping values(2, 5, 15);
+insert into category_subcategory_service_mapping values(2, 6, 16);
+insert into category_subcategory_service_mapping values(2, 6, 17);
+insert into category_subcategory_service_mapping values(2, 7, 18);
+insert into category_subcategory_service_mapping values(2, 7, 19);
+insert into category_subcategory_service_mapping values(2, 8, 20);
+insert into category_subcategory_service_mapping values(2, 9, 21);
+insert into category_subcategory_service_mapping values(2, 10, 22);
+insert into category_subcategory_service_mapping values(2, 10, 23);
+insert into category_subcategory_service_mapping values(2, 10, 24);
+insert into category_subcategory_service_mapping values(2, 11, 25);
+insert into category_subcategory_service_mapping values(2, 11, 26);
+insert into category_subcategory_service_mapping values(3, 12, 27);
+insert into category_subcategory_service_mapping values(3, 12, 28);
+insert into category_subcategory_service_mapping values(3, 12, 29);
+insert into category_subcategory_service_mapping values(3, 12, 30);
+insert into category_subcategory_service_mapping values(3, 13, 31);
+insert into category_subcategory_service_mapping values(3, 13, 32);
+insert into category_subcategory_service_mapping values(3, 13, 33);
+insert into category_subcategory_service_mapping values(3, 14, 34);
+insert into category_subcategory_service_mapping values(3, 15, 35);
+insert into category_subcategory_service_mapping values(3, 16, 36);
+insert into category_subcategory_service_mapping values(4, 17, 37);
+insert into category_subcategory_service_mapping values(4, 17, 38);
+insert into category_subcategory_service_mapping values(4, 17, 39);
+insert into category_subcategory_service_mapping values(4, 17, 40);
+insert into category_subcategory_service_mapping values(4, 18, 41);
+insert into category_subcategory_service_mapping values(4, 19, 42);
+insert into category_subcategory_service_mapping values(4, 20, 43);
+insert into category_subcategory_service_mapping values(4, 20, 44);
+insert into category_subcategory_service_mapping values(4, 21, 45);
+insert into category_subcategory_service_mapping values(4, 21, 46);
+insert into category_subcategory_service_mapping values(4, 22, 47);
+insert into category_subcategory_service_mapping values(4, 23, 48);
+insert into category_subcategory_service_mapping values(6, 24, 49);
+insert into category_subcategory_service_mapping values(6, 24, 50);
+insert into category_subcategory_service_mapping values(6, 24, 51);
+insert into category_subcategory_service_mapping values(6, 25, 52);
+insert into category_subcategory_service_mapping values(6, 25, 53);
+insert into category_subcategory_service_mapping values(6, 25, 54);
+insert into category_subcategory_service_mapping values(6, 25, 55);
+insert into category_subcategory_service_mapping values(6, 25, 56);
+insert into category_subcategory_service_mapping values(6, 25, 57);
+insert into category_subcategory_service_mapping values(6, 25, 58);
+insert into category_subcategory_service_mapping values(6, 26, 59);
+insert into category_subcategory_service_mapping values(6, 26, 60);
+insert into category_subcategory_service_mapping values(6, 26, 61);
+insert into category_subcategory_service_mapping values(6, 26, 62);
+insert into category_subcategory_service_mapping values(6, 26, 63);
+insert into category_subcategory_service_mapping values(6, 26, 64);
+insert into category_subcategory_service_mapping values(6, 27, 65);
+insert into category_subcategory_service_mapping values(6, 27, 66);
+insert into category_subcategory_service_mapping values(6, 27, 67);
+
+
+
+
 
