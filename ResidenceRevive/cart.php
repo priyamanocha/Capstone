@@ -1,47 +1,80 @@
 <?php
+
 session_start();
 
-// empty services in cart
-if (isset($_GET['action']) && $_GET['action'] == 'empty') {
-    unset($_SESSION['cart']);
-    header('Location: cart.php');
+//  only logged in user can vist cart
+if(!isset($_SESSION['email'])) {
+    header('Location: login.php');
     exit;
 }
 
-// add service to cart
-if (isset($_POST['service_id']) && isset($_POST['action']) && $_POST['action'] == 'add') {
-    $_SESSION['cart'][] = $_POST['service_id'];
-    $_SESSION['cart'] = array_unique($_SESSION['cart']);
-    echo json_encode(['status' => 'success', 'message' => 'Service added to cart']);
+
+require 'config/db.php';
+
+// Assume user email is stored in session
+$email = $_SESSION['email'];
+
+// empty cart
+if (isset($_GET['action']) && $_GET['action'] == 'empty') {
+
+    $sql = "DELETE FROM cart WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
 // remove item from cart
-if (isset($_GET['service_id']) && isset($_GET['action']) && $_GET['action'] == 'remove') {
-    $valueToDelete = $_GET['service_id'];
-    $cart_items = $_SESSION['cart'];
+if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['service_id'])) {
+    $service_id = $_GET['service_id'];
 
-    if (($key = array_search($valueToDelete, $cart_items)) !== false) {
-        unset($cart_items[$key]);
-    }
+    $sql = "DELETE FROM cart WHERE email = ? AND service_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $email, $service_id);
 
-    $_SESSION['cart'] = array_values($cart_items);
-    header('Location: cart.php?message=removed');
+    $stmt->execute();
+
+    header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
-include 'config/db.php';
 
-$cart_items = $_SESSION['cart'] ?? [];
 
-if ($cart_items) {
-    $ids = implode(", ", $cart_items);
-    $sql = "SELECT * FROM services WHERE service_id IN ($ids)";
-    $cart_services = $conn->query($sql);
-    $conn->close();
-}
+
+$sql = "
+SELECT 
+    cart.quantity, 
+    services.service_name, 
+    cart.service_id, 
+    services.service_img, 
+    services.price AS service_price, 
+    services.description AS service_description, 
+    categories.category_name, 
+    sub_categories.sub_category_name
+FROM 
+    cart
+JOIN 
+    services ON cart.service_id = services.service_id
+JOIN 
+    categories ON cart.category_id = categories.category_id
+JOIN 
+    sub_categories ON cart.subcategory_id = sub_categories.sub_category_id
+WHERE 
+    cart.email = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 
 $cart_total = 0;
+$cart_items = $result->num_rows > 0;
+
+
+$stmt->close();
+$conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +135,7 @@ $cart_total = 0;
             background-color: #f2f2f2;
         }
 
-        .table tbody + tbody {
+        .table tbody+tbody {
             border-top: 2px solid #dee2e6;
         }
 
@@ -165,61 +198,101 @@ $cart_total = 0;
 
     <div class="container my-4">
         <?php if (isset($_GET['message']) && $_GET['message'] == 'removed'): ?>
-            <div class="alert">Service removed from Cart.</div>
+        <div class="alert">Service removed from Cart.</div>
         <?php endif; ?>
 
         <h2>Cart Summary</h2>
 
         <?php if ($cart_items): ?>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Service</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th style="min-width: 140px;">
-                            <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=empty" class="btn btn-danger">Empty Cart</a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($cart_service = $cart_services->fetch_assoc()): ?>
-                        <tr>
-                            <td>
-                                <div class="border d-flex p-3 rounded-5 w-75">
-                                    <img src="<?php echo $cart_service['service_img']; ?>" class="img-fluid object-fit-contain" alt="Image">
-                                    <div class="p-3 ms-2">
-                                        <h6><?php echo $cart_service['service_name']; ?></h6>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control form-control-lg rounded-3 w-50" name="quantity1" id="quantity1" value="1">
-                            </td>
-                            <td>
-                                <span class="fw-bold"><?php echo $cart_service['price']; ?></span>
-                                <?php $cart_total += $cart_service['price']; ?>
-                            </td>
-                            <td>
-                                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=remove&service_id=<?php echo $cart_service['service_id']; ?>" class="btn text-danger fw-bold fs-3">&times;</a>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3" class="cart-total">Cart Total: $<?php echo $cart_total; ?></td>
-                        <td class="text-end">
-                            <form action="billing.php" method="POST" class="cart-buttons">
-                                <button type="submit">Proceed to Payment</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+        <table class="table" style="vertical-align: middle;">
+            <thead>
+                <tr>
+                    <th scope="col">Service</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th style="min-width: 140px;">
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=empty"
+                            class="btn btn-danger">Empty Cart</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($cart_service = $result->fetch_assoc()): ?>
+                <tr>
+                    <td>
+                        <div class="border d-flex p-3 rounded w-75">
+                            <img src="<?php echo $cart_service['service_img']; ?>"
+                                class="img-fluid object-fit-contain" alt="Image">
+                            <div class="p-2 ms-2">
+                                <h6><?php echo $cart_service['service_name']; ?>
+                                </h6>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" class="mt-3 form-control form-control-lg rounded-3 w-50" name="quantity1"
+                            id="quantity1"
+                            value="<?php echo $cart_service['quantity']; ?>">
+                    </td>
+                    <td>
+                        <p class="fw-bold mt-3">
+                            <?php echo $cart_service['service_price']; ?>
+                        </p>
+                        <?php $cart_total += $cart_service['service_price'] * $cart_service['quantity']; ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=remove&service_id=<?php echo $cart_service['service_id']; ?>"
+                            class="btn text-danger fw-bold fs-3">&times;</a>
+                    </td>
+                </tr>
+                <?php endwhile; ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="cart-total" style="font-size: 1.2rem;">
+
+
+
+                        <?php
+
+                    $tax_rate = 0.13;
+
+            $tax_amount = $cart_total * $tax_rate;
+            $total_with_tax = $cart_total + $tax_amount;
+
+
+            ?>
+
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Cart Total:</td>
+                                <td>$<?php echo number_format($cart_total, 2); ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tax Amount (13% of Cart Total):</td>
+                                <td>$<?php echo number_format($tax_amount, 2); ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total with Tax:</td>
+                                <td>$<?php echo number_format($total_with_tax, 2); ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="text-end">
+                        <form action="billing.php" method="POST" class="cart-buttons">
+                            <button type="submit">Proceed to Payment</button>
+                        </form>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
         <?php else: ?>
-            <div class="alert alert-danger">No Services in Cart</div>
+        <div class="alert alert-danger">No Services in Cart</div>
         <?php endif; ?>
+
     </div>
 
     <?php include 'includes/footer.php'; ?>
