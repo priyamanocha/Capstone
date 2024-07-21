@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 // config/db.php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "residence_revive";
 
 // Create connection
