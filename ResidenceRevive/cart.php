@@ -40,6 +40,28 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['servic
 }
 
 
+// update item from cart
+if (isset($_GET['action'], $_GET['service_id'], $_GET['quantity']) && $_GET['action'] == 'update') {
+    
+    $service_id = $_GET['service_id'];
+    $quantity = $_GET['quantity'];
+
+    if($quantity == 0){
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit; 
+    }
+
+    $sql = "UPDATE cart SET quantity = ? WHERE email = ? AND service_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isi", $quantity, $email, $service_id);
+
+    $stmt->execute();
+
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+
 
 
 $sql = "
@@ -230,9 +252,16 @@ $conn->close();
                         </div>
                     </td>
                     <td>
-                        <input type="number" class="mt-3 form-control form-control-lg rounded-3 w-50" name="quantity1"
-                            id="quantity1"
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="d-flex alig-items-center">
+                       
+                        <input type="hidden" value="update" name="action">
+                        <input type="hidden" value="<?php echo $cart_service['service_id']; ?>" name="service_id">
+                        <input type="number" class="me-1 form-control rounded-3 w-50" name="quantity"
+                            id="quantity" min="1"
                             value="<?php echo $cart_service['quantity']; ?>">
+                            <button type="submit" class="btn btn-sm py-0 btn-primary">Update</button>
+                        </form>
+
                     </td>
                     <td>
                         <p class="fw-bold mt-3">
