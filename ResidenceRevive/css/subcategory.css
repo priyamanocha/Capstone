@@ -8,7 +8,7 @@ body {
 
 /* Container for subcategories */
 .subcategories {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -50,8 +50,8 @@ body {
 }
 
 .subcategory-card img {
-    max-width: 60px;
-    height: auto;
+    width: 200px;
+    height: 150px;
 }
 
 .subcategory-info {
@@ -66,6 +66,7 @@ body {
     color: #333;
     margin: 0;
     font-weight: 500;
+    font-family: math;
 }
 
 .subcategory-info p {
@@ -148,7 +149,7 @@ body {
 
 .service-info button {
     padding: 10px 20px;
-    width: 200px;
+    width: 150px;
     font-size: 0.9rem;
     background-color: #007bff;
     color: white;
@@ -188,7 +189,8 @@ body {
 
     .service-info {
         flex-direction: column;
-        align-items: flex-start;
+        /* align-items: flex-start; */
+        align-items: center;
     }
 
     .service-info .service-price {

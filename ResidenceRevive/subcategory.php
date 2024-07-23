@@ -35,10 +35,33 @@ include 'includes/header.php';
                 <?php 
                 // Example array of icons (you can modify this to fit your actual icons)
                 $sub_icons = [
-                    'Bathroom Cleaning' => './images/slider_1.png',
-                    'Kitchen Cleaning' => './images/slider_2.png',
-                    'Carpet Cleaning' => './images/slider_3.png',
-                    'Home Cleaning' => './images/slider_3.png',
+                    'Bathroom Cleaning' => './images//service-images/BathroomCleaning.jpg',
+                    'Kitchen Cleaning' => './images/service-images/KitchenCleaning.jpg',
+                    'Carpet Cleaning' => './images/service-images/CarpetCleaning.jpg',
+                    'Home Cleaning' => './images/service-images/HomeCleaning.jpg',
+                    'Refrigerator'=> './images/service-images/Refrigerator.jpg',
+                    'Microwave'=> './images/service-images/Microwave.jpg',
+                    'Induction'=> './images/service-images/Induction.jpg',
+                    'Chimney'=> './images/service-images/Chimney.jpg',
+                    'Washer'=> './images/service-images/Washer.jpg',
+                    'Dryer'=> './images/service-images/Dryer.jpg',
+                    'Dish Washer'=> './images/service-images/DishWasher.jpg',
+                    'Switch and Socket'=> './images/service-images/SwitchandSocket.jpg',
+                    'Light'=> './images/service-images/Light.jpg',
+                    'Doorbell'=> './images/service-images/Doorbell.jpg',
+                    'Television'=> './images/service-images/Television.jpg',
+                    'Expert Consultation'=> './images/service-images/ExpertConsultation.jpg',
+                    'Wardrobe'=> './images/service-images/Wardrobe.jpg',
+                    'Tables/Drawers/Workspaces'=> './images/service-images/TablesDrawersWorkspaces.jpg',
+                    'Bed'=> './images/service-images/Bed.jpg',
+                    'Sofa'=> './images/service-images/Sofa.jpg',
+                    'Tap'=> './images/service-images/Tap.jpg',
+                    'Basin & Sink'=> './images/service-images/BasinSink.jpg',
+                    'Bath fittings'=> './images/service-images/Bathfittings.jpg',
+                    'Minor Fitting/Installation'=> './images/service-images/MinorFittingInstallation.jpg',
+                    'Toilet'=> './images/service-images/Toilet.jpg',
+                    'Shower'=> './images/service-images/Shower.jpg',
+                    'Others'=> './images/service-images/Others.jpg',
                     // Add more subcategories with their respective icon paths
                 ];
                 ?>

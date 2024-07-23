@@ -242,9 +242,9 @@ $conn->close();
                 <?php while ($cart_service = $result->fetch_assoc()): ?>
                 <tr>
                     <td>
-                        <div class="border d-flex p-3 rounded w-75">
-                            <img src="<?php echo $cart_service['service_img']; ?>"
-                                class="img-fluid object-fit-contain" alt="Image">
+                        <div class=" d-flex p-3 rounded w-75">
+                            <!-- <img src="<?php echo $cart_service['service_img']; ?>"
+                                class="img-fluid object-fit-contain" alt="Image"> -->
                             <div class="p-2 ms-2">
                                 <h6><?php echo $cart_service['service_name']; ?>
                                 </h6>
