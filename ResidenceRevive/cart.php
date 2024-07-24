@@ -243,17 +243,16 @@ $conn->close();
                         </div>
                     </td>
                     <td>
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="d-flex alig-items-center">
-                       
-                        <input type="hidden" value="update" name="action">
-                        <input type="hidden" value="<?php echo $cart_service['service_id']; ?>" name="service_id">
-                        <input type="number" class="me-1 form-control rounded-3 w-50" name="quantity"
-                            id="quantity" min="1"
-                            value="<?php echo $cart_service['quantity']; ?>">
-                            <button type="submit" class="btn btn-sm py-0 btn-primary">Update</button>
-                        </form>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="d-flex align-items-center">
+        <input type="hidden" value="update" name="action">
+        <input type="hidden" value="<?php echo $cart_service['service_id']; ?>" name="service_id">
+        <label for="quantity">Quantity:</label>
+        <input type="number" class="me-1 form-control rounded-3 w-50" name="quantity" id="quantity" min="1"
+            value="<?php echo $cart_service['quantity']; ?>">
+        <button type="submit" class="btn btn-sm py-0 btn-primary">Update</button>
+    </form>
+</td>
 
-                    </td>
                     <td>
                         <p class="fw-bold mt-3">
                             <?php echo $cart_service['service_price']; ?>

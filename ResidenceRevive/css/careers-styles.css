@@ -12,8 +12,8 @@ body {
 }
 
 .hero {
-    background-color: #003366;
-    color: #fff;
+    background-color: aliceblue;
+    color: black;
     width: 100%;
     text-align: center;
     height: 500px;
@@ -54,7 +54,7 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@ body {
 
 .hero .circle .arrow-down {
     font-size: 24px;
-    color: #fff;
+    color: black;
 }
 
 .section {
@@ -103,42 +103,26 @@ body {
     color: #777;
 }
 
-.container-split {
+.map {
     display: flex;
-    justify-content: space-between;
-}
-
-.contact-form, .map {
-    width: 48%;
+    width: 100%;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form h3, .map h3 {
+.map h3 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.contact-form button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
+@media (min-width: 768px) {
+    .container-split {
+        display: flex;
+        justify-content: space-between;
+    }
+ .map {
+        width: 100%;
+    }
 }
