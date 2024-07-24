@@ -107,9 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p><b>Phone:</b> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
                 <p><b>Address:</b> 21 Sportsman Hill St, Kitchener, Ontario, N2P L63.</p>
                 <div class="social-links-contact-us">
-                    <a href="#" class="icon-facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon-facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+<a href="#" class="icon-instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+<a href="#" class="icon-twitter" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="contact-form-container">

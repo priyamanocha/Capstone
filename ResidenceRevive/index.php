@@ -24,7 +24,7 @@ $icons = [
 ?>
 <div class="background-image-container">
     <h1 class="image-text">Professional Residence Services</h1>
-    <h3 class="image-text-h3">Home Improvement, Maintenance, and Repair</h3>
+    <h2 class="image-text-h2">Home Improvement, Maintenance, and Repair</h2>
     <p class="bold"><a href="signup.php" class="image-button">Signup</a> with us to Book Services!</p>
 </div>
 <h1 class="heading">Residence Revive Services</h1>
