@@ -45,7 +45,7 @@ if (isset($_POST['action'], $_POST['service_id'], $_POST['quantity']) && $_POST[
     $service_id = $_POST['service_id'];
     $quantity = $_POST['quantity'];
 
-    if ($quantity <= 0) {
+    if (!$quantity || $quantity <= 0) {
         echo json_encode(['status' => 'error', 'message' => 'Quantity cannot be Zero.']);
         exit;
     }
@@ -255,8 +255,10 @@ $conn->close();
                                 value="<?php echo $cart_service['service_id']; ?>"
                                 name="service_id">
 
-                            <input type="number" class="me-1 form-control rounded-3 w-50" name="quantity" id="quantity"
-                                min="1" autocomplete="off"
+                            <input type="number" class="me-1 form-control rounded-3 w-50 quantity-input" name="quantity"
+                                id="quantity" min="1" autocomplete="off"
+                                id="quantity-<?php echo $cart_service['service_id']; ?>"
+                                data-service-id="<?php echo $cart_service['service_id']; ?>"
                                 value="<?php echo $cart_service['quantity']; ?>">
                         </form>
                     </td>
@@ -327,15 +329,18 @@ $conn->close();
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
-            document.querySelector('[name=quantity]').addEventListener('input', updateQuantity);
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', updateQuantity);
+            });
         });
 
         // update service quantity
         function updateQuantity() {
 
-            let service_id = document.querySelector('[name=service_id]').value;
-            let quantity = document.querySelector('[name=quantity]').value;
+            let input = event.target;
+            let service_id = input.getAttribute('data-service-id');
+            let quantity = input.value;
+
 
             fetch('cart.php', {
                     method: 'POST',
