@@ -2,21 +2,22 @@
 
 session_start();
 
-//  only logged in user can vist cart
-if(!isset($_SESSION['email'])) {
+//  only logged in user can visit cart
+if (!isset($_SESSION['email'])) {
     header('Location: login.php');
     exit;
 }
 
-
 require 'config/db.php';
+include 'includes/functions.php';
+
+$categories = getAllCategories($conn); // Fetch category names
 
 // Assume user email is stored in session
 $email = $_SESSION['email'];
 
 // empty cart
 if (isset($_GET['action']) && $_GET['action'] == 'empty') {
-
     $sql = "DELETE FROM cart WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -32,37 +33,28 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['servic
     $sql = "DELETE FROM cart WHERE email = ? AND service_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("si", $email, $service_id);
-
     $stmt->execute();
-
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
-
 // update item from cart
 if (isset($_GET['action'], $_GET['service_id'], $_GET['quantity']) && $_GET['action'] == 'update') {
-    
     $service_id = $_GET['service_id'];
     $quantity = $_GET['quantity'];
 
-    if($quantity == 0){
+    if ($quantity == 0) {
         header("Location: " . $_SERVER['PHP_SELF']);
-        exit; 
+        exit;
     }
 
     $sql = "UPDATE cart SET quantity = ? WHERE email = ? AND service_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("isi", $quantity, $email, $service_id);
-
     $stmt->execute();
-
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
-
-
-
 
 $sql = "
 SELECT 
@@ -92,7 +84,6 @@ $result = $stmt->get_result();
 
 $cart_total = 0;
 $cart_items = $result->num_rows > 0;
-
 
 $stmt->close();
 $conn->close();

@@ -2,6 +2,9 @@
 // Include necessary files
 include 'config/db.php'; // Adjust path as per your file structure
 include 'includes/functions.php'; // Adjust path as per your file structure
+
+$categories = getAllCategories($conn); // Fetch category names
+
 include 'includes/header.php';
 ?>
 
@@ -35,7 +38,7 @@ include 'includes/header.php';
                 <?php 
                 // Example array of icons (you can modify this to fit your actual icons)
                 $sub_icons = [
-                    'Bathroom Cleaning' => './images//service-images/BathroomCleaning.jpg',
+                    'Bathroom Cleaning' => './images/service-images/BathroomCleaning.jpg',
                     'Kitchen Cleaning' => './images/service-images/KitchenCleaning.jpg',
                     'Carpet Cleaning' => './images/service-images/CarpetCleaning.jpg',
                     'Home Cleaning' => './images/service-images/HomeCleaning.jpg',
@@ -75,8 +78,6 @@ include 'includes/header.php';
                     <h2><?php echo $subcategory['sub_category_name']; ?></h2>
                     <?php if (isset($subcategory['description'])): ?>
                         <p><?php echo $subcategory['description']; ?></p>
-                    <?php else: ?>
-                        <!-- <p>No description available.</p> -->
                     <?php endif; ?>
                     <a href="#" class="view-services" data-sub-category-id="<?php echo $subcategory['sub_category_id']; ?>">View Services</a>
                 </div>

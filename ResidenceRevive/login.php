@@ -1,11 +1,12 @@
-<!-- We are starting the session in order to track user login and other session-related information -->
-
 <?php
 $email = $password = "";
 $email_err = $password_err = $email_password_err = "";
 
 // Including the database configuration file to establish a db connection
 include 'config/db.php';
+include 'includes/functions.php';
+
+$categories = getAllCategories($conn); // Fetch category names
 
 // Checking if my request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -80,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="login.php" method="POST">
                     <p>Create an account? <a href="signup.php">Register</a></p>
                     <div class="form-group">
-                <span class="error"><?php echo $email_password_err; ?></span>
-            </div>
+                        <span class="error"><?php echo $email_password_err; ?></span>
+                    </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">

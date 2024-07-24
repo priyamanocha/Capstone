@@ -7,9 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
 $title = "Home";
 include 'config/db.php';
 include 'includes/functions.php';
-include 'includes/header.php';
 
 $categories = getAllCategories($conn); // Fetch category names
+
+include 'includes/header.php';
+
 $icons = [
     'Cleaning/Disinfection' => './images/cleaning.jpg',
     'Appliance Repair' => './images/repair.jpg',

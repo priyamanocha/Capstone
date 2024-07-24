@@ -3,6 +3,10 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 include 'config/db.php';
+include 'includes/functions.php';
+
+$categories = getAllCategories($conn); // Fetch category names
+
 $first_name = $last_name = $email = $phone = $message = "";
 $first_name_err = $last_name_err = $email_err = $phone_err = $message_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -96,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php endif; ?>
         </div>
 
-
         <div class="contact-page-container" id="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>
@@ -108,7 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#" class="icon-instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="icon-twitter"><i class="fab fa-twitter"></i></a>
                 </div>
-
             </div>
             <div class="contact-form-container">
                 <h1>Contact Us</h1>
@@ -140,8 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter Message"
-                            value="<?php echo $message; ?>"></textarea>
+                        <textarea id="message" name="message" placeholder="Enter Message"></textarea>
                         <span class="error"><?php echo $message_err; ?></span>
                     </div>
                     <input type="submit" value="Submit">
