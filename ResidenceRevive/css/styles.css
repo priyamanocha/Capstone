@@ -432,8 +432,9 @@ nav {
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: green;
+    background-color: gray;
     color: white;
+    width: 200px;
 }
 
 /* CSS for Terms and Conditions */

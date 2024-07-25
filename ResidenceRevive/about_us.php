@@ -20,9 +20,14 @@
     <?php include 'includes/header.php'; ?>
 
     <!-- New Image Section Below Nav Bar -->
-    <section class="hero-image">
+    <div class="background-image-container">
+            <a href="#contact-page-container">
+                <h1 class="mb-2">About Us</h1>
+            </a>
+        </div>
+    <!-- <section class="hero-image">
         <img src="images/background.jpg" alt="Carpet Cleaning">
-    </section>
+    </section> -->
 
     <section class="about-section">
         <div class="about-content">
