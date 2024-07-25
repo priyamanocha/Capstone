@@ -44,8 +44,8 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #F16A43 !important;
-    border-color: #F16A43 !important;
+    background-color: #2C559B !important;
+    border-color: #2C559B !important;
     color: #fff;
     padding: 10px 20px !important;
     font-size: 1rem; 
@@ -56,8 +56,8 @@ h2 {
 }
 
 .btn-primary:hover {
-    background-color: #FF3D2E !important;
-    border-color: #FF3D2E !important;
+    background-color: #2C559B !important;
+    border-color: #2C559B !important;
 }
 
 .mt-5 {
@@ -93,6 +93,6 @@ h2 {
 }
 
 .alert-error {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #2C559B;
+    border-color: #2C559B;
 }

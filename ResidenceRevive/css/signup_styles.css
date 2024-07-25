@@ -81,7 +81,7 @@ text-align: center;
 
 /* Hover styles for the submit button inside the signup container */
 .signup-container input[type="submit"]:hover {
-    background-color: #F16A43;
+    background-color: #2C559B;
 }
 
 .signup-container #strength-label {

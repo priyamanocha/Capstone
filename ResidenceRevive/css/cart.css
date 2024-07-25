@@ -25,7 +25,7 @@ h2 {
 }
 
 .alert.alert-danger {
-    background-color: #f44336;
+    background-color: #2C559B;
 }
 
 .table {
@@ -59,8 +59,8 @@ h2 {
 }
 
 .table .btn-danger {
-    background-color: #ff6f61;
-    border-color: #ff6f61;
+    background-color: #2C559B;
+    border-color: #2C559B;
 }
 
 .table .btn-danger:hover {
