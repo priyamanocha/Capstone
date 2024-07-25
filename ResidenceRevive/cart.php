@@ -2,21 +2,22 @@
 
 session_start();
 
-//  only logged in user can vist cart
-if(!isset($_SESSION['email'])) {
+//  only logged in user can visit cart
+if (!isset($_SESSION['email'])) {
     header('Location: login.php');
     exit;
 }
 
-
 require 'config/db.php';
+include 'includes/functions.php';
+
+$categories = getAllCategories($conn);
 
 // Assume user email is stored in session
 $email = $_SESSION['email'];
 
 // empty cart
 if (isset($_GET['action']) && $_GET['action'] == 'empty') {
-
     $sql = "DELETE FROM cart WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -32,58 +33,51 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['servic
     $sql = "DELETE FROM cart WHERE email = ? AND service_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("si", $email, $service_id);
-
     $stmt->execute();
-
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
-
 // update item from cart
-if (isset($_GET['action'], $_GET['service_id'], $_GET['quantity']) && $_GET['action'] == 'update') {
-    
-    $service_id = $_GET['service_id'];
-    $quantity = $_GET['quantity'];
+if (isset($_POST['action'], $_POST['service_id'], $_POST['quantity']) && $_POST['action'] == 'update') {
 
-    if($quantity == 0){
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit; 
+
+    $service_id = $_POST['service_id'];
+    $quantity = $_POST['quantity'];
+
+    if (!$quantity || $quantity <= 0) {
+        echo json_encode(['status' => 'error', 'message' => 'Quantity cannot be Zero.']);
+        exit;
     }
 
     $sql = "UPDATE cart SET quantity = ? WHERE email = ? AND service_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("isi", $quantity, $email, $service_id);
-
     $stmt->execute();
 
-    header("Location: " . $_SERVER['PHP_SELF']);
+    echo json_encode(['status' => 'success', 'message' => 'Quantity updated.']);
     exit;
 }
 
-
-
-
-$sql = "
-SELECT 
-    cart.quantity, 
-    services.service_name, 
-    cart.service_id, 
-    services.service_img, 
-    services.price AS service_price, 
-    services.description AS service_description, 
-    categories.category_name, 
-    sub_categories.sub_category_name
-FROM 
-    cart
-JOIN 
-    services ON cart.service_id = services.service_id
-JOIN 
-    categories ON cart.category_id = categories.category_id
-JOIN 
-    sub_categories ON cart.subcategory_id = sub_categories.sub_category_id
-WHERE 
-    cart.email = ?";
+$sql = "SELECT 
+        cart.quantity, 
+        services.service_name, 
+        cart.service_id, 
+        services.service_img, 
+        services.price AS service_price, 
+        services.description AS service_description, 
+        categories.category_name, 
+        sub_categories.sub_category_name
+    FROM 
+        cart
+    JOIN 
+        services ON cart.service_id = services.service_id
+    JOIN 
+        categories ON cart.category_id = categories.category_id
+    JOIN 
+        sub_categories ON cart.subcategory_id = sub_categories.sub_category_id
+    WHERE 
+        cart.email = ?";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
@@ -92,7 +86,6 @@ $result = $stmt->get_result();
 
 $cart_total = 0;
 $cart_items = $result->num_rows > 0;
-
 
 $stmt->close();
 $conn->close();
@@ -242,9 +235,9 @@ $conn->close();
                 <?php while ($cart_service = $result->fetch_assoc()): ?>
                 <tr>
                     <td>
-                        <div class="border d-flex p-3 rounded w-75">
-                            <img src="<?php echo $cart_service['service_img']; ?>"
-                                class="img-fluid object-fit-contain" alt="Image">
+                        <div class=" d-flex p-3 rounded w-75">
+                            <!-- <img src="<?php echo $cart_service['service_img']; ?>"
+                            class="img-fluid object-fit-contain" alt="Image"> -->
                             <div class="p-2 ms-2">
                                 <h6><?php echo $cart_service['service_name']; ?>
                                 </h6>
@@ -252,17 +245,24 @@ $conn->close();
                         </div>
                     </td>
                     <td>
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="d-flex alig-items-center">
-                       
-                        <input type="hidden" value="update" name="action">
-                        <input type="hidden" value="<?php echo $cart_service['service_id']; ?>" name="service_id">
-                        <input type="number" class="me-1 form-control rounded-3 w-50" name="quantity"
-                            id="quantity" min="1"
-                            value="<?php echo $cart_service['quantity']; ?>">
-                            <button type="submit" class="btn btn-sm py-0 btn-primary">Update</button>
-                        </form>
+                        <form
+                            action="<?php echo $_SERVER['PHP_SELF']; ?>"
+                            class="d-flex align-items-center">
 
+                            <input type="hidden" value="update" name="action">
+
+                            <input type="hidden"
+                                value="<?php echo $cart_service['service_id']; ?>"
+                                name="service_id">
+
+                            <input type="number" class="me-1 form-control rounded-3 w-50 quantity-input" name="quantity"
+                                id="quantity" min="1" autocomplete="off"
+                                id="quantity-<?php echo $cart_service['service_id']; ?>"
+                                data-service-id="<?php echo $cart_service['service_id']; ?>"
+                                value="<?php echo $cart_service['quantity']; ?>">
+                        </form>
                     </td>
+
                     <td>
                         <p class="fw-bold mt-3">
                             <?php echo $cart_service['service_price']; ?>
@@ -284,15 +284,15 @@ $conn->close();
 
                         <?php
 
-                    $tax_rate = 0.13;
+                        $tax_rate = 0.13;
 
             $tax_amount = $cart_total * $tax_rate;
             $total_with_tax = $cart_total + $tax_amount;
 
-
             ?>
 
                         <table class="table table-bordered">
+
                             <tr>
                                 <td>Cart Total:</td>
                                 <td>$<?php echo number_format($cart_total, 2); ?>
@@ -310,6 +310,7 @@ $conn->close();
                             </tr>
                         </table>
                     </td>
+
                     <td class="text-end">
                         <form action="billing.php" method="POST" class="cart-buttons">
                             <button type="submit">Proceed to Payment</button>
@@ -325,6 +326,51 @@ $conn->close();
     </div>
 
     <?php include 'includes/footer.php'; ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', updateQuantity);
+            });
+        });
+
+        // update service quantity
+        function updateQuantity() {
+
+            let input = event.target;
+            let service_id = input.getAttribute('data-service-id');
+            let quantity = input.value;
+
+
+            fetch('cart.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        action: 'update',
+                        service_id: service_id,
+                        quantity: parseInt(quantity)
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        console.log(data.message);
+                        // refresh
+                        window.location.reload();
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    console.log('An error occurred while updating the quantity.');
+                });
+
+        }
+    </script>
+
 </body>
 
 </html>

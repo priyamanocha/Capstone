@@ -14,7 +14,7 @@
         <div class="privacy_policy_container">
             <h1>Privacy Policy</h1><br>
             <p>Effective Date: 27/06/2024</p>
-            <h3>Introduction</h3>
+            <h2>Introduction</h2>
             <p>Welcome to Residence Revive. We value your privacy and are committed to protecting your personal
                 information. This Privacy Policy outlines how we collect, use, and protect your data when you use our
                 services.</p>
@@ -22,12 +22,12 @@
             <h3>Information We Collect</h3>
             <ul>
                 <li>
-                    <h5>Personal Information</h5>
+                    <h4>Personal Information</h4>
                     <p>When you use our services, we may collect personal information such as your name, email address,
                         phone number, and payment details.</p>
                 </li>
                 <li>
-                    <h5>Non-Personal Information</h5>
+                    <h4>Non-Personal Information</h4>
                     <p>We may also collect non-personal information about your interaction with our website, such as
                         your IP address, browser type, and browsing behavior.</p>
                 </li>
@@ -35,12 +35,12 @@
             <h3>How We Use Your Information</h3>
             <ul>
                 <li>
-                    <h5>Providing Services</h5>
+                    <h4>Providing Services</h4>
                     <p>We use your personal information to provide and improve our cleaning services, process payments,
                         and communicate with you about your appointments and our services.</p>
                 </li>
                 <li>
-                    <h5>Marketing and Promotions</h5>
+                    <h4>Marketing and Promotions</h4>
                     <p>We may use your personal information to send you promotional materials and offers about our
                         services. You can opt-out of receiving marketing communications at any time.</p>
                 </li>
@@ -48,12 +48,12 @@
             <h3>Information Sharing and Disclosure</h3>
             <ul>
                 <li>
-                    <h5>Service Providers</h5>
+                    <h4>Service Providers</h4>
                     <p>We may share your information with third-party service providers who assist us in delivering our
                         services, such as payment processors and customer support.</p>
                 </li>
                 <li>
-                    <h5>Legal Requirements</h5>
+                    <h4>Legal Requirements</h4>
                     <p>We may disclose your information if required by law or if we believe that such action is
                         necessary to comply with legal obligations, protect our rights, or ensure the safety of our
                         users.</p>
@@ -66,7 +66,7 @@
             <h3>Your Rights</h3>
             <ul>
                 <li>
-                    <h5>Access and Correction</h5>
+                    <h4>Access and Correction</h4>
                     <p>You have the right to access and correct your personal information. You can update your
                         information by contacting us directly.</p>
                 </li>

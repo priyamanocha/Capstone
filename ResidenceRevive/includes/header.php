@@ -1,4 +1,3 @@
-
 <?php
 $first_name = "";
 // setting firstname and lastname from session

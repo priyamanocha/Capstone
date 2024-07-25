@@ -7,9 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
 $title = "Home";
 include 'config/db.php';
 include 'includes/functions.php';
-include 'includes/header.php';
 
 $categories = getAllCategories($conn); // Fetch category names
+
+include 'includes/header.php';
+
 $icons = [
     'Cleaning/Disinfection' => './images/cleaning.jpg',
     'Appliance Repair' => './images/repair.jpg',
@@ -22,7 +24,7 @@ $icons = [
 ?>
 <div class="background-image-container">
     <h1 class="image-text">Professional Residence Services</h1>
-    <h3 class="image-text-h3">Home Improvement, Maintenance, and Repair</h3>
+    <h2 class="image-text-h2">Home Improvement, Maintenance, and Repair</h2>
     <p class="bold"><a href="signup.php" class="image-button">Signup</a> with us to Book Services!</p>
 </div>
 <h1 class="heading">Residence Revive Services</h1>
