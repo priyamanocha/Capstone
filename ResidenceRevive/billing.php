@@ -6,7 +6,7 @@ $email = "";
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 }
-// header('Content-Type: application/json');
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion'])) {
 
@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     $tax = round($tax, 2);
     $totalAmount = round($totalAmount, 2);
 
+
     // Insert booking information into booking table
     $sql = "INSERT INTO booking (email, booking_date, booking_time, service_date, service_time, booking_first_name, booking_last_name, booking_contact_number, address, city, state, postal_code, amount, tax, total_amount) 
             VALUES (?, NOW(), NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -89,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         $stmt->bind_param('s', $email);
         $stmt->execute();
         echo json_encode(['status' => 'success', 'message' => 'Your service is booked successfully!', 'booking_id' => $booking_id]);
-       
+
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Error: ' . $stmt->error]);
     }
@@ -222,9 +223,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                             <span class="error"></span>
                         </div>
                     </div>
-
-                    <div class="text-center">
-                        <button type="button" class="btn btn-success mb-3" onclick="handleCashOnCompletion()">Cash On
+                    <div class="mb-4">
+                        <h1 class="h3">Payment</h1>
+                        <hr>
+                    </div>
+                    <div class="payment-buttons">
+                        <button type="button" class="payment-buttons btn gpay-card-info-container btn-secondary"
+                            onclick="handleCashOnCompletion()">Cash On
                             Completion</button>
                     </div>
                     <div class="payment-buttons">
@@ -410,13 +415,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
 
         paypal.Buttons({
             createOrder: function (data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '0.01'
-                        }
-                    }]
-                });
+                if (validateForm()) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '0.01'
+                            }
+                        }]
+                    });
+                }
             },
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
@@ -482,24 +489,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
             });
 
         function onGooglePaymentButtonClicked() {
-            const paymentDataRequest = Object.assign({}, baseRequest);
-            paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
-            paymentDataRequest.transactionInfo = {
-                totalPriceStatus: 'FINAL',
-                totalPrice: '0.01',
-                currencyCode: 'USD'
-            };
-            paymentDataRequest.merchantInfo = {
-                merchantName: 'Residence Revive'
-            };
+            if (validateForm()) {
+                const paymentDataRequest = Object.assign({}, baseRequest);
+                paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
+                paymentDataRequest.transactionInfo = {
+                    totalPriceStatus: 'FINAL',
+                    totalPrice: '0.01',
+                    currencyCode: 'USD'
+                };
+                paymentDataRequest.merchantInfo = {
+                    merchantName: 'Residence Revive'
+                };
 
-            paymentsClient.loadPaymentData(paymentDataRequest)
-                .then(function (paymentData) {
-                    processPayment(paymentData);
-                })
-                .catch(function (err) {
-                    console.error(err);
-                });
+                paymentsClient.loadPaymentData(paymentDataRequest)
+                    .then(function (paymentData) {
+                        processPayment(paymentData);
+                    })
+                    .catch(function (err) {
+                        console.error(err);
+                    });
+            }
         }
 
         function processPayment(paymentData) {
