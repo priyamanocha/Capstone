@@ -768,7 +768,7 @@ button {
 }
 
 .contact-form-container input[type="submit"] {
-    background-color: #F16A43;
+    background-color: #2C559B !important;
     color: white;
     padding: 10px 20px;
     border: none;

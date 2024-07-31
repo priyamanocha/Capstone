@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Login to Residence Revive</h2>
                 <!-- The login form that sends a POST request to login_action.php when the user submit the form -->
                 <form action="login.php" method="POST">
-                    <p>Create an account? <a href="signup.php">Register</a></p>
+                    <p>Create an account? <a href="signup.php" style="color: #004DA3;">Register</a></p>
                     <div class="form-group">
                         <span class="error"><?php echo $email_password_err; ?></span>
                     </div>

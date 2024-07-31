@@ -161,8 +161,8 @@ $conn->close();
         }
 
         .table .btn-danger {
-            background-color: #ff6f61;
-            border-color: #ff6f61;
+            background-color: ##2C559B !important;
+            border-color: ##2C559B !important;
         }
 
         .table .btn-danger:hover {
@@ -191,9 +191,20 @@ $conn->close();
             text-align: right;
             margin-top: 20px;
         }
+        .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 
         .cart-buttons button {
-            background-color: #ff6f61;
+            background-color: #2C559B !important;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -227,7 +238,7 @@ $conn->close();
                     <th scope="col">Price</th>
                     <th style="min-width: 140px;">
                         <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=empty"
-                            class="btn btn-danger">Empty Cart</a>
+                            class="btn btn-danger" style="background-color: #2C559B; border-color: #2C559B ">Empty Cart</a>
                     </th>
                 </tr>
             </thead>
@@ -254,8 +265,10 @@ $conn->close();
                             <input type="hidden"
                                 value="<?php echo $cart_service['service_id']; ?>"
                                 name="service_id">
-
-                            <input type="number" class="me-1 form-control rounded-3 w-50 quantity-input" name="quantity"
+                                <label for="quantity-<?php echo $cart_service['service_id']; ?>" class="visually-hidden">
+                                Quantity for <?php echo $cart_service['service_name']; ?>
+                            </label>
+<input type="number" class="me-1 form-control rounded-3 w-50 quantity-input" name="quantity"
                                 id="quantity" min="1" autocomplete="off"
                                 id="quantity-<?php echo $cart_service['service_id']; ?>"
                                 data-service-id="<?php echo $cart_service['service_id']; ?>"

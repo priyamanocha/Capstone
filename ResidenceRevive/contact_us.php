@@ -103,8 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="contact-page-container" id="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>
-                <p><b>Email:</b> <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
-                <p><b>Phone:</b> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><b>Email:</b> <a href="mailto:support@residencerevive.com" style="color: black;">support@residencerevive.com</a></p>
+<p><b>Phone:</b> <a href="tel:+1234567890" style="color: black;">+1 (234) 567-890</a></p>
                 <p><b>Address:</b> 21 Sportsman Hill St, Kitchener, Ontario, N2P L63.</p>
                 <div class="social-links-contact-us">
                 <a href="#" class="icon-facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
