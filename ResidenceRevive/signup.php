@@ -203,27 +203,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" name="first_name" value="<?php echo $first_name; ?>">
+                <input type="text" id ="first_name" name="first_name" value="<?php echo $first_name; ?>">
                 <span class="error"><?php echo $first_name_err; ?></span>
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" value="<?php echo $last_name; ?>">
+                <input type="text" id = "last_name" name="last_name" value="<?php echo $last_name; ?>">
                 <span class="error"><?php echo $last_name_err; ?></span>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" name="email" value="<?php echo $email; ?>">
+                <input type="text" id="email" name="email" value="<?php echo $email; ?>">
                 <span class="error"><?php echo $email_err; ?></span>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="text" name="phone" value="<?php echo $phone; ?>">
+                <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>">
                 <span class="error"><?php echo $phone_err; ?></span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" oninput="checkPasswordStrength(this.value)">
+                <input type="password" id="password" name="password" oninput="checkPasswordStrength(this.value)">
                 <span class="error"><?php echo $password_err; ?></span>
                 <progress id="strength-bar" max="5" value="0"></progress>
                 <!-- The label to display password strength text -->

@@ -23,9 +23,10 @@ $icons = [
 ];
 ?>
 <div class="background-image-container">
-    <h1 class="image-text">Professional Residence Services</h1>
+    <h1 class="image-text">Residence Revive Services</h1>
     <h2 class="image-text-h2">Home Improvement, Maintenance, and Repair</h2>
     <p class="bold"><a href="signup.php" class="image-button">Signup</a> with us to Book Services!</p>
+    <a class="bold why-us-banner" href="#why-us">Why Choose Us?</a>
 </div>
 <h1 class="heading">Residence Revive Services</h1>
 <div class="services-grid" id="services-grid">
@@ -45,34 +46,34 @@ $icons = [
         </div>
     <?php endforeach; ?>
 </div>
-
-<h3 class="heading">Why Choose Us?</h3>
-<div class="why-us">
-    <!-- Left Container -->
-    <div class="left-container">
-        <div class="icon-line">
-            <img src="./images/safe.png" alt="Icon 1">
-            <div>
-                <h3 class="bold">100% Safe</h3>
-                <p>Totally safe and secure</p>
+<div id="why-us">
+    <h3 class="heading">Why Choose Us?</h3>
+    <div class="why-us">
+        <!-- Left Container -->
+        <div class="left-container">
+            <div class="icon-line">
+                <img src="./images/safe.png" alt="Icon 1">
+                <div>
+                    <h3 class="bold">100% Safe</h3>
+                    <p>Totally safe and secure</p>
+                </div>
             </div>
-        </div>
-        <div class="icon-line">
-            <img src="./images/search.png" alt="Icon 2">
-            <div>
-                <h3 class="bold">Transparent Pricing</h3>
-                <p>See prices before you book, No hidden fees</p>
+            <div class="icon-line">
+                <img src="./images/search.png" alt="Icon 2">
+                <div>
+                    <h3 class="bold">Transparent Pricing</h3>
+                    <p>See prices before you book, No hidden fees</p>
+                </div>
             </div>
-        </div>
-        <div class="icon-line">
-            <img src="./images/leader.png" alt="Icon 3">
-            <div>
-                <h3 class="bold">Experts Only</h3>
-                <p>Our Staff is full of experts, and have on-job experience of years</p>
+            <div class="icon-line">
+                <img src="./images/leader.png" alt="Icon 3">
+                <div>
+                    <h3 class="bold">Experts Only</h3>
+                    <p>Our Staff is full of experts, and have on-job experience of years</p>
+                </div>
             </div>
         </div>
     </div>
-
     <!-- Right Container -->
     <div class="right-container">
         <div class="whyus_card">

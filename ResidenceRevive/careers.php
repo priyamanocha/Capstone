@@ -33,28 +33,28 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>Current Job Openings</h2>
             <div class="job-listings-container">
                 <div class="job-listing">
-                    <h4>General Manager</h4>
-                    <h5>Residence Revive - Kitchener</h5>
+                    <h3>General Manager</h3>
+                    <h4>Residence Revive - Kitchener</h4>
                 </div>
                 <div class="job-listing">
-                    <h4>Supervisor</h4>
-                    <h5>Residence Revive - Toronto</h5>
+                    <h3>Supervisor</h3>
+                    <h4>Residence Revive - Toronto</h4>
                 </div>
                 <div class="job-listing">
-                    <h4>Operations Manager</h4>
-                    <h5>Residence Revive - Toronto</h5>
+                    <h3>Operations Manager</h3>
+                    <h4>Residence Revive - Toronto</h4>
                 </div>
                 <div class="job-listing">
-                    <h4>Marketing Director</h4>
-                    <h5>Residence Revive - Remote</h5>
+                    <h3>Marketing Director</h3>
+                    <h4>Residence Revive - Remote</h4>
                 </div>
             </div>
-            <h6>Please apply by sending us cover letter and resume to support@residencerevive.com</h6>
+            <h5>Please apply by sending us cover letter and resume to support@residencerevive.com</h5>
         </section>
 
         <div class="map">
-            <h3>Our Location</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.020333996691!2d-80.42182492376466!3d43.376598870276716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c7571ae5d7969%3A0x34136ccf2e63d14c!2s21%20Sportsman%20Hill%20St%2C%20Kitchener%2C%20ON%20N2P%202N7!5e0!3m2!1sen!2sca!4v1721873628207!5m2!1sen!2sca" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h5>Our Location</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.020333996691!2d-80.42182492376466!3d43.376598870276716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c7571ae5d7969%3A0x34136ccf2e63d14c!2s21%20Sportsman%20Hill%20St%2C%20Kitchener%2C%20ON%20N2P%202N7!5e0!3m2!1sen!2sca!4v1721873628207!5m2!1sen!2sca" title="map" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 

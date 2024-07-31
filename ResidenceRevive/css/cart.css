@@ -64,18 +64,18 @@ h2 {
 }
 
 .table .btn-danger:hover {
-    background-color: #e65c54;
-    border-color: #e65c54;
+    background-color: #2C559B;
+    border-color: #2C559B;
 }
 
 .table .btn-primary {
-    background-color: #ff6f61;
-    border-color: #ff6f61;
+    background-color: #2C559B;
+    border-color: #2C559B;
 }
 
 .table .btn-primary:hover {
-    background-color: #e65c54;
-    border-color: #e65c54;
+    background-color: #2C559B;
+    border-color: #2C559B;
 }
 
 .cart-total {
@@ -91,7 +91,7 @@ h2 {
 }
 
 .cart-buttons button {
-    background-color: #ff6f61;
+    background-color: #2C559B;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -101,5 +101,5 @@ h2 {
 }
 
 .cart-buttons button:hover {
-    background-color: #e65c54;
+    background-color: #2C559B;
 }

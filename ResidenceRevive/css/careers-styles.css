@@ -37,14 +37,14 @@ body {
     font-size: 20px;
     color: #fff;
     font-weight: 400;
-    background-color: #007bff;
+    background-color: black;
     border: none;
     border-radius: 35px;
     text-decoration: none;
 }
 
 .hero .btn:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .hero .circle {
@@ -94,7 +94,7 @@ body {
 .job-listing h4 {
     font-size: 24px;
     margin: 0;
-    color: rgb(232, 134, 37);
+    color: rgb(80, 40, 0);
     cursor: pointer;
 }
 

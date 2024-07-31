@@ -103,8 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="contact-page-container" id="contact-page-container">
             <div class="contact-info">
                 <h2>Contact Customer Support</h2>
-                <p><b>Email:</b> <a href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
-                <p><b>Phone:</b> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><b>Email:</b> <a style="color:black;"href="mailto:support@residencerevive.com">support@residencerevive.com</a></p>
+                <p><b>Phone:</b> <a style="color:black;" href="tel:+1234567890">+1 (234) 567-890</a></p>
                 <p><b>Address:</b> 21 Sportsman Hill St, Kitchener, Ontario, N2P L63.</p>
                 <div class="social-links-contact-us">
                 <a href="#" class="icon-facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form id="contactForm" action="contact_us.php" method="POST">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" placeholder="Enter First Name"
+                        <input type="text" x-webkit-speech id="first_name" name="first_name" placeholder="Enter First Name"
                             value="<?php echo $first_name; ?>">
                         <span class="error"><?php echo $first_name_err; ?></span>
                     </div>
