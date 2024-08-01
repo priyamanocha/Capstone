@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form id="contactForm" action="contact_us.php" method="POST">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" placeholder="Enter First Name"
+                        <input type="text" x-webkit-speech id="first_name" name="first_name" placeholder="Enter First Name"
                             value="<?php echo $first_name; ?>">
                         <span class="error"><?php echo $first_name_err; ?></span>
                     </div>

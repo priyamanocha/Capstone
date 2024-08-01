@@ -120,7 +120,7 @@ $conn->close();
 
         .alert {
             padding: 20px;
-            background-color: #4caf50;
+            background-color: #2C559B;
             color: white;
             margin-bottom: 20px;
             border-radius: 5px;
@@ -128,7 +128,8 @@ $conn->close();
         }
 
         .alert.alert-danger {
-            background-color: #f44336;
+            background-color: #2C559B;
+            color: white;
         }
 
         .table {
@@ -167,18 +168,18 @@ $conn->close();
         }
 
         .table .btn-danger:hover {
-            background-color: #e65c54;
-            border-color: #e65c54;
+            background-color: #2C559B;
+            
         }
 
         .table .btn-primary {
-            background-color: #ff6f61;
-            border-color: #ff6f61;
+            background-color: #2C559B;
+            border-color: #2C559B;
         }
 
         .table .btn-primary:hover {
-            background-color: #e65c54;
-            border-color: #e65c54;
+            background-color: #2C559B;
+            border-color: #2C559B;
         }
 
         .cart-total {
@@ -215,7 +216,7 @@ $conn->close();
         }
 
         .cart-buttons button:hover {
-            background-color: #e65c54;
+            background-color: #2C559B;
         }
     </style>
 </head>
@@ -251,8 +252,8 @@ $conn->close();
                             <!-- <img src="<?php echo $cart_service['service_img']; ?>"
                             class="img-fluid object-fit-contain" alt="Image"> -->
                             <div class="p-2 ms-2">
-                                <h6><?php echo $cart_service['service_name']; ?>
-                                </h6>
+                                <p><?php echo $cart_service['service_name']; ?>
+                                </p>
                             </div>
                         </div>
                     </td>
@@ -263,7 +264,7 @@ $conn->close();
 
                             <input type="hidden" value="update" name="action">
 
-                            <input type="hidden"
+                            <input type="hidden" id="service_id"
                                 value="<?php echo $cart_service['service_id']; ?>"
                                 name="service_id">
                                 <label for="quantity-<?php echo $cart_service['service_id']; ?>" class="visually-hidden">

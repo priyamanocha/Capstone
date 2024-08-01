@@ -14,7 +14,7 @@
     <?php include 'includes/header.php'; ?>
     <div class="terms_conditions">
         <h1>Terms and Conditions</h1>
-        <h2>Introduction</h2>
+        <h3>Introduction</h3>
         <p>Welcome to Residence Revive! These Terms and Conditions ("Terms") govern your use of our services, including
             Appliance Repair, Cleaning/Disinfection, Electrician, Furniture Assembly, Pest Control, and Plumbing
             services

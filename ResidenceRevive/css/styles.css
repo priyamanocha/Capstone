@@ -53,7 +53,7 @@ nav a {
 }
 
 .background-image-container p {
-    padding: 2%;
+    padding: 2% 2% 1% 2%;
 }
 
 .background-image-container .image-button {
@@ -65,8 +65,16 @@ nav a {
 
 .background-image-container a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    
+}
+.why-us-banner{
+    padding: 1%;
+    color: black;
+    margin-left: 10px;
+    text-decoration: underline !important;
+    font-weight: bold;
+    font-family: math;
+    font-size: 1.5rem;
 }
 
 .heading {
@@ -660,9 +668,11 @@ nav {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="number"],
+.form-group input[type="date"],
 .form-group select,
 .form-group textarea {
     width: 100%;
+    height: 3rem;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -766,7 +776,9 @@ button {
 .form-group input[type="checkbox"] {
     margin-right: 10px;
 }
-
+.image-text-h2{
+    padding-left: 20px;
+}
 .contact-form-container input[type="submit"] {
     background-color: #2C559B !important;
     color: white;
@@ -777,7 +789,7 @@ button {
 }
 
 .contact-form-container input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #2C559B !important
 }
 
 .error {
