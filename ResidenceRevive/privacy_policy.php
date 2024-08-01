@@ -9,6 +9,13 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    include 'config/db.php';
+    include 'includes/functions.php';
+
+    $categories = getAllCategories($conn); // Fetch category names
+    ?>
     <?php include 'includes/header.php'; ?>
     <main>
         <div class="privacy_policy_container">

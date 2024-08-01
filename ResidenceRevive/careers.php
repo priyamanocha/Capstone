@@ -18,7 +18,15 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
+<?php
+
+include 'config/db.php';
+include 'includes/functions.php';
+
+$categories = getAllCategories($conn); // Fetch category names
+?>
     <?php include 'includes/header.php'; ?>
+   
 
     <div class="hero">
         <h1>Welcome to Residence Revive Careers</h1>
