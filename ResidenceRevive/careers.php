@@ -44,29 +44,20 @@ $categories = getAllCategories($conn); // Fetch category names
                 <div class="job-listing">
                     <h3>General Manager</h3>
                     <h4>Residence Revive - Kitchener</h4>
-                    <h3>General Manager</h3>
-                    <h4>Residence Revive - Kitchener</h4>
                 </div>
                 <div class="job-listing">
-                    <h3>Supervisor</h3>
-                    <h4>Residence Revive - Toronto</h4>
                     <h3>Supervisor</h3>
                     <h4>Residence Revive - Toronto</h4>
                 </div>
                 <div class="job-listing">
                     <h3>Operations Manager</h3>
                     <h4>Residence Revive - Toronto</h4>
-                    <h3>Operations Manager</h3>
-                    <h4>Residence Revive - Toronto</h4>
                 </div>
                 <div class="job-listing">
-                    <h3>Marketing Director</h3>
-                    <h4>Residence Revive - Remote</h4>
                     <h3>Marketing Director</h3>
                     <h4>Residence Revive - Remote</h4>
                 </div>
             </div>
-            <h5>Please apply by sending us cover letter and resume to support@residencerevive.com</h5>
             <h5>Please apply by sending us cover letter and resume to support@residencerevive.com</h5>
         </section>
 
