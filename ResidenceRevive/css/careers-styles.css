@@ -37,8 +37,9 @@ body {
     font-size: 20px;
     color: #fff;
     font-weight: 400;
-    background-color: black;
+    background-color: #004899;
     border: none;
+    font-weight: 400;
     border-radius: 35px;
     text-decoration: none;
 }
@@ -94,13 +95,13 @@ body {
 .job-listing h4 {
     font-size: 24px;
     margin: 0;
-    color: rgb(80, 40, 0);
+    color: #004DA3;
     cursor: pointer;
 }
 
 .job-listing h5 {
     font-size: 18px;
-    color: #777;
+    color: black;
 }
 
 .map {

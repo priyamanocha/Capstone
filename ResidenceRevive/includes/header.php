@@ -12,6 +12,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
     <!-- The Meta tags for char set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional home improvement, maintenance, and repair services. Sign up to book expert services for your residence today!">
     <title><?php echo $title; ?></title>
 
     <!-- Bootstrap -->

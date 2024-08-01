@@ -72,7 +72,7 @@ text-align: center;
 .signup-container input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #2C559B;
+    background-color: #2C559B !important;
     color: #fff;
     border: none;
     border-radius: 5px;
