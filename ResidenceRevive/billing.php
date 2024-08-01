@@ -1,12 +1,16 @@
 <?php
 // Include database connection
 include 'config/db.php';
+define('FPDF_FONTPATH', 'libs/fpdf/font/');
+
+// Include FPDF library
+require('libs/fpdf/fpdf.php');
+
 $email = "";
 // setting email from session
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 }
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion'])) {
 
@@ -35,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     JOIN categories AS cat ON c.category_id = cat.category_id
     JOIN sub_categories AS subcat ON c.subcategory_id = subcat.sub_category_id
     WHERE c.email = ?
-";
+    ";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -59,7 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     $amount = round($amount, 2);
     $tax = round($tax, 2);
     $totalAmount = round($totalAmount, 2);
-
 
     // Insert booking information into booking table
     $sql = "INSERT INTO booking (email, booking_date, booking_time, service_date, service_time, booking_first_name, booking_last_name, booking_contact_number, address, city, state, postal_code, amount, tax, total_amount) 
@@ -89,7 +92,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $email);
         $stmt->execute();
-        echo json_encode(['status' => 'success', 'message' => 'Your service is booked successfully!', 'booking_id' => $booking_id]);
+
+        // Generate PDF
+        $pdf = new FPDF();
+        $pdf->SetTitle('Residence Revive Receipt');
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Cell(0, 10, 'Booking Confirmation', 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(0, 10, 'Booking ID: ' . $booking_id, 0, 1);
+        $pdf->Cell(0, 10, 'Name: ' . $first_name . ' ' . $last_name, 0, 1);
+        $pdf->Cell(0, 10, 'Service Date: ' . $serviceDate, 0, 1);
+        $pdf->Cell(0, 10, 'Service Time: ' . $serviceTime, 0, 1);
+        $pdf->Cell(0, 10, 'Address: ' . $street_address . ', ' . $city . ', ' . $state . ', ' . $zip_code, 0, 1);
+        $pdf->Cell(0, 10, 'Total Amount: $' . $totalAmount, 0, 1);
+
+        $pdfOutput = 'booking_confirmation_' . $booking_id . '.pdf';
+        $pdf->Output('F', $pdfOutput);
+
+        // Provide a link to download the PDF
+        echo json_encode(['status' => 'success', 'message' => 'Your service is booked successfully!', 'booking_id' => $booking_id, 'pdf' => $pdfOutput]);
 
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Error: ' . $stmt->error]);

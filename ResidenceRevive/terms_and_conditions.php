@@ -11,7 +11,17 @@
 </head>
 
 <body>
-    <?php include 'includes/header.php'; ?>
+<?php
+    session_start();
+    include 'config/db.php';
+    include 'includes/functions.php';
+
+    $categories = getAllCategories($conn); // Fetch category names
+    ?>
+  <?php include 'includes/header.php'; 
+  
+    ?>
+ 
     <div class="terms_conditions">
         <h1>Terms and Conditions</h1>
         <h3>Introduction</h3>
