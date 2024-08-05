@@ -41,6 +41,7 @@ nav a {
     font-weight: bold;
     font-size: 50px;
     margin-top: 50px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .background-image-container .image-text {
