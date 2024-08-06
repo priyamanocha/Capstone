@@ -23,7 +23,7 @@
     <!-- New Image Section Below Nav Bar -->
     <div class="background-image-container">
             <a href="#contact-page-container">
-                <h1 class="mb-2">About Us</h1>
+                <h1 class="mb-2 text-dark">About Us</h1>
             </a>
         </div>
     <!-- <section class="hero-image">

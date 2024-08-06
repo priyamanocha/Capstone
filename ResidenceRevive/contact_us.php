@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main>
         <div class="background-image-container">
             <a href="#contact-page-container">
-                <h1 class="mb-2">Contact Us</h1>
+                <h1 class="mb-2 text-dark">Contact Us</h1>
             </a>
         </div>
         <div class="container">
