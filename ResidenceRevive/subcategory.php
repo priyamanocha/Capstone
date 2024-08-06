@@ -5,7 +5,7 @@ include 'includes/functions.php'; // Adjust path as per your file structure
 
 $categories = getAllCategories($conn); // Fetch category names
 
-include 'includes/header.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +14,10 @@ include 'includes/header.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/subcategory.css"> <!-- Link to external CSS file -->
-    <title>Subcategories</title>
+    <title>Services</title>
 </head>
 <body>
-    
+<?php include 'includes/header.php'; ?>
     <!-- Subcategories Section -->
     <div class="subcategories">
         <h3>Services</h3>
