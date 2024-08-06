@@ -163,8 +163,8 @@ $conn->close();
         }
 
         .table .btn-danger {
-            background-color: ##2C559B !important;
-            border-color: ##2C559B !important;
+            background-color: #2C559B !important;
+            border-color: #2C559B !important;
         }
 
         .table .btn-danger:hover {
@@ -229,18 +229,24 @@ $conn->close();
         <div class="alert">Service removed from Cart.</div>
         <?php endif; ?>
 
-        <h2>Cart Summary</h2>
+        <h2 class="mb-3">Cart Summary</h2>
+
+        <div class="text-center mb-3">
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=empty"
+                            class="btn btn-danger" style="background-color: #2C559B; border-color: #2C559B ">Empty Cart</a>
+                   
+        </div>
+
 
         <?php if ($cart_items): ?>
-        <table class="table" style="vertical-align: middle;">
+            <div class="table-responsive">
+        <table class="table border" style="vertical-align: middle;">
             <thead>
                 <tr>
                     <th scope="col">Service</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
-                    <th style="min-width: 140px;">
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?action=empty"
-                            class="btn btn-danger" style="background-color: #2C559B; border-color: #2C559B ">Empty Cart</a>
+                    <th >
                     </th>
                 </tr>
             </thead>
@@ -291,9 +297,7 @@ $conn->close();
                 </tr>
                 <?php endwhile; ?>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3" class="cart-total" style="font-size: 1.2rem;">
+                </table>
 
 
 
@@ -306,7 +310,9 @@ $conn->close();
 
             ?>
 
-                        <table class="table table-bordered">
+            <div class="col-md-6 mx-md-auto">
+
+            <table class="table table-bordered fw-bold">
 
                             <tr>
                                 <td>Cart Total:</td>
@@ -324,16 +330,16 @@ $conn->close();
                                 </td>
                             </tr>
                         </table>
-                    </td>
+                
+                               <form action="billing.php" method="POST" class="cart-buttons text-center">
+                                   <button type="submit">Proceed to Payment</button>
+                               </form>
 
-                    <td class="text-end">
-                        <form action="billing.php" method="POST" class="cart-buttons">
-                            <button type="submit">Proceed to Payment</button>
-                        </form>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+            </div>
+
+                    
+         </div>
+                     
         <?php else: ?>
         <div class="alert alert-danger">No Services in Cart</div>
         <?php endif; ?>
