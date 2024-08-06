@@ -420,7 +420,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                             console.log('Response data:', data);
                             if (data.status === 'success') {
                                 alert(`Your service has been successfully booked! Your booking ID is ${data.booking_id}. Thank you for choosing our service.`);
-                                window.location.href = '/'; // Redirect to the index page
+                                window.location.href = 'index.php'; // Redirect to the index page
                             } else {
                                 alert(data.message);
                             }

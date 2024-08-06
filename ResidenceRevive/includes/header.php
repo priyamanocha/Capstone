@@ -12,7 +12,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
     <!-- The Meta tags for char set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional home improvement, maintenance, and repair services. Sign up to book expert services for your residence today!">
+    <meta name="description"
+        content="Professional home improvement, maintenance, and repair services. Sign up to book expert services for your residence today!">
     <title><?php echo $title; ?></title>
 
     <!-- Bootstrap -->
@@ -33,10 +34,13 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                     <img src="images/ResidenceRevive_logo.png" alt="Residence Revive Logo">
                     Residence Revive Services
                 </a>
-                <div class="search mx-5">
-                    <input type="text" placeholder="Search for Service"
-                        class="form-control form-control-lg d-inline-block search-service">
-                </div>
+                <form class="d-inline-block">
+                    <div class="search mx-5">
+                        <input type="text" id="searchInput" placeholder="Search for Service"
+                            class="form-control form-control-lg">
+                        <div id="searchResults" class="mt-2"></div>
+                    </div>
+                </form>
                 <div>
                     <?php
                     if (isset($_SESSION['email'])) {
@@ -54,16 +58,16 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                                 <?php if (isset($categories) && is_array($categories)): ?>
                                     <?php foreach ($categories as $category): ?>
                                         <li><a class="dropdown-item"
-                                               href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
-                                            <?php echo $category['category_name']; ?>
-                                        </a></li>
+                                                href="subcategory.php?category_id=<?php echo $category['category_id']; ?>">
+                                                <?php echo $category['category_name']; ?>
+                                            </a></li>
                                     <?php endforeach; ?>
                                 <?php else: ?>
                                     <li><a class="dropdown-item" href="#">No categories available</a></li>
@@ -79,7 +83,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php">Cart</a>
                         </li>
-                        
+
                         <?php if (!isset($_SESSION['email'])): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
@@ -88,19 +92,59 @@ if (isset($_SESSION['email']) && isset($_SESSION['first_name'])) {
                             <li class="nav-item">
                                 <a class="nav-link" href="signup.php">Register</a>
                             </li>
-                            
+
                         <?php else: ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout
                                 </a>
                             </li>
-                        <?php endif ; ?>
+                        <?php endif; ?>
 
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.trim();
+
+        if (query.length > 0) {
+            fetch(`search.php?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    searchResults.innerHTML = '';
+
+                    if (Array.isArray(data) && data.length > 0) {
+                        const list = document.createElement('ul');
+                        list.classList.add('list-group');
+
+                        data.forEach(item => {
+                            const listItem = document.createElement('li');
+                            listItem.classList.add('list-group-item');
+                            listItem.innerHTML = `<a href="subcategory.php?category_id=${item.category_id}">${item.service_name}</a>`;
+                            list.appendChild(listItem);
+                        });
+
+                        searchResults.appendChild(list);
+                    } else {
+                        searchResults.innerHTML = '<p>No results found.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
+        } else {
+            searchResults.innerHTML = '';
+        }
+    });
+});
+</script>
 
     <!-- Bootstrap JavaScript and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
