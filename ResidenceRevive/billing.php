@@ -78,8 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         $sql = "INSERT INTO booking_services (booking_id, category_id, subcategory_id, service_id) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
-        $insertStmt = $conn->prepare("INSERT INTO booking_services (booking_id, category_id, subcategory_id, service_id) VALUES (?, ?, ?, ?)");
-
         $result->data_seek(0);
 
         while ($row = $result->fetch_assoc()) {
@@ -122,7 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
     exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -283,6 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         // Set the min and max attributes of the service_date input
         serviceDateInput.setAttribute('min', formattedMinDate);
         serviceDateInput.setAttribute('max', formattedMaxDate);
+
         function validateForm() {
             const serviceDate = document.getElementById('service_date').value;
             const serviceTime = document.getElementById('service_time').value;
@@ -392,49 +390,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
             return valid;
         }
 
-
         function handleCashOnCompletion() {
             if (validateForm()) {
                 const form = document.getElementById('billing-form');
                 const formData = new FormData(form);
-                for (let [key, value] of formData.entries()) {
-                    console.log(key, value);
-                }
-                console.log(form);
-                console.log(formData);
                 formData.append('cash_on_completion', '1');
 
                 fetch('billing.php', {
                     method: 'POST',
                     body: formData
                 })
-                    .then(response => {
-                        // Log the response to inspect it
-                        console.log('Response status:', response.status);
-                        return response.text(); // Use text() to capture the raw response
-                    })
-                    .then(text => {
-                        try {
-                            console.log(text);
-                            const data = JSON.parse(text); // Attempt to parse JSON
-                            console.log('Response data:', data);
-                            if (data.status === 'success') {
-                                alert(`Your service has been successfully booked! Your booking ID is ${data.booking_id}. Thank you for choosing our service.`);
-                                window.location.href = 'index.php'; // Redirect to the index page
-                            } else {
-                                alert(data.message);
-                            }
-                        } catch (error) {
-                            console.error('Failed to parse JSON:', error);
-                            alert('Failed to process the response.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Fetch error:', error);
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(`Your service has been successfully booked! Your booking ID is ${data.booking_id}. Thank you for choosing our service.`);
+                        window.open(data.pdf, '_blank'); // Open PDF in a new tab
+                        window.location.href = 'index.php'; // Redirect to the index page
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
             }
         }
-
 
         paypal.Buttons({
             createOrder: function (data, actions) {
@@ -455,9 +435,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                 });
             }
         }).render('#paypal-button-container');
-    </script>
 
-    <script>
         const baseRequest = {
             apiVersion: 2,
             apiVersionMinor: 0
