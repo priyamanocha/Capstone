@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         $pdf->SetTitle('Residence Revive Receipt');
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(0, 10, 'Booking Confirmation', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Booking Confirmation for Residence Revive', 0, 1, 'C');
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(0, 10, 'Booking ID: ' . $booking_id, 0, 1);
         $pdf->Cell(0, 10, 'Name: ' . $first_name . ' ' . $last_name, 0, 1);
@@ -104,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
         $pdf->Cell(0, 10, 'Service Time: ' . $serviceTime, 0, 1);
         $pdf->Cell(0, 10, 'Address: ' . $street_address . ', ' . $city . ', ' . $state . ', ' . $zip_code, 0, 1);
         $pdf->Cell(0, 10, 'Total Amount: $' . $totalAmount, 0, 1);
+        $pdf->Cell(0, 10, 'Thank you for Choosing our services', 0, 1, 'C');
 
         $pdfOutput = 'booking_confirmation_' . $booking_id . '.pdf';
         $pdf->Output('F', $pdfOutput);
@@ -422,7 +423,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: '0.01'
+                                value: '11.29'
                             }
                         }]
                     });
@@ -495,7 +496,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cash_on_completion']))
                 paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
                 paymentDataRequest.transactionInfo = {
                     totalPriceStatus: 'FINAL',
-                    totalPrice: '0.01',
+                    totalPrice: '11.29',
                     currencyCode: 'USD'
                 };
                 paymentDataRequest.merchantInfo = {
