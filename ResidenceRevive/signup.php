@@ -215,7 +215,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" value="<?php echo $email; ?>">
-                <input type="text" id="email" name="email" value="<?php echo $email; ?>">
                 <span class="error"><?php echo $email_err; ?></span>
             </div>
             <div class="form-group">

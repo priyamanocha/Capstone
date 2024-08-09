@@ -64,6 +64,8 @@ $categories = getAllCategories($conn); // Fetch category names
                     'Minor Fitting/Installation'=> './images/service-images/MinorFittingInstallation.jpg',
                     'Toilet'=> './images/service-images/Toilet.jpg',
                     'Shower'=> './images/service-images/Shower.jpg',
+                    'Insects'=> './images/service-images/insects.jpg',
+                    'Rodents'=> './images/service-images/rodents.jpg',
                     'Others'=> './images/service-images/Others.jpg',
                     // Add more subcategories with their respective icon paths
                 ];

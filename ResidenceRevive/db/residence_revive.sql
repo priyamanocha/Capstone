@@ -128,6 +128,9 @@ insert into sub_categories values(24, 'Wardrobe');
 insert into sub_categories values(25, 'Tables/Drawers/Workspaces');
 insert into sub_categories values(26, 'Bed');
 insert into sub_categories values(27, 'Sofa');
+insert into sub_categories values(28, 'Insects');
+insert into sub_categories values(29, 'Rodents');
+
 
 -- Insert Queries for Services
 INSERT INTO services (service_id, service_name, description, service_img, price)
@@ -198,8 +201,9 @@ VALUES
 (64, 'Hydraulic Bed', 'Hydraulic bed assembly.', 'images/cleaning.jpg', 89.99),
 (65, 'Sofa - 2 seater', '2-seater sofa assembly.', 'images/cleaning.jpg', 89.99),
 (66, 'Sofa - 3 seater', '3-seater sofa assembly.', 'images/cleaning.jpg', 99.99),
-(67, 'Sofa - 4 seater', '4-seater sofa assembly.', 'images/cleaning.jpg', 99.99);
-
+(67, 'Sofa - 4 seater', '4-seater sofa assembly.', 'images/cleaning.jpg', 99.99),
+(68, 'Insects Control', 'Ants, Bed Bugs, Cockroaches, and Fleas', 'images/insects.jpg', 499.99),
+(69, 'Rodents Control', 'Mice and Rats', 'images/rodents.jpg', 499.99);
 -- Insert Queries for category_subcategory_service_mapping
 insert into category_subcategory_service_mapping values(1, 1, 1);
 insert into category_subcategory_service_mapping values(1, 1, 2);
@@ -268,6 +272,8 @@ insert into category_subcategory_service_mapping values(6, 26, 64);
 insert into category_subcategory_service_mapping values(6, 27, 65);
 insert into category_subcategory_service_mapping values(6, 27, 66);
 insert into category_subcategory_service_mapping values(6, 27, 67);
+insert into category_subcategory_service_mapping values(5, 28, 68);
+insert into category_subcategory_service_mapping values(5, 29, 69);
 
 
 

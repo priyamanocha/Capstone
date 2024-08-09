@@ -21,7 +21,7 @@
             <!-- Container for the social media icons -->
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61561765015915&notif_id=1720298577477623&notif_t=page_user_activity&ref=notif" class="icon-facebook" aria-label="Facebook" name="facebook-link"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="icon-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/residencerevive/?igsh=d2RsM2NmMWVsYXNz" class="icon-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/ResidenceRevive" class="icon-twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
@@ -29,7 +29,6 @@
             <p class="bold">For Customers</p>
             <a href="signup.php">Register</a>
             <a href="login.php">Log In</a>
-            <a href="#">Book Services</a>
             <a href="cart.php">View Cart</a>
         </div>
         <div>
