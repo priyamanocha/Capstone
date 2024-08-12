@@ -73,7 +73,7 @@ $icons = [
                 </div>
             </div>
         </div>
-    </div>
+    
     <!-- Right Container -->
     <div class="right-container">
         <div class="whyus_card">
